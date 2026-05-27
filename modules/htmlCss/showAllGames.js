@@ -1,5 +1,6 @@
 const matchesStats = document.getElementById("matchesStats");
 export default function ShowAllGames(resJson) {
+  matchesStats.style.display = "flex";
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
 
@@ -45,17 +46,6 @@ export default function ShowAllGames(resJson) {
       } else if (player.team == "Dire") {
         direContainer.append(playerContainer);
       }
-    });
-    const streamsContainer = document.createElement("div");
-    streamsContainer.classList.add("streamsContainer");
-
-    matchContainer.append(streamsContainer);
-    match.streams.forEach((url) => {
-      const streamContainer = document.createElement("a");
-      streamContainer.target = "_blank";
-      streamContainer.innerHTML = url;
-      streamsContainer.append(streamContainer);
-      streamContainer.href = url;
     });
   });
 

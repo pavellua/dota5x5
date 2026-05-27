@@ -9,6 +9,7 @@ import TopPickedHeroes from "./modules/topPickedHeroes.js";
 const picksStatsTable = document.getElementById("picksStatsTable");
 const headPicksTable = picksStatsTable.querySelector("thead");
 const allMatchesBtn = document.getElementById("allMatchesBtn");
+const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 
 const local = true;
 let data;
@@ -24,21 +25,24 @@ let pickedHeroes = TopPickedHeroes(data);
 let topBanedHeroes = TopBanedHeroes(data);
 
 // ShowPlayerStatsTable(playerStats, data);
-// ShowPicksStatsTable(pickedHeroes, data);
 
 allMatchesBtn.addEventListener("click", () => {
   ShowAllGames(data);
+});
+
+pickedBanedHeroesBtn.addEventListener("click", () => {
+  ShowPicksStatsTable(pickedHeroes, data);
 });
 
 headPicksTable.addEventListener("click", (e) => {
   switch (e.target.dataset.sort) {
     case "bans":
       pickedHeroes = pickedHeroes.sort((a, b) => b.bans - a.bans);
-      ShowPicksStatsTable(pickedHeroes, resJson);
+      ShowPicksStatsTable(pickedHeroes, data);
       break;
     case "picks":
       pickedHeroes = pickedHeroes.sort((a, b) => b.picks - a.picks);
-      ShowPicksStatsTable(pickedHeroes, resJson);
+      ShowPicksStatsTable(pickedHeroes, data);
       break;
     case "winrate":
       console.log(pickedHeroes);
@@ -47,7 +51,7 @@ headPicksTable.addEventListener("click", (e) => {
         if (isNaN(b.winrate)) return -1;
         return b.winrate - a.winrate || b.picks - a.picks;
       });
-      ShowPicksStatsTable(pickedHeroes, resJson);
+      ShowPicksStatsTable(pickedHeroes, data);
       break;
   }
 });

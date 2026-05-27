@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/allGames.css" />
+    <link rel="stylesheet" href="styles/playerStatTable.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
@@ -13,9 +15,10 @@
   </head>
   <body>
     <button id="allMatchesBtn">Усі матчі</button>
-    
+    <button id="pickedBanedHeroesBtn">Піки</button>
+
     <div id="matchesStats"></div>
-    <table class="statTable" id="playerStatsTable">
+    <table class="statTable" id="playerStatsTable" style="display: none">
       <thead>
         <td>Гравець</td>
         <td>Перемоги</td>
@@ -26,7 +29,7 @@
       </thead>
       <tbody></tbody>
     </table>
-    <table class="statTable" id="picksStatsTable">
+    <table class="statTable" id="picksStatsTable" style="display: none">
       <thead>
         <td>Іконка</td>
         <td>Ім'я</td>
@@ -71,55 +74,3 @@
     <script type="module" src="index.js"></script>
   </body>
 </html>
-
-<thead>
-  <tr>
-    <td>Іконка</td>
-    <td>Ім'я</td>
-    <td>
-      <button class="sort-btn" onclick="sortBy('bans')">
-        Кількість банів
-        <span class="arrow"
-          ><span class="arrow-asc">▲</span
-          ><span class="arrow-desc">▼</span></span
-        >
-      </button>
-    </td>
-    <td>
-      <button class="sort-btn" onclick="sortBy('wins')" id="btn-wins">
-        Перемоги
-        <span class="arrow"
-          ><span class="arrow-asc">▲</span
-          ><span class="arrow-desc">▼</span></span
-        >
-      </button>
-    </td>
-    <td>
-      <button class="sort-btn" onclick="sortBy('losses')" id="btn-losses">
-        Поразки
-        <span class="arrow"
-          ><span class="arrow-asc">▲</span
-          ><span class="arrow-desc">▼</span></span
-        >
-      </button>
-    </td>
-    <td>
-      <button class="sort-btn" onclick="sortBy('picks')" id="btn-picks">
-        Кількість піків
-        <span class="arrow"
-          ><span class="arrow-asc">▲</span
-          ><span class="arrow-desc">▼</span></span
-        >
-      </button>
-    </td>
-    <td>
-      <button class="sort-btn" onclick="sortBy('wr')" id="btn-wr">
-        Вінрейт
-        <span class="arrow"
-          ><span class="arrow-asc">▲</span
-          ><span class="arrow-desc">▼</span></span
-        >
-      </button>
-    </td>
-  </tr>
-</thead>

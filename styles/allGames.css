@@ -16,6 +16,7 @@
   font-family: "Segoe UI", sans-serif;
   color: #e0e0e0;
   font-size: 13px;
+  width: 90vw;
 }
 .matchDateIdContainer {
   display: flex;
@@ -37,6 +38,11 @@
 .matchHeroIcon {
   width: 30px;
   margin-right: 5px;
+}
+#matchesStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .teamsContainer {
   display: grid;

@@ -14,12 +14,12 @@
   background: #16213e;
   color: #a78bfa;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.5rem;
   letter-spacing: 0.08em;
 }
 
 .statTable thead td {
-  padding: 14px 18px;
+  /* padding: 14px 18px; */
   font-weight: 600;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .statTable tbody td {
-  padding: 6px 18px;
+  padding: 6px 3px;
 }
 
 .statTable tbody td:first-child {
@@ -103,14 +103,8 @@
   pointer-events: none;
 }
 
-#matchesStats {
-  display: flex;
-  flex-direction: column;
-}
-.matchContainer {
-  display: flex;
-  flex-direction: row;
-}
+
+
 .streamsContainer {
   display: flex;
   flex-direction: column;
