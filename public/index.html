@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/allGames.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+  </head>
+  <body>
+    <button id="allMatchesBtn">Усі матчі</button>
+    
+    <div id="matchesStats"></div>
+    <table class="statTable" id="playerStatsTable">
+      <thead>
+        <td>Гравець</td>
+        <td>Перемоги</td>
+        <td>Поразки</td>
+        <td>Услього ігр</td>
+        <td>Вінрейт</td>
+        <td>Герої</td>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <table class="statTable" id="picksStatsTable">
+      <thead>
+        <td>Іконка</td>
+        <td>Ім'я</td>
+        <td>
+          <span>Кількість банів</span>
+
+          <button class="sort-btn" data-sort="bans">
+            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
+          </button>
+        </td>
+        <td>
+          <span
+            >Перемоги
+            <button class="sort-btn">
+              <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
+            </button></span
+          >
+        </td>
+        <td>
+          <span>Поразки</span>
+          <button class="sort-btn">
+            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
+          </button>
+        </td>
+        <td>
+          <span>Кількість піків</span>
+          <button class="sort-btn" data-sort="picks">
+            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
+          </button>
+        </td>
+
+        <td>
+          <span>Вінрейт</span
+          ><button class="sort-btn" data-sort="winrate">
+            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
+          </button>
+        </td>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button></button>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
+
+<thead>
+  <tr>
+    <td>Іконка</td>
+    <td>Ім'я</td>
+    <td>
+      <button class="sort-btn" onclick="sortBy('bans')">
+        Кількість банів
+        <span class="arrow"
+          ><span class="arrow-asc">▲</span
+          ><span class="arrow-desc">▼</span></span
+        >
+      </button>
+    </td>
+    <td>
+      <button class="sort-btn" onclick="sortBy('wins')" id="btn-wins">
+        Перемоги
+        <span class="arrow"
+          ><span class="arrow-asc">▲</span
+          ><span class="arrow-desc">▼</span></span
+        >
+      </button>
+    </td>
+    <td>
+      <button class="sort-btn" onclick="sortBy('losses')" id="btn-losses">
+        Поразки
+        <span class="arrow"
+          ><span class="arrow-asc">▲</span
+          ><span class="arrow-desc">▼</span></span
+        >
+      </button>
+    </td>
+    <td>
+      <button class="sort-btn" onclick="sortBy('picks')" id="btn-picks">
+        Кількість піків
+        <span class="arrow"
+          ><span class="arrow-asc">▲</span
+          ><span class="arrow-desc">▼</span></span
+        >
+      </button>
+    </td>
+    <td>
+      <button class="sort-btn" onclick="sortBy('wr')" id="btn-wr">
+        Вінрейт
+        <span class="arrow"
+          ><span class="arrow-asc">▲</span
+          ><span class="arrow-desc">▼</span></span
+        >
+      </button>
+    </td>
+  </tr>
+</thead>

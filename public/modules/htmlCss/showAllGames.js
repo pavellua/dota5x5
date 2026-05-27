@@ -1,0 +1,94 @@
+const matchesStats = document.getElementById("matchesStats");
+export default function ShowAllGames(resJson) {
+  const allMatches = resJson.matches;
+  const heroesId = resJson.heroesId;
+
+  allMatches.forEach((match) => {
+    const matchContainer = document.createElement("div");
+    const matchId = match.replay_file.replace(".dem", "");
+
+    matchesStats.append(matchContainer);
+    const matchDateIdContainer = document.createElement("div");
+    matchContainer.append(matchDateIdContainer);
+    const date = new Date(match.date.replace("Z", ""));
+
+    console.log(date.toLocaleString("uk-UA", { timeZone: "Europe/Kiev" }));
+    const matchDateString = date.toLocaleString("uk-UA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    matchDateIdContainer.innerHTML = `<span class="matchId">Match id: ${matchId}</span><span class="matchDate">${matchDateString}</span>`;
+    matchDateIdContainer.classList.add("matchDateIdContainer");
+
+    const direContainer = document.createElement("div");
+    const radiantContainer = document.createElement("div");
+    const teamsContainer = document.createElement("div");
+    teamsContainer.classList.add("teamsContainer");
+    matchContainer.append(teamsContainer);
+    teamsContainer.append(radiantContainer);
+    teamsContainer.append(direContainer);
+    radiantContainer.innerHTML = `<span class="radiant teamLabel">Radiant</span>`;
+    direContainer.innerHTML = `<span  class="dire teamLabel">Dire</span>`;
+    matchContainer.classList.add("matchContainer");
+    match.players.forEach((player) => {
+      const playerContainer = document.createElement("div");
+      playerContainer.classList.add("playerContainer");
+      const heroIconContainerString = getHeroIconContainer(heroesId, player);
+      const streamIcon = getStreamIcon(player, match.streams);
+      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName">${player.name} </span> ${streamIcon}`;
+
+      if (player.team == "Radiant") {
+        radiantContainer.append(playerContainer);
+      } else if (player.team == "Dire") {
+        direContainer.append(playerContainer);
+      }
+    });
+    const streamsContainer = document.createElement("div");
+    streamsContainer.classList.add("streamsContainer");
+
+    matchContainer.append(streamsContainer);
+    match.streams.forEach((url) => {
+      const streamContainer = document.createElement("a");
+      streamContainer.target = "_blank";
+      streamContainer.innerHTML = url;
+      streamsContainer.append(streamContainer);
+      streamContainer.href = url;
+    });
+  });
+
+  console.log(allMatches);
+}
+
+function getHeroIconContainer(heroesId, player) {
+  const imgSrc = heroesId[player.hero].npcName.replace("npc_dota_hero_", "");
+  return `<img 
+      class="matchHeroIcon"
+            src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/icons/${imgSrc}.png"
+            alt="${heroesId[player.hero].name}"
+            )"
+          />`;
+}
+
+function getStreamIcon(player, streams) {
+  const matchStreamer = streams.find(
+    (stream) => stream.streamerId == player.accountid,
+  );
+
+  if (matchStreamer) {
+    console.log(matchStreamer);
+    if (matchStreamer.url.includes("yout")) {
+      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.youtube.com/favicon.ico" width="16" height="16" /></a>`;
+    } else if (matchStreamer.url.includes("twitch")) {
+      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.twitch.tv/favicon.ico" width="16" height="16" /></a>`;
+    }
+  }
+  return "";
+}
+
+{
+  /*
+   */
+}

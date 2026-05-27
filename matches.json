@@ -1,0 +1,837 @@
+[
+  {
+    "bans": {
+      "dire": [
+        76,
+        87,
+        75,
+        135,
+        2,
+        54,
+        35
+      ],
+      "radiant": [
+        111,
+        121,
+        1,
+        74,
+        60,
+        67,
+        6
+      ]
+    },
+    "duration": "51:28",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 30
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 25
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 41
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 151370037,
+        "name": "Владік hex",
+        "hero": 29
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 128
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 98
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 8
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 31
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 26
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 39
+      }
+    ],
+    "date": "2026-05-15T22:21:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/JlpQXJ_ilvw?t=26",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8812312611.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        111,
+        121,
+        1,
+        12,
+        35,
+        60,
+        126
+      ],
+      "radiant": [
+        76,
+        87,
+        25,
+        29,
+        2,
+        70,
+        93
+      ]
+    },
+    "duration": "45:33",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 6
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 88
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 3
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 102
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 30
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 79
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 151370037,
+        "name": "Владік hex",
+        "hero": 44
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 26
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 75
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 84
+      }
+    ],
+    "date": "2026-05-15T23:29:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/JlpQXJ_ilvw?t=4126",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8812388824.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        76,
+        79,
+        75,
+        87,
+        135,
+        56,
+        6
+      ],
+      "radiant": [
+        111,
+        121,
+        74,
+        86,
+        29,
+        25,
+        59
+      ]
+    },
+    "duration": "36:46",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 31
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 26
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 94
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 28
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 126
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 4
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 349682372,
+        "name": "Невідомо",
+        "hero": 93
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 5
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 102
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 22
+      }
+    ],
+    "date": "2026-05-16T00:33:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/JlpQXJ_ilvw?t=7959",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8812449253.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        80,
+        79,
+        35,
+        58,
+        72,
+        93,
+        44
+      ],
+      "radiant": [
+        111,
+        14,
+        76,
+        25,
+        31,
+        114,
+        6
+      ]
+    },
+    "duration": "61:54",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 87
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 128
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 47
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 29
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 18
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 4
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 5
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 71
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 75
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 121
+      }
+    ],
+    "date": "2026-05-16T22:07:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/lXn7b3JbugU?t=31",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8813718735.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        111,
+        121,
+        76,
+        30,
+        26,
+        12,
+        6
+      ],
+      "radiant": [
+        35,
+        79,
+        100,
+        80,
+        44,
+        93,
+        41
+      ]
+    },
+    "duration": "66:43",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 25
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 70
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 27
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 119
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 14
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 75
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 98
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 114
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 9
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 58
+      }
+    ],
+    "date": "2026-05-16T23:27:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/lXn7b3JbugU?t=4808",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8813812832.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        14,
+        87,
+        58,
+        74,
+        79,
+        1,
+        114
+      ],
+      "radiant": [
+        50,
+        9,
+        60,
+        72,
+        112,
+        98,
+        29
+      ]
+    },
+    "duration": "46:37",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 100
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 71
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 30
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 80
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 138
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 7
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 21
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 102
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 31
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 151370037,
+        "name": "Владік hex",
+        "hero": 6
+      }
+    ],
+    "date": "2026-05-23T22:31:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/8ecV5ONTMUE?t=67",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8822709347.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        50,
+        72,
+        128,
+        29,
+        98,
+        41,
+        86
+      ],
+      "radiant": [
+        87,
+        35,
+        58,
+        75,
+        79,
+        120
+      ]
+    },
+    "duration": "50:25",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 2
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 26
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 31
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 151370037,
+        "name": "Владік hex",
+        "hero": 70
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 39
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 42
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 131
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 101
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 14
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 5
+      }
+    ],
+    "date": "2026-05-23T23:36:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/8ecV5ONTMUE?t=4012",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8822784295.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        87,
+        35,
+        14,
+        75,
+        31,
+        6,
+        8
+      ],
+      "radiant": [
+        121,
+        111,
+        72,
+        9,
+        7,
+        41,
+        44
+      ]
+    },
+    "duration": "58:29",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 79
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 120
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 58
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 114
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 22
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 23
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 135
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 151370037,
+        "name": "Владік hex",
+        "hero": 11
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 45
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 30
+      }
+    ],
+    "date": "2026-05-24T00:52:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/8ecV5ONTMUE?t=8555",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2779284086",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8822857992.dem"
+  }
+]

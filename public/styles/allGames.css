@@ -1,0 +1,110 @@
+.matchDateIdContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.teamsContainer {
+  display: flex;
+}
+
+.matchContainer {
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  font-family: "Segoe UI", sans-serif;
+  color: #e0e0e0;
+  font-size: 13px;
+}
+.matchDateIdContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #16213e;
+  border-bottom: 1px solid #2a2a4a;
+}
+.matchId {
+  font-weight: 600;
+  color: #c9ec00;
+  font-size: 12px;
+}
+.matchDate {
+  font-size: 11px;
+  color: #6b7280;
+}
+.matchHeroIcon {
+  width: 30px;
+  margin-right: 5px;
+}
+.teamsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.teamBlock {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.teamBlock:first-child {
+  border-right: 1px solid #2a2a4a;
+}
+
+.teamLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.radiant {
+  background: #14532d;
+  color: #4ade80;
+  font-weight: bold;
+}
+.dire {
+  background: #4c1d1d;
+  color: #f87171;
+  font-weight: bold;
+}
+
+.playerContainer {
+  padding: 3px 0;
+  border-bottom: 1px solid #2a2a4a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+.playerContainer:last-child {
+  border-bottom: none;
+}
+.playerName {
+  font-weight: 500;
+  color: #c4b5fd;
+  font-size: 12px;
+}
+
+.streamsContainer {
+  padding: 8px 14px;
+  background: #16213e;
+  border-top: 1px solid #2a2a4a;
+}
+.streamsContainer a {
+  font-size: 12px;
+  color: #a78bfa;
+  text-decoration: none;
+}
+.streamsContainer a:hover {
+  color: #facc15;
+}
+.streamUrl {
+  margin: 0;
+  margin-left: 5px;
+}
