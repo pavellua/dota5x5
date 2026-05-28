@@ -3,9 +3,10 @@
 }
 
 .matchContainer {
-  background: #1a1a2e;
+  background: rgba(5, 0, 27, 0.33); /* обов'язково rgba, не просто колір */
+  backdrop-filter: blur(4px);
   border: 1px solid #2a2a4a;
-  border-radius: 12px;
+  border-radius: 9px;
   overflow: hidden;
   margin-bottom: 12px;
   font-family: "Segoe UI", sans-serif;
@@ -18,7 +19,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
-  background: #16213e;
+  background: rgba(0, 0, 0, 0.5); /* обов'язково rgba, не просто колір */
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid #2a2a4a;
 }
 .matchId {
@@ -53,14 +55,15 @@
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 6px;
+  width: 100%;
 }
 .radiant {
-  background: #14532d;
-  color: #4ade80;
+  background: #00441b;
+  color: #01db0c9a;
 }
 .dire {
-  background: #4c1d1d;
-  color: #f87171;
+  background: #5f0000;
+  color: #cc0000;
 }
 
 .playerContainer {
@@ -96,5 +99,11 @@
 }
 .streamUrl {
   margin: 0;
-  margin-left: 5px;
+  margin-left: 20px;
+  text-align: right;
+}
+.streamUrl img {
+  display: block;
+  height: 25px;
+  width: auto;
 }

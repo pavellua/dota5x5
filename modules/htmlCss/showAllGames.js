@@ -1,5 +1,7 @@
 const matchesStats = document.getElementById("matchesStats");
 export default function ShowAllGames(resJson) {
+  matchesStats.innerHTML = "";
+  matchesStats.classList.add("activeContainer");
   matchesStats.style.display = "flex";
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
@@ -13,7 +15,6 @@ export default function ShowAllGames(resJson) {
     matchContainer.append(matchDateIdContainer);
     const date = new Date(match.date.replace("Z", ""));
 
-    console.log(date.toLocaleString("uk-UA", { timeZone: "Europe/Kiev" }));
     const matchDateString = date.toLocaleString("uk-UA", {
       year: "numeric",
       month: "2-digit",
@@ -48,8 +49,6 @@ export default function ShowAllGames(resJson) {
       }
     });
   });
-
-  console.log(allMatches);
 }
 
 function getHeroIconContainer(heroesId, player) {
@@ -68,11 +67,10 @@ function getStreamIcon(player, streams) {
   );
 
   if (matchStreamer) {
-    console.log(matchStreamer);
     if (matchStreamer.url.includes("yout")) {
-      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.youtube.com/favicon.ico" width="16" height="16" /></a>`;
+      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" width="32" height="32" /></a>`;
     } else if (matchStreamer.url.includes("twitch")) {
-      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.twitch.tv/favicon.ico" width="16" height="16" /></a>`;
+      return `<a target="_blank" href="${matchStreamer.url}" class="streamUrl"><img src="https://www.google.com/s2/favicons?domain=twitch.tv&sz=32" width="32" height="32" /></a>`;
     }
   }
   return "";

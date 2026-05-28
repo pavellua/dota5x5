@@ -2,10 +2,12 @@ const playerStatsTable = document.getElementById("picksStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
 
 export default function ShowPicksStatsTable(pickedHeroes, resJson) {
+  bodyTable.innerHTML = "";
+  playerStatsTable.classList.add("activeContainer");
   playerStatsTable.style.display = "table";
 
   const heroesId = resJson.heroesId;
-  bodyTable.innerHTML = "";
+
   pickedHeroes.forEach((hero) => {
     const tr = document.createElement("tr");
     const heroId = hero.hero_id;

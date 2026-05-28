@@ -15,8 +15,10 @@
   </head>
   <body>
     <div id="bg"></div>
-    <button id="allMatchesBtn">Усі матчі</button>
-    <button id="pickedBanedHeroesBtn">Піки</button>
+    <nav class="nav">
+      <button class="nav-btn" id="allMatchesBtn">Усі матчі</button>
+      <button class="nav-btn" id="pickedBanedHeroesBtn">Піки</button>
+    </nav>
 
     <div id="matchesStats"></div>
     <table class="statTable" id="playerStatsTable" style="display: none">
@@ -32,10 +34,10 @@
     </table>
     <table class="statTable" id="picksStatsTable" style="display: none">
       <thead>
-        <td>Іконка</td>
-        <td>Ім'я</td>
+        <td></td>
+        <td></td>
         <td>
-          <span>Кількість банів</span>
+          <span>Бани</span>
 
           <button class="sort-btn" data-sort="bans">
             <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
@@ -56,7 +58,7 @@
           </button>
         </td>
         <td>
-          <span>Кількість піків</span>
+          <span>Піки</span>
           <button class="sort-btn" data-sort="picks">
             <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
           </button>

@@ -19,6 +19,7 @@ const img = new Image();
 img.src = "./images/startLogo.jpg";
 img.onload = () => {
   bg.style.opacity = "1";
+  document.querySelector("body").style.opacity = "1";
 };
 
 if (!local) {
@@ -35,10 +36,22 @@ let topBanedHeroes = TopBanedHeroes(data);
 // ShowPlayerStatsTable(playerStats, data);
 
 allMatchesBtn.addEventListener("click", () => {
+  const activeContainer = document.querySelector(".activeContainer");
+  if (activeContainer) {
+    activeContainer.style.display = "none";
+    activeContainer.classList.remove("activeContainer");
+    console.log(1);
+  }
+
   ShowAllGames(data);
 });
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
+  const activeContainer = document.querySelector(".activeContainer");
+  if (activeContainer) {
+    activeContainer.style.display = "none";
+    activeContainer.classList.remove("activeContainer");
+  }
   ShowPicksStatsTable(pickedHeroes, data);
 });
 

@@ -16,6 +16,8 @@ body {
   font-size: 1rem;
   margin: 0 auto;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 3s ease;
 }
 
 #bg {
@@ -28,7 +30,7 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 3s ease;
   z-index: -1;
 }
 
@@ -37,7 +39,7 @@ body {
   gap: 8px;
 }
 
-button {
+.nav-btn {
   background: rgba(15, 10, 30, 0.75);
   color: #c4b5fd;
   border: 1px solid rgba(139, 92, 246, 0.4);
@@ -51,13 +53,13 @@ button {
   transition: all 0.2s ease;
 }
 
-button:hover {
+.nav-btn:hover {
   background: rgba(139, 92, 246, 0.25);
   border-color: rgba(139, 92, 246, 0.8);
   color: #ede9fe;
 }
 
-button.active {
+.nav-btn.active {
   background: rgba(139, 92, 246, 0.3);
   border-color: #8b5cf6;
   color: #fff;

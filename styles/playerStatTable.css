@@ -7,7 +7,9 @@
   color: #e0e0e0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(5, 0, 27, 0.33); /* обов'язково rgba, не просто колір */
+  backdrop-filter: blur(4px);
 }
 
 .statTable thead tr {
@@ -21,6 +23,7 @@
 .statTable thead td {
   /* padding: 14px 18px; */
   font-weight: 600;
+  text-align: center;
 }
 
 .statTable tbody tr {
@@ -38,6 +41,7 @@
 
 .statTable tbody td {
   padding: 6px 3px;
+  text-align: center;
 }
 
 .statTable tbody td:first-child {
