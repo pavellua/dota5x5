@@ -16,7 +16,7 @@ let data;
 
 const bg = document.getElementById("bg");
 const img = new Image();
-img.src = "../images/startLogo.jpg";
+img.src = "/images/startLogo.jpg";
 img.onload = () => {
   bg.style.opacity = "1";
 };
