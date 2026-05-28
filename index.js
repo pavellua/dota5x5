@@ -13,6 +13,14 @@ const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 
 const local = true;
 let data;
+
+const bg = document.getElementById("bg");
+const img = new Image();
+img.src = "../images/startLogo.jpg";
+img.onload = () => {
+  bg.style.opacity = "1";
+};
+
 if (!local) {
   const dataRequest = await fetch("/api/matches");
   data = await dataRequest.json();
@@ -35,23 +43,32 @@ pickedBanedHeroesBtn.addEventListener("click", () => {
 });
 
 headPicksTable.addEventListener("click", (e) => {
+  console.log(pickedHeroes);
   switch (e.target.dataset.sort) {
     case "bans":
       pickedHeroes = pickedHeroes.sort((a, b) => b.bans - a.bans);
-      ShowPicksStatsTable(pickedHeroes, data);
+
       break;
     case "picks":
       pickedHeroes = pickedHeroes.sort((a, b) => b.picks - a.picks);
-      ShowPicksStatsTable(pickedHeroes, data);
+
+      break;
+    case "wins":
+      pickedHeroes = pickedHeroes.sort((a, b) => b.wins - a.wins);
+
+      break;
+    case "lose":
+      pickedHeroes = pickedHeroes.sort((a, b) => b.lose - a.lose);
+
       break;
     case "winrate":
-      console.log(pickedHeroes);
       pickedHeroes.sort((a, b) => {
         if (isNaN(a.winrate)) return 1;
         if (isNaN(b.winrate)) return -1;
         return b.winrate - a.winrate || b.picks - a.picks;
       });
-      ShowPicksStatsTable(pickedHeroes, data);
+
       break;
   }
+  ShowPicksStatsTable(pickedHeroes, data);
 });

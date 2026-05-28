@@ -14,6 +14,7 @@
     />
   </head>
   <body>
+    <div id="bg"></div>
     <button id="allMatchesBtn">Усі матчі</button>
     <button id="pickedBanedHeroesBtn">Піки</button>
 
@@ -43,14 +44,14 @@
         <td>
           <span
             >Перемоги
-            <button class="sort-btn">
+            <button class="sort-btn" data-sort="wins">
               <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
             </button></span
           >
         </td>
         <td>
           <span>Поразки</span>
-          <button class="sort-btn">
+          <button class="sort-btn" data-sort="lose">
             <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
           </button>
         </td>

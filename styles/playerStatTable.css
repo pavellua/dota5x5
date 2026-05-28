@@ -103,13 +103,7 @@
   pointer-events: none;
 }
 
-
-
 .streamsContainer {
-  display: flex;
-  flex-direction: column;
-}
-.matchDateIdContainer {
   display: flex;
   flex-direction: column;
 }
