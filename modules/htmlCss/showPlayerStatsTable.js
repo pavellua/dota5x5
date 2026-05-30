@@ -2,6 +2,10 @@ const playerStatsTable = document.getElementById("playerStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
 let heroesId = null;
 export default function ShowPlayerStatsTable(playerStats, resJson) {
+  bodyTable.innerHTML = "";
+
+  playerStatsTable.style.display = "table";
+  setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   heroesId = resJson.heroesId;
   console.log(playerStats);
   const players = Object.entries(playerStats).map(([id, player]) => ({
@@ -43,7 +47,6 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
 function playersHeroesDiv(player) {
   return Object.entries(player.heroes)
     .map(([heroId, stats]) => {
-      console.log(heroesId[heroId]);
       const imgName = heroesId[heroId].npcName.replace("npc_dota_hero_", "");
 
       return `

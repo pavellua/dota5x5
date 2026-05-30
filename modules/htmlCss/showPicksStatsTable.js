@@ -3,9 +3,9 @@ const bodyTable = playerStatsTable.querySelector("tbody");
 
 export default function ShowPicksStatsTable(pickedHeroes, resJson) {
   bodyTable.innerHTML = "";
-  playerStatsTable.classList.add("activeContainer");
-  playerStatsTable.style.display = "table";
 
+  playerStatsTable.style.display = "table";
+  setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   const heroesId = resJson.heroesId;
 
   pickedHeroes.forEach((hero) => {

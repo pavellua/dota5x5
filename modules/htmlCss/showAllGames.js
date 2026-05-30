@@ -1,8 +1,9 @@
 const matchesStats = document.getElementById("matchesStats");
 export default function ShowAllGames(resJson) {
   matchesStats.innerHTML = "";
-  matchesStats.classList.add("activeContainer");
+
   matchesStats.style.display = "flex";
+  setTimeout(() => matchesStats.classList.add("activeContainer"), 10);
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
 

@@ -3,13 +3,14 @@ import ShowAllGames from "./modules/htmlCss/showAllGames.js";
 import ShowPicksStatsTable from "./modules/htmlCss/showPicksStatsTable.js";
 import ShowPlayerStatsTable from "./modules/htmlCss/showPlayerStatsTable.js";
 import PlayerStats from "./modules/playersStats.js";
-import TopBanedHeroes from "./modules/topBanedHeroes.js";
+
 import TopPickedHeroes from "./modules/topPickedHeroes.js";
 
 const picksStatsTable = document.getElementById("picksStatsTable");
 const headPicksTable = picksStatsTable.querySelector("thead");
 const allMatchesBtn = document.getElementById("allMatchesBtn");
 const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
+const playersBtn = document.getElementById("playersBtn");
 
 const local = true;
 let data;
@@ -31,27 +32,15 @@ if (!local) {
 
 let playerStats = PlayerStats(data);
 let pickedHeroes = TopPickedHeroes(data);
-let topBanedHeroes = TopBanedHeroes(data);
-
-// ShowPlayerStatsTable(playerStats, data);
 
 allMatchesBtn.addEventListener("click", () => {
-  const activeContainer = document.querySelector(".activeContainer");
-  if (activeContainer) {
-    activeContainer.style.display = "none";
-    activeContainer.classList.remove("activeContainer");
-    console.log(1);
-  }
+  hideActiveContainer();
 
   ShowAllGames(data);
 });
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
-  const activeContainer = document.querySelector(".activeContainer");
-  if (activeContainer) {
-    activeContainer.style.display = "none";
-    activeContainer.classList.remove("activeContainer");
-  }
+  hideActiveContainer();
   ShowPicksStatsTable(pickedHeroes, data);
 });
 
@@ -85,3 +74,15 @@ headPicksTable.addEventListener("click", (e) => {
   }
   ShowPicksStatsTable(pickedHeroes, data);
 });
+playersBtn.addEventListener("click", () => {
+  hideActiveContainer();
+  ShowPlayerStatsTable(playerStats, data);
+});
+
+function hideActiveContainer() {
+  const activeContainer = document.querySelector(".activeContainer");
+  if (activeContainer) {
+    activeContainer.style.display = "none";
+    activeContainer.classList.remove("activeContainer");
+  }
+}

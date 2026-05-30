@@ -7,9 +7,17 @@
   color: #e0e0e0;
   border-radius: 12px;
   overflow: hidden;
+  opacity: 0;
+  display: none;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   background: rgba(5, 0, 27, 0.33); /* обов'язково rgba, не просто колір */
   backdrop-filter: blur(4px);
+}
+
+.statTable.activeContainer {
+  opacity: 1;
+  display: flex;
+  transition: opacity 0.7s ease;
 }
 
 .statTable thead tr {
@@ -23,7 +31,10 @@
 .statTable thead td {
   /* padding: 14px 18px; */
   font-weight: 600;
+
   text-align: center;
+  word-break: break-word; /* переносить слова */
+  white-space: normal; /* дозволяє перенос рядків */
 }
 
 .statTable tbody tr {
@@ -72,12 +83,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 1px;
 }
 
 .hero-item img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24 px;
   border-radius: 4px;
   border: 1px solid #2a2a4a;
 }
@@ -89,6 +100,7 @@
 
 .heroesStats {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .sort-btn {
