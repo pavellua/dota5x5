@@ -12,7 +12,7 @@ const allMatchesBtn = document.getElementById("allMatchesBtn");
 const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 const playersBtn = document.getElementById("playersBtn");
 
-const local = true;
+const local = false;
 let data;
 
 const bg = document.getElementById("bg");

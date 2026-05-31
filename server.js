@@ -8,7 +8,7 @@ const { GetHeroesId } = require("./serverFunctions/getHeroesId");
 const app = express();
 const REPLAYS_DIR = path.join(__dirname, "replays");
 
-app.use(express.static("public"));
+app.use(express.static("."));
 
 // Кеш щоб не парсити одне й те саме двічі
 const cache = {};
@@ -33,9 +33,10 @@ app.get("/api/matches", async (req, res) => {
   // Читаємо існуючий matches.json
   let matches = [];
 
-  // if (fs.existsSync("./matches.json")) {
-  //   matches = JSON.parse(fs.readFileSync("./matches.json", "utf8"));
-  // }
+  if (fs.existsSync("./matches.json")) {
+    matches = JSON.parse(fs.readFileSync("./matches.json", "utf8"));
+  }
+
   const matchInfo = require("./data/gamesInfo.json");
   // Перебираємо всі реплеї
   for (const file of replayFiles) {
@@ -49,6 +50,11 @@ app.get("/api/matches", async (req, res) => {
       const replay = fs.readFileSync(replayPath);
 
       // Отримуємо дані матчу
+      const matchReplay = matches.find((match) => match.replay_file == file);
+      if (matchReplay) {
+        console.log("Ріплей вже є");
+        continue;
+      }
       const matchData = await GetMatchInfo(replay);
       matchData.date = matchDateInfo.date || "";
       matchData.streams = matchDateInfo.streams || [];

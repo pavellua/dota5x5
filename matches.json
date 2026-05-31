@@ -833,5 +833,221 @@
       }
     ],
     "replay_file": "8822857992.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        87,
+        97,
+        58,
+        75,
+        35,
+        47,
+        36
+      ],
+      "radiant": [
+        111,
+        121,
+        14,
+        4,
+        1,
+        98,
+        50
+      ]
+    },
+    "duration": "44:24",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 131
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 135
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 114
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 27
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 42
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 119
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 20
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 84
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 44
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 16
+      }
+    ],
+    "date": "2026-05-30T22:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/Tpc4WDp-WEg?t=444",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2784713065?t=00h04m31s",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8832086815.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        14,
+        121,
+        4,
+        98,
+        60,
+        114,
+        8
+      ],
+      "radiant": [
+        97,
+        58,
+        87,
+        35,
+        75,
+        17,
+        46
+      ]
+    },
+    "duration": "63:31",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 123
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 162686539,
+        "name": "Макс Пудж",
+        "hero": 42
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 111
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 120
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 57
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 68
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 30
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 44
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 36
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 2
+      }
+    ],
+    "date": "2026-05-30T23:24:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/Tpc4WDp-WEg?t=4351",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2784713065?t=01h09m37s",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8832165449.dem"
   }
 ]

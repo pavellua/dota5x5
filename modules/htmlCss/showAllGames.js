@@ -6,7 +6,7 @@ export default function ShowAllGames(resJson) {
   setTimeout(() => matchesStats.classList.add("activeContainer"), 10);
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
-
+  allMatches.reverse();
   allMatches.forEach((match) => {
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
