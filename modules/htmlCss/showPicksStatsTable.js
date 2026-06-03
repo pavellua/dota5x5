@@ -33,7 +33,7 @@ export default function ShowPicksStatsTable(pickedHeroes, resJson) {
 <td class="redTd">${lose}</td>
 <td>${pickNumber}</td>
 
-<td>${isNaN(winrate) ? "—" : winrate + "%"}</td>
+<td class="winrate">${isNaN(winrate) ? "—" : winrate + "%"}</td>
 
 
 

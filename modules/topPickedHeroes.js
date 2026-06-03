@@ -2,7 +2,7 @@ function TopPickedHeroes(resJson) {
   const matches = resJson.matches;
   const heroesId = resJson.heroesId;
   const pickCount = {};
-  console.log(resJson);
+
   matches.forEach((match) => {
     const winnerSide = match.winner;
     match.players.forEach((player) => {

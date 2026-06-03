@@ -6,7 +6,8 @@ export default function ShowAllGames(resJson) {
   setTimeout(() => matchesStats.classList.add("activeContainer"), 10);
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
-  allMatches.reverse();
+
+  allMatches.sort((a, b) => new Date(b.date) - new Date(a.date));
   allMatches.forEach((match) => {
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
@@ -41,7 +42,8 @@ export default function ShowAllGames(resJson) {
       playerContainer.classList.add("playerContainer");
       const heroIconContainerString = getHeroIconContainer(heroesId, player);
       const streamIcon = getStreamIcon(player, match.streams);
-      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName">${player.name} </span> ${streamIcon}`;
+      console.log(player);
+      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${streamIcon}`;
 
       if (player.team == "Radiant") {
         radiantContainer.append(playerContainer);

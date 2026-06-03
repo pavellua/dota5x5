@@ -1,0 +1,35 @@
+#individualStats {
+  opacity: 0;
+  display: none;
+}
+
+#individualStats table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font-size: 14px;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(5, 0, 27, 0.33); /* обов'язково rgba, не просто колір */
+  backdrop-filter: blur(4px);
+}
+
+#individualStats.activeContainer {
+  opacity: 1;
+  display: flex;
+  transition: opacity 0.7s ease;
+}
+
+#teammateWinrate .heading {
+  font-weight: 700;
+  color: rgb(43, 216, 0);
+}
+
+#opponentWinrate .heading {
+  font-weight: 700;
+  color: rgb(255, 20, 20);
+}

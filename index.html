@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/allGames.css" />
     <link rel="stylesheet" href="styles/playerStatTable.css" />
+    <link rel="stylesheet" href="styles/individualStats.css" />
 
     <link
       rel="stylesheet"
@@ -19,6 +20,7 @@
       <button class="nav-btn" id="allMatchesBtn">Усі матчі</button>
       <button class="nav-btn" id="pickedBanedHeroesBtn">Піки</button>
       <button class="nav-btn" id="playersBtn">Гравці</button>
+      <button class="nav-btn" id="individBtn">Індивідуальна</button>
     </nav>
 
     <div id="matchesStats"></div>
@@ -74,6 +76,40 @@
       </thead>
       <tbody></tbody>
     </table>
+
+    <div id="individualStats">
+      <div id="winrateWithPlayers">
+        <select id="selectIndividPlayer">
+          <option value="">-- Оберіть гравця --</option>
+        </select>
+        <div id="teammateWinrate">
+          <p class="heading">ТІММЕЙТИ</p>
+          <table class="statTable">
+            <thead>
+              <td>Гравець</td>
+              <td>Перемоги</td>
+              <td>Поразки</td>
+              <td>Услього ігр</td>
+              <td>Вінрейт</td>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="opponentWinrate">
+          <p class="heading">ОПОНЕНТИ</p>
+          <table class="statTable">
+            <thead>
+              <td>Гравець</td>
+              <td>Перемоги</td>
+              <td>Поразки</td>
+              <td>Услього ігр</td>
+              <td>Вінрейт</td>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="index.js"></script>
   </body>

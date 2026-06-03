@@ -1,5 +1,6 @@
 const playerStatsTable = document.getElementById("playerStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
+
 let heroesId = null;
 export default function ShowPlayerStatsTable(playerStats, resJson) {
   bodyTable.innerHTML = "";
@@ -22,6 +23,8 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
   players.forEach((player) => {
     if (player.name === "Невідомо") return;
     const tr = document.createElement("tr");
+    console.log(player);
+    tr.setAttribute("data-player-id", player.id);
     const playerName = player.name;
     const wins = player.wins;
     const losses = player.losses;
@@ -29,11 +32,11 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
     const winrate = Math.round(player.winrate * 100);
 
     tr.innerHTML = `
-<td>${playerName}</td>
+<td data-player-name>${playerName}</td>
 <td class="greenTd">${wins}</td>
 <td class="redTd">${losses}</td>
 <td>${matchNumber}</td>
-<td>${winrate}%</td>
+<td class="winrate">${winrate}%</td>
 <td class="heroesStats">${playersHeroesDiv(player)}</td>
 
 
