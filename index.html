@@ -22,6 +22,9 @@
       <button class="nav-btn" id="playersBtn">Гравці</button>
       <button class="nav-btn" id="individBtn">Індивідуальна</button>
     </nav>
+    <select id="selectPlayer">
+      <option value="" disabled selected>-- Загальна статистика --</option>
+    </select>
 
     <div id="matchesStats"></div>
     <table class="statTable" id="playerStatsTable">
@@ -79,9 +82,6 @@
 
     <div id="individualStats">
       <div id="winrateWithPlayers">
-        <select id="selectIndividPlayer">
-          <option value="">-- Оберіть гравця --</option>
-        </select>
         <div id="teammateWinrate">
           <p class="heading">ТІММЕЙТИ</p>
           <table class="statTable">
@@ -111,6 +111,6 @@
       </div>
     </div>
 
-    <script type="module" src="index.js"></script>
+    <script type="module" src="index.js" defer></script>
   </body>
 </html>

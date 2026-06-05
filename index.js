@@ -1,5 +1,5 @@
 import { GetData } from "./modules/dataStore.js";
-import GetIndividStats from "./modules/getIndividStats.js";
+
 import AddIndividPlayerInSelect from "./modules/htmlCss/addIndividPlayerInSelect.js";
 import ShowAllGames from "./modules/htmlCss/showAllGames.js";
 import ShowIndividualStats from "./modules/htmlCss/showIndiwidualStats.js";
@@ -18,9 +18,7 @@ const matchesStats = document.getElementById("matchesStats");
 
 const winrateWithPlayersContainer =
   document.getElementById("winrateWithPlayers");
-const selectIndividPlayerContainer = document.getElementById(
-  "selectIndividPlayer",
-);
+const selectIndividPlayerContainer = document.getElementById("selectPlayer");
 const playerStatsTable = document.getElementById("playerStatsTable");
 const individBtn = document.getElementById("individBtn");
 
@@ -45,8 +43,8 @@ if (!local) {
 let playerStats = PlayerStats(data);
 
 let pickedHeroes = TopPickedHeroes(data);
-const individStats = GetIndividStats(data);
 
+console.log(playerStats);
 AddIndividPlayerInSelect(playerStats);
 
 allMatchesBtn.addEventListener("click", () => {
@@ -96,7 +94,7 @@ playersBtn.addEventListener("click", () => {
 });
 individBtn.addEventListener("click", () => {
   hideActiveContainer();
-  ShowIndividualStats(playerStats, 107383793);
+  ShowIndividualStats(playerStats);
 });
 
 function hideActiveContainer() {

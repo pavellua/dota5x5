@@ -17,7 +17,9 @@
   background: rgba(5, 0, 27, 0.33); /* обов'язково rgba, не просто колір */
   backdrop-filter: blur(4px);
 }
-
+#individualStats table thead td {
+  padding: 5px 0;
+}
 #individualStats.activeContainer {
   opacity: 1;
   display: flex;
@@ -25,11 +27,13 @@
 }
 
 #teammateWinrate .heading {
+  margin: 15px 0 8px 0;
   font-weight: 700;
   color: rgb(43, 216, 0);
 }
 
 #opponentWinrate .heading {
+  margin: 15px 0 8px 0;
   font-weight: 700;
   color: rgb(255, 20, 20);
 }

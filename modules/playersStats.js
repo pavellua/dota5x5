@@ -1,3 +1,5 @@
+import SortTeammates from "./helpingModules/sortTeammates.js";
+
 function PlayerStats(resJson) {
   let playersStat = {};
   const matches = resJson.matches;
@@ -9,7 +11,7 @@ function PlayerStats(resJson) {
       if (!playersStat[id]) {
         playersStat[id] = { name: player.name, wins: 0, losses: 0, heroes: {} };
       }
-      teamMates(player, game, playersStat);
+
       const won = player.team === game.winner;
       if (won) playersStat[id].wins++;
       else playersStat[id].losses++;
@@ -21,11 +23,12 @@ function PlayerStats(resJson) {
       playersStat[id].heroes[heroId].picks++;
       if (won) playersStat[id].heroes[heroId].wins++;
       else playersStat[id].heroes[heroId].losses++;
+      teamMates(player, game, playersStat);
     });
   });
 
   // Додаємо winrate після підрахунку
-  Object.values(playersStat).forEach((player) => {
+  Object.entries(playersStat).forEach(([playerId, player]) => {
     const total = player.wins + player.losses;
     player.winrate = total > 0 ? Math.round(player.wins / total) : 0;
 

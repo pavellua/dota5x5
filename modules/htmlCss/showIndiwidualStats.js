@@ -5,34 +5,49 @@ const opponentWinrateContainer = document.getElementById("opponentWinrate");
 
 const teammatesTable = teammateWinrateContainer.querySelector("table");
 const teammatesTableBody = teammatesTable.querySelector("tbody");
-const selectIndividPlayerContainer = document.getElementById(
-  "selectIndividPlayer",
-);
+const selectIndividPlayerContainer = document.getElementById("selectPlayer");
 const opponentsTable = opponentWinrateContainer.querySelector("table");
 const opponentsTableBody = opponentsTable.querySelector("tbody");
 
-export default function ShowIndividualStats(playerStats, playerId) {
-  selectIndividPlayerContainer.value = playerId;
+export default function ShowIndividualStats(
+  playerStats,
+  playerId,
+  sortParam = "winrate",
+) {
+  const selectIdPlayer = selectIndividPlayerContainer.value;
+
   opponentsTableBody.innerHTML = "";
   teammatesTableBody.innerHTML = "";
   individualStatsContainer.style.display = "block";
+
   setTimeout(
     () => individualStatsContainer.classList.add("activeContainer"),
     10,
   );
-  const teamMates = playerStats[playerId].teamMates;
-  const opponents = playerStats[playerId].opponents;
-  console.log(playerStats);
-  for (let playerId in teamMates) {
-    const teammateTr = document.createElement("tr");
-    teammatesTableBody.append(teammateTr);
-    const teammateName = playerStats[playerId].name;
-    const winrate = teamMates[playerId].winrate;
-    const wins = teamMates[playerId].wins;
-    const lose = teamMates[playerId].lose;
-    const matchesNumber = wins + lose;
+  if (!playerId && selectIdPlayer) playerId = selectIdPlayer;
+  if (playerId) {
+    selectIndividPlayerContainer.value = playerId;
+    let teamMates = playerStats[playerId].teamMates;
+    console.log(teamMates);
+    teamMates = Object.entries(teamMates)
+      .map(([id, stat]) => ({ id, ...stat }))
+      .sort((a, b) => b[sortParam] - a[sortParam]);
 
-    teammateTr.innerHTML = `
+    let opponents = playerStats[playerId].opponents;
+    opponents = Object.entries(opponents)
+      .map(([id, stat]) => ({ id, ...stat }))
+      .sort((a, b) => b[sortParam] - a[sortParam]);
+
+    for (let player of teamMates) {
+      const teammateTr = document.createElement("tr");
+      teammatesTableBody.append(teammateTr);
+      const teammateName = playerStats[player.id].name;
+      const winrate = player.winrate;
+      const wins = player.wins;
+      const lose = player.lose;
+      const matchesNumber = wins + lose;
+
+      teammateTr.innerHTML = `
 <td>${teammateName}</td>
 <td class="greenTd">${wins}</td>
 <td class="redTd">${lose}</td>
@@ -40,17 +55,17 @@ export default function ShowIndividualStats(playerStats, playerId) {
 <td class="winrate">${winrate}%</td>
 
 `;
-  }
+    }
 
-  for (let playerId in opponents) {
-    const opponentTr = document.createElement("tr");
-    opponentsTableBody.append(opponentTr);
-    const teammateName = playerStats[playerId].name;
-    const winrate = opponents[playerId].winrate;
-    const wins = opponents[playerId].wins;
-    const lose = opponents[playerId].lose;
-    const matchesNumber = wins + lose;
-    opponentTr.innerHTML = `
+    for (let player of opponents) {
+      const opponentTr = document.createElement("tr");
+      opponentsTableBody.append(opponentTr);
+      const teammateName = playerStats[player.id].name;
+      const winrate = player.winrate;
+      const wins = player.wins;
+      const lose = player.lose;
+      const matchesNumber = wins + lose;
+      opponentTr.innerHTML = `
 <td>${teammateName}</td>
 <td class="greenTd">${wins}</td>
 <td class="redTd">${lose}</td>
@@ -58,5 +73,6 @@ export default function ShowIndividualStats(playerStats, playerId) {
 <td class="winrate">${winrate}%</td>
 
 `;
+    }
   }
 }
