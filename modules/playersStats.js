@@ -30,7 +30,8 @@ function PlayerStats(resJson) {
   // Додаємо winrate після підрахунку
   Object.entries(playersStat).forEach(([playerId, player]) => {
     const total = player.wins + player.losses;
-    player.winrate = total > 0 ? Math.round(player.wins / total) : 0;
+    player.winrate =
+      total > 0 ? Math.round((player.wins / total) * 100) / 100 : 0;
 
     for (const [id, stats] of Object.entries(player.teamMates)) {
       stats.winrate =

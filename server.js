@@ -170,15 +170,16 @@ app.get("/api/add-stream", async (req, res) => {
   const replayId = req.query.idReplay;
   const streamerId = req.query.streamerId;
   const streamUrl = req.query.streamUrl;
-  console.log(replayId);
-  console.log(streamerId);
-  console.log(streamUrl);
+
   const gamesInfo = JSON.parse(
     fs.readFileSync("./data/gamesInfo.json", "utf-8"),
   );
   const currentGame = gamesInfo[replayId];
 
   if (currentGame) {
+    if (!currentGame.streams) {
+      currentGame.streams = [];
+    }
     currentGame.streams.push({
       url: streamUrl,
       streamerId: streamerId,
@@ -198,4 +199,33 @@ app.get("/api/add-stream", async (req, res) => {
   //   matches: matches,
   //   heroesId,
   // });
+});
+
+app.get("/api/get-matches", async (req, res) => {
+  const matches = JSON.parse(fs.readFileSync("./matches.json", "utf-8"));
+  res.json(matches);
+});
+
+app.get("/api/add-match-data", async (req, res) => {
+  const gamesInfo = JSON.parse(
+    fs.readFileSync("./data/gamesInfo.json", "utf-8"),
+  );
+
+  const matchDate = req.query.matchDate;
+  const matchTime = req.query.matchTime;
+  const replayId = req.query.replayId;
+
+  const currentGame = gamesInfo[replayId];
+  if (!currentGame) {
+    console.log("Нові дані про ріплей");
+    gamesInfo[replayId] = { date: `${matchDate}T${matchTime}:00Z` };
+    fs.writeFileSync(
+      "./data/gamesInfo.json",
+      JSON.stringify(gamesInfo, null, 2),
+      "utf-8",
+    );
+  } else {
+    console.log("Дані про цю гру вже є");
+  }
+  console.log(gamesInfo);
 });

@@ -5,6 +5,9 @@ const streamUrlInput = document.getElementById("streamUrl");
 
 const addReplaysBtn = document.getElementById("addReplaysBtn");
 const addStreamBtn = document.getElementById("addStreamBtn");
+const addMatchInfoBtn = document.getElementById("addMatchInfoBtn");
+const matchDateInput = document.getElementById("matchDateInput");
+const matchTimeInput = document.getElementById("matchTimeInput");
 
 deleteBtn.addEventListener("click", async () => {
   const deleteReplayId = replayNumberDeleteInput.value;
@@ -32,4 +35,20 @@ addStreamBtn.addEventListener("click", async () => {
   );
   const data = await dataRequest.json();
   console.log(data);
+});
+
+addMatchInfoBtn.addEventListener("click", async () => {
+  const deleteReplayId = replayNumberDeleteInput.value;
+
+  const streamUrl = streamUrlInput.value;
+  const matchDate = matchDateInput.value;
+  const matchTime = matchTimeInput.value;
+
+  if (deleteReplayId && matchDate != "2026-05-06") {
+    const dataRequest = await fetch(
+      `/api/add-match-data?matchDate=${matchDate}&matchTime=${matchTime}&replayId=${deleteReplayId}`,
+    );
+    const data = await dataRequest.json();
+    console.log(data);
+  }
 });

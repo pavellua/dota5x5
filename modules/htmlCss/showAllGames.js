@@ -34,9 +34,10 @@ export default function ShowAllGames(resJson) {
     matchContainer.append(teamsContainer);
     teamsContainer.append(radiantContainer);
     teamsContainer.append(direContainer);
-    radiantContainer.innerHTML = `<span class="radiant teamLabel">Radiant</span>`;
-    direContainer.innerHTML = `<span  class="dire teamLabel">Dire</span>`;
+    radiantContainer.innerHTML = `<span class="radiant teamLabel">Sentinel</span>`;
+    direContainer.innerHTML = `<span  class="dire teamLabel">Scourge</span>`;
     matchContainer.classList.add("matchContainer");
+    matchContainer.setAttribute("data-match-id", matchId);
     match.players.forEach((player) => {
       const playerContainer = document.createElement("div");
       playerContainer.classList.add("playerContainer");

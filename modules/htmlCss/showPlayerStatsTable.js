@@ -8,7 +8,7 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
   playerStatsTable.style.display = "table";
   setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   heroesId = resJson.heroesId;
-  console.log(playerStats);
+
   const players = Object.entries(playerStats).map(([id, player]) => ({
     id,
     ...player,
