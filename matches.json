@@ -1924,5 +1924,329 @@
       }
     ],
     "replay_file": "8841566719.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        76,
+        87,
+        111,
+        25,
+        3,
+        70,
+        6
+      ],
+      "radiant": [
+        34,
+        58,
+        99,
+        74,
+        41,
+        12,
+        44
+      ]
+    },
+    "duration": "39:23",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 105
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 2
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 121
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 11
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 8
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 128
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 20
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 35
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1692235787,
+        "name": "Жека (друга Владіка)",
+        "hero": 54
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 98
+      }
+    ],
+    "date": "2026-06-12T22:14:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/FdqbTGD7yM4?t=1221",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795074562?t=00h06m19s",
+        "streamerId": "1092509200"
+      }
+    ],
+    "replay_file": "8849305791.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        34,
+        58,
+        121,
+        99,
+        2,
+        42,
+        12
+      ],
+      "radiant": [
+        76,
+        111,
+        87,
+        3,
+        29,
+        135,
+        60
+      ]
+    },
+    "duration": "52:26",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1692235787,
+        "name": "Жека (друга Владіка)",
+        "hero": 74
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 97
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 37
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 105
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 35
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 119
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 51
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 75
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 70
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 128
+      }
+    ],
+    "date": "2026-06-12T23:10:00Z",
+    "streams": [
+      {
+        "url": "https://www.twitch.tv/videos/2795074562?t=01h01m18s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/FdqbTGD7yM4?t=4533",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8849365840.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        76,
+        111,
+        121,
+        75,
+        25,
+        11,
+        35
+      ],
+      "radiant": [
+        34,
+        58,
+        99,
+        2,
+        80,
+        17,
+        39
+      ]
+    },
+    "duration": "36:26",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 71
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 98
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 87
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 183048150,
+        "name": "Коля",
+        "hero": 6
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 86973065,
+        "name": "Ромаріо",
+        "hero": 26
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 113
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 42
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1692235787,
+        "name": "Жека (друга Владіка)",
+        "hero": 63
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 30
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 102
+      }
+    ],
+    "date": "2026-06-13T00:31:00Z",
+    "streams": [
+      {
+        "url": "https://www.twitch.tv/videos/2795167223?t=00h09m56s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/FdqbTGD7yM4?t=9409",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8849441272.dem"
   }
 ]
