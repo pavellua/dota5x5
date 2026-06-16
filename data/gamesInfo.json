@@ -255,5 +255,60 @@
         "streamerId": "107383793"
       }
     ]
+  },
+  "8850816293": {
+    "date": "2026-06-13T23:45:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/BoWKen59cSc?t=6641",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795916784?t=01h19m15s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795970172?t=00h04m23s",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "8850746487": {
+    "date": "2026-06-13T22:43:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/BoWKen59cSc?t=2037",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795916784?t=00h02m39s",
+        "streamerId": "1092509200"
+      }
+    ],
+    "bans": {
+      "dire": [121, 111, 34, 86, 60, 59, 47],
+      "radiant": [76, 99, 75, 98, 25, 7, 2]
+    }
+  },
+  "8850900224": {
+    "date": "2026-06-14T01:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/BoWKen59cSc?t=11461",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795916784?t=02h39m40s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2795970172?t=01h24m41s",
+        "streamerId": "173288536"
+      }
+    ],
+    "bans": {
+      "dire": [111, 121, 76, 99, 98, 27, 50],
+      "radiant": [87, 34, 79, 71, 12, 135, 42]
+    }
   }
 }

@@ -130,7 +130,8 @@ app.get("/api/add-replays", async (req, res) => {
     try {
       console.log(`Обробка: ${file}`);
       const matchDateInfo = matchInfo[file.replace(".dem", "")];
-
+      const matchDate = matchDateInfo ? matchDateInfo.date : "";
+      const streamsMas = matchDateInfo ? matchDateInfo.streams : [];
       const replayPath = path.join(replayFolder, file);
 
       // Читаємо реплей
@@ -143,8 +144,9 @@ app.get("/api/add-replays", async (req, res) => {
         continue;
       }
       const matchData = await GetMatchInfo(replay);
-      matchData.date = matchDateInfo.date || "";
-      matchData.streams = matchDateInfo.streams || [];
+      matchData.date = matchDate;
+      matchData.streams = streamsMas;
+      matchDateInfo.bans ? (matchData.bans = matchDateInfo.bans) : null;
       // Можеш додати ім'я файлу
       matchData.replay_file = file;
 

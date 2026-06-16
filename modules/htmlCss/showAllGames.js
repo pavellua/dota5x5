@@ -1,7 +1,7 @@
 const matchesStats = document.getElementById("matchesStats");
 export default function ShowAllGames(resJson) {
   matchesStats.innerHTML = "";
-
+  console.log(resJson);
   matchesStats.style.display = "flex";
   setTimeout(() => matchesStats.classList.add("activeContainer"), 10);
   const allMatches = resJson.matches;
@@ -43,7 +43,7 @@ export default function ShowAllGames(resJson) {
       playerContainer.classList.add("playerContainer");
       const heroIconContainerString = getHeroIconContainer(heroesId, player);
       const streamIcon = getStreamIcon(player, match.streams);
-      console.log(player);
+
       playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${streamIcon}`;
 
       if (player.team == "Radiant") {
