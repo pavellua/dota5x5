@@ -42,7 +42,10 @@ export default function ShowAllGames(resJson) {
       const playerContainer = document.createElement("div");
       playerContainer.classList.add("playerContainer");
       const heroIconContainerString = getHeroIconContainer(heroesId, player);
-      const streamIcon = getStreamIcon(player, match.streams);
+      let streamIcon = "";
+      if (match.streams) {
+        streamIcon = getStreamIcon(player, match.streams);
+      }
 
       playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${streamIcon}`;
 
