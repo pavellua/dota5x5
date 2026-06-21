@@ -381,5 +381,44 @@
         "streamerId": "173288536"
       }
     ]
+  },
+  "8859915470": {
+    "date": "2026-06-21T00:51:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/mVl9v0LpXPY?t=9966",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2801399145?t=02h42m45s",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "8859855511": {
+    "date": "2026-06-20T23:46:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/mVl9v0LpXPY?t=6099",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2801399145?t=01h38m21s",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "8859750192": {
+    "date": "2026-06-20T22:09:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/mVl9v0LpXPY?t=257",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2801399145?t=00h00m55s",
+        "streamerId": "1092509200"
+      }
+    ]
   }
 }
