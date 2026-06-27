@@ -26,9 +26,17 @@ async function GetMatchInfo(replay) {
     })
     .filter(Boolean);
 
+  const wardEvents = events.filter(
+    (e) =>
+      e.type === "CHAT_MESSAGE_OBSERVER_WARD_KILLED" ||
+      e.type === "CHAT_MESSAGE_SENTRY_WARD_KILLED",
+  );
+  console.log(JSON.stringify(wardEvents, null, 2));
+
   const knownPlayers = require("../players.json");
 
   const heroBySlot = {};
+  const stacksBySlot = {};
   const players = [];
   const bans = {
     dire: [],
@@ -67,6 +75,22 @@ async function GetMatchInfo(replay) {
     if (e.type === "game_start_time") {
       matchDate = e.game_start_time;
     }
+    //Стаки кріпів
+    if (e.type === "interval" && e.slot !== undefined) {
+      stacksBySlot[e.slot] = {
+        creeps_stacked: e.creeps_stacked || 0,
+        camps_stacked: e.camps_stacked || 0,
+      };
+    }
+    //Поставлені варди
+    if (e.type === "interval" && e.slot !== undefined) {
+      stacksBySlot[e.slot] = {
+        creeps_stacked: e.creeps_stacked || 0,
+        camps_stacked: e.camps_stacked || 0,
+        obs_placed: e.obs_placed || 0,
+        sen_placed: e.sen_placed || 0,
+      };
+    }
 
     // Гравці
     if (e.type === "player_slot") {
@@ -99,6 +123,10 @@ async function GetMatchInfo(replay) {
       accountid: p.accountid,
       name: knownPlayers[String(p.accountid)] || "Невідомо",
       hero: heroBySlot[p.key] || "Невідомо",
+      creeps_stacked: stacksBySlot[p.key]?.creeps_stacked || 0,
+      camps_stacked: stacksBySlot[p.key]?.camps_stacked || 0,
+      obs_placed: stacksBySlot[p.key]?.obs_placed || 0,
+      sen_placed: stacksBySlot[p.key]?.sen_placed || 0,
     })),
   };
 

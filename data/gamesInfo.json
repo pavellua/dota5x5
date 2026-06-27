@@ -420,5 +420,27 @@
         "streamerId": "1092509200"
       }
     ]
+  },
+  "8867912985": {
+    "date": "2026-06-26T22:10:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/KkZFinsBqGk?t=338",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/nNH9B7-zKCU?t=419",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "8868022819": {
+    "date": "2026-06-26T23:28:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/KkZFinsBqGk?t=5035",
+        "streamerId": "107383793"
+      }
+    ]
   }
 }
