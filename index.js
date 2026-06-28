@@ -2,6 +2,7 @@ import { GetData } from "./modules/dataStore.js";
 
 import AddIndividPlayerInSelect from "./modules/htmlCss/addIndividPlayerInSelect.js";
 import ShowAllGames from "./modules/htmlCss/showAllGames.js";
+import ShowIndividuaHeroes from "./modules/htmlCss/showIndividualHeroes.js";
 import ShowIndividualStats from "./modules/htmlCss/showIndiwidualStats.js";
 import ShowPicksStatsTable from "./modules/htmlCss/showPicksStatsTable.js";
 import ShowPlayerStatsTable from "./modules/htmlCss/showPlayerStatsTable.js";
@@ -139,6 +140,7 @@ winrateWithPlayersContainer.addEventListener("click", (e) => {
 selectIndividPlayerContainer.addEventListener("change", function () {
   console.log(this.value); // значення обраної опції
   ShowIndividualStats(playerStats, this.value);
+  ShowIndividuaHeroes(playerStats, this.value, data);
 });
 
 playerStatsTable.addEventListener("click", (e) => {
