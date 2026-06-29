@@ -34,6 +34,19 @@ img.onload = () => {
   document.querySelector("body").style.opacity = "1";
 };
 
+const music = new Audio("./sounds/mainTheme.mp3");
+music.preload = "auto";
+music.load();
+music.volume = 0.3;
+
+document.addEventListener(
+  "click",
+  () => {
+    music.play();
+  },
+  { once: true },
+);
+
 if (!local) {
   const dataRequest = await fetch("/api/matches");
   data = await dataRequest.json();
