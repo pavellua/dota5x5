@@ -19,6 +19,7 @@ export default async function ShowIndividualStats(params) {
   opponentsTableBody.innerHTML = "";
   teammatesTableBody.innerHTML = "";
   individualStatsContainer.style.display = "block";
+  console.log(1);
 
   setTimeout(
     () => individualStatsContainer.classList.add("activeContainer"),
