@@ -1,3 +1,6 @@
+import { GetData } from "../dataStore.js";
+import ShowIndividuaHeroes from "./showIndividualHeroes.js";
+
 const individualStatsContainer = document.getElementById("individualStats");
 
 const teammateWinrateContainer = document.getElementById("teammateWinrate");
@@ -9,11 +12,8 @@ const selectIndividPlayerContainer = document.getElementById("selectPlayer");
 const opponentsTable = opponentWinrateContainer.querySelector("table");
 const opponentsTableBody = opponentsTable.querySelector("tbody");
 
-export default function ShowIndividualStats(
-  playerStats,
-  playerId,
-  sortParam = "winrate",
-) {
+export default async function ShowIndividualStats(params) {
+  let { playerStats, playerId, sortParam = "winrate" } = params;
   const selectIdPlayer = selectIndividPlayerContainer.value;
 
   opponentsTableBody.innerHTML = "";
@@ -26,6 +26,8 @@ export default function ShowIndividualStats(
   );
   if (!playerId && selectIdPlayer) playerId = selectIdPlayer;
   if (playerId) {
+    const data = await GetData();
+    ShowIndividuaHeroes(playerStats, selectIndividPlayerContainer.value, data);
     selectIndividPlayerContainer.value = playerId;
     let teamMates = playerStats[playerId].teamMates;
     console.log(teamMates);

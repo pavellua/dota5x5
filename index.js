@@ -106,9 +106,9 @@ playersBtn.addEventListener("click", () => {
   hideActiveContainer();
   ShowPlayerStatsTable(playerStats, data);
 });
-individBtn.addEventListener("click", () => {
+individBtn.addEventListener("click", async () => {
   hideActiveContainer();
-  ShowIndividualStats(playerStats);
+  ShowIndividualStats({ playerStats });
 });
 
 function hideActiveContainer() {
@@ -161,18 +161,20 @@ selectIndividPlayerContainer.addEventListener("change", function () {
       case "picksStatsTable":
         ShowPicksStatsTable(pickedHeroes, data);
         break;
+      case "individualStats":
+        ShowIndividualStats({ playerStats, playerId: this.value });
+
+        break;
     }
   }
   // console.log(this.value); // значення обраної опції
-  // ShowIndividualStats(playerStats, this.value);
-  // ShowIndividuaHeroes(playerStats, this.value, data);
 });
 
 playerStatsTable.addEventListener("click", (e) => {
   if (e.target.hasAttribute("data-player-name")) {
     hideActiveContainer();
     const playerId = e.target.closest("tr").getAttribute("data-player-id");
-    ShowIndividualStats(playerStats, playerId);
+    ShowIndividualStats({ playerStats, playerId });
   }
 });
 matchesStats.addEventListener("click", (e) => {
@@ -180,6 +182,6 @@ matchesStats.addEventListener("click", (e) => {
   if (playerId) {
     hideActiveContainer();
 
-    ShowIndividualStats(playerStats, playerId);
+    ShowIndividualStats({ playerStats, playerId });
   }
 });
