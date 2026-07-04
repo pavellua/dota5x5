@@ -37,7 +37,7 @@ img.onload = () => {
 const music = new Audio("./sounds/mainTheme.mp3");
 music.preload = "auto";
 music.load();
-music.volume = 0.3;
+music.volume = 0.08;
 
 document.addEventListener(
   "click",
@@ -151,9 +151,21 @@ winrateWithPlayersContainer.addEventListener("click", (e) => {
 });
 
 selectIndividPlayerContainer.addEventListener("change", function () {
-  console.log(this.value); // значення обраної опції
-  ShowIndividualStats(playerStats, this.value);
-  ShowIndividuaHeroes(playerStats, this.value, data);
+  const activeContainer = document.querySelector(".activeContainer");
+  if (activeContainer) {
+    console.log(activeContainer.id);
+    switch (activeContainer.id) {
+      case "matchesStats":
+        ShowAllGames(data);
+        break;
+      case "picksStatsTable":
+        ShowPicksStatsTable(pickedHeroes, data);
+        break;
+    }
+  }
+  // console.log(this.value); // значення обраної опції
+  // ShowIndividualStats(playerStats, this.value);
+  // ShowIndividuaHeroes(playerStats, this.value, data);
 });
 
 playerStatsTable.addEventListener("click", (e) => {

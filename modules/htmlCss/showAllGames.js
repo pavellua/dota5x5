@@ -1,4 +1,6 @@
 const matchesStats = document.getElementById("matchesStats");
+const selectPlayer = document.getElementById("selectPlayer");
+
 export default function ShowAllGames(resJson) {
   matchesStats.innerHTML = "";
   console.log(resJson);
@@ -6,9 +8,18 @@ export default function ShowAllGames(resJson) {
   setTimeout(() => matchesStats.classList.add("activeContainer"), 10);
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
+  const selectPlayerId = selectPlayer.value;
+  let filtredMas;
+  if (selectPlayerId != "") {
+    filtredMas = allMatches.filter((match) => {
+      console.log(match);
+      return match.players.find((player) => player.accountid == selectPlayerId);
+    });
+  }
 
   allMatches.sort((a, b) => new Date(b.date) - new Date(a.date));
-  allMatches.forEach((match) => {
+
+  (filtredMas || allMatches).forEach((match) => {
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
 
