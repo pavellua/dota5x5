@@ -545,5 +545,56 @@
         "streamerId": "173288536"
       }
     ]
+  },
+  "8890349082": {
+    "date": "2026-07-10T22:10:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=910",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=00h01m09s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "8890435917": {
+    "date": "2026-07-10T23:17:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=4948",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=01h08m24s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8?t=3531",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "8890515002": {
+    "date": "2026-07-11T00:23:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=8921",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=02h14m48s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8?t=7506",
+        "streamerId": "173288536"
+      }
+    ]
   }
 }

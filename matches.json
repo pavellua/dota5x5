@@ -1,8 +1,24 @@
 [
   {
     "bans": {
-      "dire": [76, 87, 75, 135, 2, 54, 35],
-      "radiant": [111, 121, 1, 74, 60, 67, 6]
+      "dire": [
+        76,
+        87,
+        75,
+        135,
+        2,
+        54,
+        35
+      ],
+      "radiant": [
+        111,
+        121,
+        1,
+        74,
+        60,
+        67,
+        6
+      ]
     },
     "duration": "51:28",
     "winner": "Dire",
@@ -89,8 +105,24 @@
   },
   {
     "bans": {
-      "dire": [111, 121, 1, 12, 35, 60, 126],
-      "radiant": [76, 87, 25, 29, 2, 70, 93]
+      "dire": [
+        111,
+        121,
+        1,
+        12,
+        35,
+        60,
+        126
+      ],
+      "radiant": [
+        76,
+        87,
+        25,
+        29,
+        2,
+        70,
+        93
+      ]
     },
     "duration": "45:33",
     "winner": "Radiant",
@@ -177,8 +209,24 @@
   },
   {
     "bans": {
-      "dire": [76, 79, 75, 87, 135, 56, 6],
-      "radiant": [111, 121, 74, 86, 29, 25, 59]
+      "dire": [
+        76,
+        79,
+        75,
+        87,
+        135,
+        56,
+        6
+      ],
+      "radiant": [
+        111,
+        121,
+        74,
+        86,
+        29,
+        25,
+        59
+      ]
     },
     "duration": "36:46",
     "winner": "Dire",
@@ -265,8 +313,24 @@
   },
   {
     "bans": {
-      "dire": [80, 79, 35, 58, 72, 93, 44],
-      "radiant": [111, 14, 76, 25, 31, 114, 6]
+      "dire": [
+        80,
+        79,
+        35,
+        58,
+        72,
+        93,
+        44
+      ],
+      "radiant": [
+        111,
+        14,
+        76,
+        25,
+        31,
+        114,
+        6
+      ]
     },
     "duration": "61:54",
     "winner": "Dire",
@@ -353,8 +417,24 @@
   },
   {
     "bans": {
-      "dire": [111, 121, 76, 30, 26, 12, 6],
-      "radiant": [35, 79, 100, 80, 44, 93, 41]
+      "dire": [
+        111,
+        121,
+        76,
+        30,
+        26,
+        12,
+        6
+      ],
+      "radiant": [
+        35,
+        79,
+        100,
+        80,
+        44,
+        93,
+        41
+      ]
     },
     "duration": "66:43",
     "winner": "Dire",
@@ -441,8 +521,24 @@
   },
   {
     "bans": {
-      "dire": [14, 87, 58, 74, 79, 1, 114],
-      "radiant": [50, 9, 60, 72, 112, 98, 29]
+      "dire": [
+        14,
+        87,
+        58,
+        74,
+        79,
+        1,
+        114
+      ],
+      "radiant": [
+        50,
+        9,
+        60,
+        72,
+        112,
+        98,
+        29
+      ]
     },
     "duration": "46:37",
     "winner": "Dire",
@@ -529,8 +625,23 @@
   },
   {
     "bans": {
-      "dire": [50, 72, 128, 29, 98, 41, 86],
-      "radiant": [87, 35, 58, 75, 79, 120]
+      "dire": [
+        50,
+        72,
+        128,
+        29,
+        98,
+        41,
+        86
+      ],
+      "radiant": [
+        87,
+        35,
+        58,
+        75,
+        79,
+        120
+      ]
     },
     "duration": "50:25",
     "winner": "Dire",
@@ -617,8 +728,24 @@
   },
   {
     "bans": {
-      "dire": [87, 35, 14, 75, 31, 6, 8],
-      "radiant": [121, 111, 72, 9, 7, 41, 44]
+      "dire": [
+        87,
+        35,
+        14,
+        75,
+        31,
+        6,
+        8
+      ],
+      "radiant": [
+        121,
+        111,
+        72,
+        9,
+        7,
+        41,
+        44
+      ]
     },
     "duration": "58:29",
     "winner": "Radiant",
@@ -709,8 +836,24 @@
   },
   {
     "bans": {
-      "dire": [87, 97, 58, 75, 35, 47, 36],
-      "radiant": [111, 121, 14, 4, 1, 98, 50]
+      "dire": [
+        87,
+        97,
+        58,
+        75,
+        35,
+        47,
+        36
+      ],
+      "radiant": [
+        111,
+        121,
+        14,
+        4,
+        1,
+        98,
+        50
+      ]
     },
     "duration": "44:24",
     "winner": "Dire",
@@ -805,8 +948,24 @@
   },
   {
     "bans": {
-      "dire": [14, 121, 4, 98, 60, 114, 8],
-      "radiant": [97, 58, 87, 35, 75, 17, 46]
+      "dire": [
+        14,
+        121,
+        4,
+        98,
+        60,
+        114,
+        8
+      ],
+      "radiant": [
+        97,
+        58,
+        87,
+        35,
+        75,
+        17,
+        46
+      ]
     },
     "duration": "63:31",
     "winner": "Dire",
@@ -901,8 +1060,24 @@
   },
   {
     "bans": {
-      "dire": [97, 87, 44, 46, 68, 73, 17],
-      "radiant": [76, 25, 30, 119, 102, 39, 136]
+      "dire": [
+        97,
+        87,
+        44,
+        46,
+        68,
+        73,
+        17
+      ],
+      "radiant": [
+        76,
+        25,
+        30,
+        119,
+        102,
+        39,
+        136
+      ]
     },
     "duration": "48:38",
     "winner": "Dire",
@@ -993,8 +1168,24 @@
   },
   {
     "bans": {
-      "dire": [76, 25, 75, 4, 86, 8, 6],
-      "radiant": [97, 34, 87, 13, 44, 29, 2]
+      "dire": [
+        76,
+        25,
+        75,
+        4,
+        86,
+        8,
+        6
+      ],
+      "radiant": [
+        97,
+        34,
+        87,
+        13,
+        44,
+        29,
+        2
+      ]
     },
     "duration": "37:52",
     "winner": "Radiant",
@@ -1085,8 +1276,24 @@
   },
   {
     "bans": {
-      "dire": [58, 121, 120, 42, 6, 80, 41],
-      "radiant": [76, 123, 79, 59, 87, 70, 8]
+      "dire": [
+        58,
+        121,
+        120,
+        42,
+        6,
+        80,
+        41
+      ],
+      "radiant": [
+        76,
+        123,
+        79,
+        59,
+        87,
+        70,
+        8
+      ]
     },
     "duration": "36:11",
     "winner": "Radiant",
@@ -1181,8 +1388,24 @@
   },
   {
     "bans": {
-      "dire": [76, 123, 79, 68, 25, 70, 44],
-      "radiant": [58, 121, 80, 35, 120, 13, 36]
+      "dire": [
+        76,
+        123,
+        79,
+        68,
+        25,
+        70,
+        44
+      ],
+      "radiant": [
+        58,
+        121,
+        80,
+        35,
+        120,
+        13,
+        36
+      ]
     },
     "duration": "38:07",
     "winner": "Dire",
@@ -1273,8 +1496,24 @@
   },
   {
     "bans": {
-      "dire": [76, 113, 58, 79, 68, 29, 129],
-      "radiant": [105, 34, 74, 121, 2, 39, 126]
+      "dire": [
+        76,
+        113,
+        58,
+        79,
+        68,
+        29,
+        129
+      ],
+      "radiant": [
+        105,
+        34,
+        74,
+        121,
+        2,
+        39,
+        126
+      ]
     },
     "duration": "65:16",
     "winner": "Radiant",
@@ -1365,8 +1604,24 @@
   },
   {
     "bans": {
-      "dire": [76, 58, 79, 71, 60, 129, 29],
-      "radiant": [34, 102, 74, 99, 57, 44, 8]
+      "dire": [
+        76,
+        58,
+        79,
+        71,
+        60,
+        129,
+        29
+      ],
+      "radiant": [
+        34,
+        102,
+        74,
+        99,
+        57,
+        44,
+        8
+      ]
     },
     "duration": "60:10",
     "winner": "Dire",
@@ -1457,8 +1712,23 @@
   },
   {
     "bans": {
-      "dire": [102, 72, 99, 120, 31, 54, 35],
-      "radiant": [76, 58, 79, 87, 60, 67]
+      "dire": [
+        102,
+        72,
+        99,
+        120,
+        31,
+        54,
+        35
+      ],
+      "radiant": [
+        76,
+        58,
+        79,
+        87,
+        60,
+        67
+      ]
     },
     "duration": "51:27",
     "winner": "Radiant",
@@ -1549,8 +1819,24 @@
   },
   {
     "bans": {
-      "dire": [34, 74, 102, 120, 25, 86, 13],
-      "radiant": [76, 111, 58, 35, 68, 39, 43]
+      "dire": [
+        34,
+        74,
+        102,
+        120,
+        25,
+        86,
+        13
+      ],
+      "radiant": [
+        76,
+        111,
+        58,
+        35,
+        68,
+        39,
+        43
+      ]
     },
     "duration": "48:56",
     "winner": "Radiant",
@@ -1641,8 +1927,24 @@
   },
   {
     "bans": {
-      "dire": [76, 87, 111, 25, 3, 70, 6],
-      "radiant": [34, 58, 99, 74, 41, 12, 44]
+      "dire": [
+        76,
+        87,
+        111,
+        25,
+        3,
+        70,
+        6
+      ],
+      "radiant": [
+        34,
+        58,
+        99,
+        74,
+        41,
+        12,
+        44
+      ]
     },
     "duration": "39:23",
     "winner": "Radiant",
@@ -1733,8 +2035,24 @@
   },
   {
     "bans": {
-      "dire": [34, 58, 121, 99, 2, 42, 12],
-      "radiant": [76, 111, 87, 3, 29, 135, 60]
+      "dire": [
+        34,
+        58,
+        121,
+        99,
+        2,
+        42,
+        12
+      ],
+      "radiant": [
+        76,
+        111,
+        87,
+        3,
+        29,
+        135,
+        60
+      ]
     },
     "duration": "52:26",
     "winner": "Dire",
@@ -1825,8 +2143,24 @@
   },
   {
     "bans": {
-      "dire": [76, 111, 121, 75, 25, 11, 35],
-      "radiant": [34, 58, 99, 2, 80, 17, 39]
+      "dire": [
+        76,
+        111,
+        121,
+        75,
+        25,
+        11,
+        35
+      ],
+      "radiant": [
+        34,
+        58,
+        99,
+        2,
+        80,
+        17,
+        39
+      ]
     },
     "duration": "36:26",
     "winner": "Radiant",
@@ -1917,8 +2251,24 @@
   },
   {
     "bans": {
-      "dire": [99, 76, 75, 25, 98, 46, 11],
-      "radiant": [121, 111, 34, 123, 86, 39, 74]
+      "dire": [
+        99,
+        76,
+        75,
+        25,
+        98,
+        46,
+        11
+      ],
+      "radiant": [
+        121,
+        111,
+        34,
+        123,
+        86,
+        39,
+        74
+      ]
     },
     "duration": "49:12",
     "winner": "Radiant",
@@ -2013,8 +2363,24 @@
   },
   {
     "bans": {
-      "dire": [111, 121, 76, 99, 98, 27, 50],
-      "radiant": [87, 34, 79, 71, 12, 135, 42]
+      "dire": [
+        111,
+        121,
+        76,
+        99,
+        98,
+        27,
+        50
+      ],
+      "radiant": [
+        87,
+        34,
+        79,
+        71,
+        12,
+        135,
+        42
+      ]
     },
     "duration": "76:18",
     "winner": "Radiant",
@@ -2109,8 +2475,24 @@
   },
   {
     "bans": {
-      "dire": [121, 111, 34, 86, 60, 59, 47],
-      "radiant": [76, 99, 75, 98, 25, 7, 2]
+      "dire": [
+        121,
+        111,
+        34,
+        86,
+        60,
+        59,
+        47
+      ],
+      "radiant": [
+        76,
+        99,
+        75,
+        98,
+        25,
+        7,
+        2
+      ]
     },
     "duration": "47:17",
     "winner": "Radiant",
@@ -2201,8 +2583,24 @@
   },
   {
     "bans": {
-      "dire": [76, 75, 79, 68, 2, 93, 73],
-      "radiant": [34, 121, 98, 87, 12, 96, 28]
+      "dire": [
+        76,
+        75,
+        79,
+        68,
+        2,
+        93,
+        73
+      ],
+      "radiant": [
+        34,
+        121,
+        98,
+        87,
+        12,
+        96,
+        28
+      ]
     },
     "duration": "50:29",
     "winner": "Radiant",
@@ -2293,8 +2691,24 @@
   },
   {
     "bans": {
-      "dire": [34, 121, 58, 12, 98, 67, 138],
-      "radiant": [76, 105, 87, 75, 35, 93, 46]
+      "dire": [
+        34,
+        121,
+        58,
+        12,
+        98,
+        67,
+        138
+      ],
+      "radiant": [
+        76,
+        105,
+        87,
+        75,
+        35,
+        93,
+        46
+      ]
     },
     "duration": "45:28",
     "winner": "Radiant",
@@ -2385,8 +2799,24 @@
   },
   {
     "bans": {
-      "dire": [76, 105, 87, 75, 46, 60, 2],
-      "radiant": [34, 121, 111, 42, 12, 41, 1]
+      "dire": [
+        76,
+        105,
+        87,
+        75,
+        46,
+        60,
+        2
+      ],
+      "radiant": [
+        34,
+        121,
+        111,
+        42,
+        12,
+        41,
+        1
+      ]
     },
     "duration": "80:21",
     "winner": "Radiant",
@@ -2477,8 +2907,24 @@
   },
   {
     "bans": {
-      "dire": [34, 12, 105, 31, 26, 30, 5],
-      "radiant": [76, 75, 87, 25, 35, 6, 41]
+      "dire": [
+        34,
+        12,
+        105,
+        31,
+        26,
+        30,
+        5
+      ],
+      "radiant": [
+        76,
+        75,
+        87,
+        25,
+        35,
+        6,
+        41
+      ]
     },
     "duration": "75:33",
     "winner": "Dire",
@@ -2569,8 +3015,24 @@
   },
   {
     "bans": {
-      "dire": [76, 121, 87, 6, 42, 41, 36],
-      "radiant": [34, 105, 128, 2, 12, 113, 25]
+      "dire": [
+        76,
+        121,
+        87,
+        6,
+        42,
+        41,
+        36
+      ],
+      "radiant": [
+        34,
+        105,
+        128,
+        2,
+        12,
+        113,
+        25
+      ]
     },
     "duration": "46:44",
     "winner": "Dire",
@@ -2661,8 +3123,24 @@
   },
   {
     "bans": {
-      "dire": [34, 75, 105, 128, 12, 99, 98],
-      "radiant": [76, 121, 87, 36, 42, 25, 46]
+      "dire": [
+        34,
+        75,
+        105,
+        128,
+        12,
+        99,
+        98
+      ],
+      "radiant": [
+        76,
+        121,
+        87,
+        36,
+        42,
+        25,
+        46
+      ]
     },
     "duration": "44:19",
     "winner": "Radiant",
@@ -2793,8 +3271,24 @@
   },
   {
     "bans": {
-      "dire": [34, 121, 87, 12, 96, 4, 67],
-      "radiant": [76, 75, 58, 6, 35, 21, 47]
+      "dire": [
+        34,
+        121,
+        87,
+        12,
+        96,
+        4,
+        67
+      ],
+      "radiant": [
+        76,
+        75,
+        58,
+        6,
+        35,
+        21,
+        47
+      ]
     },
     "duration": "50:46",
     "winner": "Dire",
@@ -2925,8 +3419,24 @@
   },
   {
     "bans": {
-      "dire": [76, 75, 58, 6, 25, 41, 70],
-      "radiant": [34, 121, 87, 96, 68, 17, 39]
+      "dire": [
+        76,
+        75,
+        58,
+        6,
+        25,
+        41,
+        70
+      ],
+      "radiant": [
+        34,
+        121,
+        87,
+        96,
+        68,
+        17,
+        39
+      ]
     },
     "duration": "69:37",
     "winner": "Radiant",
@@ -3053,8 +3563,24 @@
   },
   {
     "bans": {
-      "dire": [76, 87, 105, 128, 6, 79, 3],
-      "radiant": [34, 75, 123, 31, 39, 4, 12]
+      "dire": [
+        76,
+        87,
+        105,
+        128,
+        6,
+        79,
+        3
+      ],
+      "radiant": [
+        34,
+        75,
+        123,
+        31,
+        39,
+        4,
+        12
+      ]
     },
     "duration": "32:25",
     "winner": "Radiant",
@@ -3185,8 +3711,24 @@
   },
   {
     "bans": {
-      "dire": [34, 12, 123, 67, 97, 70, 41],
-      "radiant": [76, 75, 87, 58, 35, 46, 43]
+      "dire": [
+        34,
+        12,
+        123,
+        67,
+        97,
+        70,
+        41
+      ],
+      "radiant": [
+        76,
+        75,
+        87,
+        58,
+        35,
+        46,
+        43
+      ]
     },
     "duration": "60:07",
     "winner": "Dire",
@@ -3317,8 +3859,24 @@
   },
   {
     "bans": {
-      "dire": [75, 76, 105, 87, 6, 128, 102],
-      "radiant": [34, 12, 123, 25, 96, 17, 39]
+      "dire": [
+        75,
+        76,
+        105,
+        87,
+        6,
+        128,
+        102
+      ],
+      "radiant": [
+        34,
+        12,
+        123,
+        25,
+        96,
+        17,
+        39
+      ]
     },
     "duration": "34:50",
     "winner": "Radiant",
@@ -3449,8 +4007,24 @@
   },
   {
     "bans": {
-      "dire": [34, 12, 123, 25, 67, 44, 54],
-      "radiant": [76, 75, 58, 87, 42, 71, 51]
+      "dire": [
+        34,
+        12,
+        123,
+        25,
+        67,
+        44,
+        54
+      ],
+      "radiant": [
+        76,
+        75,
+        58,
+        87,
+        42,
+        71,
+        51
+      ]
     },
     "duration": "48:49",
     "winner": "Radiant",
@@ -3581,8 +4155,24 @@
   },
   {
     "bans": {
-      "dire": [35, 58, 87, 75, 42, 80, 47],
-      "radiant": [111, 34, 25, 31, 12, 67, 41]
+      "dire": [
+        35,
+        58,
+        87,
+        75,
+        42,
+        80,
+        47
+      ],
+      "radiant": [
+        111,
+        34,
+        25,
+        31,
+        12,
+        67,
+        41
+      ]
     },
     "duration": "37:36",
     "winner": "Dire",
@@ -3717,8 +4307,24 @@
   },
   {
     "bans": {
-      "dire": [111, 121, 34, 12, 6, 54, 67],
-      "radiant": [58, 35, 75, 87, 2, 79, 37]
+      "dire": [
+        111,
+        121,
+        34,
+        12,
+        6,
+        54,
+        67
+      ],
+      "radiant": [
+        58,
+        35,
+        75,
+        87,
+        2,
+        79,
+        37
+      ]
     },
     "duration": "33:24",
     "winner": "Dire",
@@ -3853,8 +4459,24 @@
   },
   {
     "bans": {
-      "dire": [58, 35, 42, 75, 80, 46, 41],
-      "radiant": [34, 111, 121, 12, 98, 26, 27]
+      "dire": [
+        58,
+        35,
+        42,
+        75,
+        80,
+        46,
+        41
+      ],
+      "radiant": [
+        34,
+        111,
+        121,
+        12,
+        98,
+        26,
+        27
+      ]
     },
     "duration": "61:50",
     "winner": "Radiant",
@@ -3986,5 +4608,461 @@
       }
     ],
     "replay_file": "8881426943.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        34,
+        75,
+        111,
+        121,
+        12,
+        26,
+        123
+      ],
+      "radiant": [
+        50,
+        79,
+        2,
+        36,
+        7,
+        54,
+        6
+      ]
+    },
+    "duration": "43:48",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1199610740,
+        "name": "Микита (друг Владіка)",
+        "hero": 8,
+        "creeps_stacked": 2,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 43,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 87,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 16,
+        "sen_placed": 29
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1692235787,
+        "name": "Жека (друг Владіка)",
+        "hero": 28,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 1,
+        "sen_placed": 1
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 73,
+        "creeps_stacked": 8,
+        "camps_stacked": 4,
+        "obs_placed": 3,
+        "sen_placed": 4
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 40,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 9,
+        "sen_placed": 25
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 29,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 98,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 4,
+        "sen_placed": 0
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 31,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 6,
+        "sen_placed": 6
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 42,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      }
+    ],
+    "date": "2026-07-10T22:10:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=910",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=00h01m09s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8890349082.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        50,
+        87,
+        42,
+        75,
+        7,
+        54,
+        36
+      ],
+      "radiant": [
+        34,
+        111,
+        121,
+        12,
+        6,
+        26,
+        27
+      ]
+    },
+    "duration": "33:18",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 79,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 6,
+        "sen_placed": 18
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 823191543,
+        "name": "Владік 2.0.",
+        "hero": 96,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 25,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 3,
+        "sen_placed": 0
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 31,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 3,
+        "sen_placed": 5
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 1,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 2,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1199610740,
+        "name": "Микита (друг Владіка)",
+        "hero": 44,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 101,
+        "creeps_stacked": 2,
+        "camps_stacked": 1,
+        "obs_placed": 9,
+        "sen_placed": 17
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 45,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 6,
+        "sen_placed": 13
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1692235787,
+        "name": "Жека (друг Владіка)",
+        "hero": 11,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 1,
+        "sen_placed": 1
+      }
+    ],
+    "date": "2026-07-10T23:17:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=4948",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=01h08m24s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8?t=3531",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8890435917.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        34,
+        111,
+        75,
+        2,
+        7,
+        44,
+        8
+      ],
+      "radiant": [
+        87,
+        50,
+        121,
+        36,
+        12,
+        46,
+        19
+      ]
+    },
+    "duration": "37:25",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 129,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1692235787,
+        "name": "Жека (друг Владіка)",
+        "hero": 11,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 1,
+        "sen_placed": 1
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 119,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 13,
+        "sen_placed": 24
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 3,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 5
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1199610740,
+        "name": "Микита (друг Владіка)",
+        "hero": 6,
+        "creeps_stacked": 6,
+        "camps_stacked": 3,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 131,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 10,
+        "sen_placed": 20
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 5,
+        "creeps_stacked": 8,
+        "camps_stacked": 3,
+        "obs_placed": 6,
+        "sen_placed": 10
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 42,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 294978061,
+        "name": "Вова брат Колі",
+        "hero": 29,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 35,
+        "creeps_stacked": 5,
+        "camps_stacked": 2,
+        "obs_placed": 1,
+        "sen_placed": 1
+      }
+    ],
+    "date": "2026-07-11T00:23:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/wPjG8Hht208?t=8921",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://www.twitch.tv/videos/2816820210?t=02h14m48s",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/pCXWhceTYt8?t=7506",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8890515002.dem"
   }
 ]
