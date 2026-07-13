@@ -20,6 +20,7 @@ export default function ShowAllGames(resJson) {
   allMatches.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   (filtredMas || allMatches).forEach((match) => {
+    console.log(match);
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
 
@@ -35,8 +36,32 @@ export default function ShowAllGames(resJson) {
       hour: "2-digit",
       minute: "2-digit",
     });
-    matchDateIdContainer.innerHTML = `<span class="matchId">Match id: ${matchId}</span><span class="matchDate">${matchDateString}</span>`;
+    const winnerContainerString = `<div class="winnerContainer">
+      <span class="btn-text">Переможець</span>
+  <svg class="eye-icon" viewBox="0 0 24 24" width="18" height="18">
+    <!-- закрите око (за замовчуванням) -->
+    <path class="eye-closed" d="M12 6c-5 0-9 4-10 6 1 2 5 6 10 6s9-4 10-6c-1-2-5-6-10-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" fill="currentColor" opacity="0.4"/>
+    <path class="eye-closed" d="M3 3l18 18" stroke="currentColor" stroke-width="2" fill="none"/>
+  </svg>
+
+</div>`;
+
+    matchDateIdContainer.innerHTML = `<span class="matchId">Match id: ${matchId}</span>${winnerContainerString}<span class="matchDate">${matchDateString}</span>`;
     matchDateIdContainer.classList.add("matchDateIdContainer");
+
+    const winnerContainerEl =
+      matchDateIdContainer.querySelector(".winnerContainer");
+    winnerContainerEl.addEventListener(
+      "click",
+      () => {
+        if (match.winner == "Radiant") {
+          winnerContainerEl.innerHTML = `<span class="radiant teamLabel">Sentinel</span>`;
+        } else if (match.winner == "Dire") {
+          winnerContainerEl.innerHTML = `<span  class="dire teamLabel">Scourge</span>`;
+        }
+      },
+      { once: true },
+    );
 
     const direContainer = document.createElement("div");
     const radiantContainer = document.createElement("div");
@@ -92,9 +117,4 @@ function getStreamIcon(player, streams) {
     }
   }
   return "";
-}
-
-{
-  /*
-   */
 }

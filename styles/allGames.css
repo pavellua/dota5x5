@@ -10,7 +10,7 @@
   border-radius: 9px;
   overflow: hidden;
   margin-bottom: 12px;
- 
+
   color: #e0e0e0;
   font-size: 13px;
   width: 90vw;
@@ -120,4 +120,8 @@
   display: block;
   height: 25px;
   width: auto;
+}
+.winnerContainer {
+  display: flex;
+  align-items: center;
 }
