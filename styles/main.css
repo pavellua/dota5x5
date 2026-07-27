@@ -39,6 +39,7 @@ body {
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .nav-btn {
@@ -67,7 +68,19 @@ body {
   color: #fff;
   box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
 }
-
+#playBtn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red; /* іконка стане червоною */
+  transition: transform 0.1s ease;
+}
 select {
   appearance: none;
   -webkit-appearance: none;

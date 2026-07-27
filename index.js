@@ -16,6 +16,13 @@ const allMatchesBtn = document.getElementById("allMatchesBtn");
 const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 const playersBtn = document.getElementById("playersBtn");
 const matchesStats = document.getElementById("matchesStats");
+const playBtn = document.getElementById("playBtn");
+
+const playIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>`;
+const pauseIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
+  <rect x="6" y="5" width="4" height="14"/>
+  <rect x="14" y="5" width="4" height="14"/>
+</svg>`;
 
 const winrateWithPlayersContainer =
   document.getElementById("winrateWithPlayers");
@@ -183,5 +190,17 @@ matchesStats.addEventListener("click", (e) => {
     hideActiveContainer();
 
     ShowIndividualStats({ playerStats, playerId });
+  }
+});
+
+playBtn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    playBtn.innerHTML = pauseIcon;
+    playBtn.style.color = "red";
+  } else {
+    music.pause();
+    playBtn.innerHTML = playIcon;
+    playBtn.style.color = "green";
   }
 });
