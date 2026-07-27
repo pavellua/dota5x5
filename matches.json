@@ -7099,5 +7099,597 @@
       }
     ],
     "replay_file": "8906073884.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        75,
+        58,
+        42,
+        12,
+        35,
+        54,
+        11
+      ],
+      "radiant": [
+        121,
+        111,
+        36,
+        34,
+        44,
+        46,
+        6
+      ]
+    },
+    "duration": "83:22",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 79,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 30,
+        "sen_placed": 52
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 93,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 22,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 0
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 37,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 4,
+        "sen_placed": 14
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 84,
+        "creeps_stacked": 2,
+        "camps_stacked": 2,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 114,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 2,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 87,
+        "creeps_stacked": 6,
+        "camps_stacked": 3,
+        "obs_placed": 25,
+        "sen_placed": 50
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1692235787,
+        "name": "Жека (друг Владіка)",
+        "hero": 123,
+        "creeps_stacked": 4,
+        "camps_stacked": 3,
+        "obs_placed": 12,
+        "sen_placed": 19
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 43,
+        "creeps_stacked": 3,
+        "camps_stacked": 3,
+        "obs_placed": 0,
+        "sen_placed": 1
+      }
+    ],
+    "date": "2026-07-25T22:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/w9Io0pXyHag?t=164",
+        "streamerId": "173288536"
+      },
+      {
+        "url": "https://youtu.be/OBksry_hI4M?t=544",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8913614171.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        111,
+        121,
+        36,
+        44,
+        46,
+        17,
+        43
+      ],
+      "radiant": [
+        58,
+        75,
+        87,
+        42,
+        12,
+        32,
+        11
+      ]
+    },
+    "duration": "50:27",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 6,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 2,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 101,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 19,
+        "sen_placed": 33
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1692235787,
+        "name": "Жека (друг Владіка)",
+        "hero": 34,
+        "creeps_stacked": 12,
+        "camps_stacked": 5,
+        "obs_placed": 2,
+        "sen_placed": 1
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 128,
+        "creeps_stacked": 2,
+        "camps_stacked": 1,
+        "obs_placed": 3,
+        "sen_placed": 10
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 3,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 13,
+        "sen_placed": 33
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 81,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 1,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 65,
+        "creeps_stacked": 5,
+        "camps_stacked": 3,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 85,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 7
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 35,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 4,
+        "sen_placed": 0
+      }
+    ],
+    "date": "2026-07-26T00:02:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/OBksry_hI4M?t=6733",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/w9Io0pXyHag?t=6344",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8913753746.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        58,
+        75,
+        87,
+        42,
+        12,
+        32,
+        11
+      ],
+      "radiant": [
+        111,
+        121,
+        2,
+        6,
+        44,
+        114,
+        46
+      ]
+    },
+    "duration": "40:35",
+    "winner": "Radiant",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 26,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 15,
+        "sen_placed": 27
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 36,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 0
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 85,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 8
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 95,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 137,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 50,
+        "creeps_stacked": 11,
+        "camps_stacked": 3,
+        "obs_placed": 15,
+        "sen_placed": 31
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 98,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 17,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 2
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 15,
+        "creeps_stacked": 6,
+        "camps_stacked": 2,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 163039294,
+        "name": "Невідомо",
+        "hero": 84,
+        "creeps_stacked": 1,
+        "camps_stacked": 1,
+        "obs_placed": 1,
+        "sen_placed": 3
+      }
+    ],
+    "date": "2026-07-26T01:20:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/w9Io0pXyHag?t=11041",
+        "streamerId": "173288536"
+      },
+      {
+        "url": "https://youtu.be/OBksry_hI4M?t=11430",
+        "streamerId": "107383793"
+      }
+    ],
+    "replay_file": "8913840195.dem"
+  },
+  {
+    "bans": {
+      "dire": [
+        121,
+        111,
+        6,
+        44,
+        46,
+        70,
+        54
+      ],
+      "radiant": [
+        75,
+        58,
+        42,
+        36,
+        12,
+        131,
+        79
+      ]
+    },
+    "duration": "45:48",
+    "winner": "Dire",
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1182277894,
+        "name": "Саня",
+        "hero": 97,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1039325711,
+        "name": "Тьома",
+        "hero": 35,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 1,
+        "sen_placed": 1
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "name": "Катя",
+        "hero": 30,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 16,
+        "sen_placed": 32
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 163039294,
+        "name": "Невідомо",
+        "hero": 87,
+        "creeps_stacked": 9,
+        "camps_stacked": 3,
+        "obs_placed": 4,
+        "sen_placed": 6
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "name": "Дєдор",
+        "hero": 7,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "name": "Павло",
+        "hero": 26,
+        "creeps_stacked": 11,
+        "camps_stacked": 4,
+        "obs_placed": 12,
+        "sen_placed": 25
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "name": "Владік Паща",
+        "hero": 67,
+        "creeps_stacked": 10,
+        "camps_stacked": 3,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "name": "Дрюс (друг Владіка)",
+        "hero": 2,
+        "creeps_stacked": 4,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 143651735,
+        "name": "Агата",
+        "hero": 85,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 5,
+        "sen_placed": 14
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1091396423,
+        "name": "Макс Ведмідь",
+        "hero": 47,
+        "creeps_stacked": 5,
+        "camps_stacked": 3,
+        "obs_placed": 3,
+        "sen_placed": 0
+      }
+    ],
+    "date": "2026-07-26T02:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/OBksry_hI4M?t=14959",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/w9Io0pXyHag?t=14578",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "8913891346.dem"
   }
 ]
