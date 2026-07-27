@@ -21,16 +21,18 @@
       <button class="nav-btn" id="pickedBanedHeroesBtn">Піки</button>
       <button class="nav-btn" id="playersBtn">Гравці</button>
       <button class="nav-btn" id="individBtn">Індивідуальна</button>
+    </nav>
+    <div style="display: flex; align-items: center">
+      <select id="selectPlayer">
+        <option value="" selected>-- Загальна статистика --</option>
+      </select>
       <button id="playBtn" aria-label="Play">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <rect x="6" y="5" width="4" height="14" />
           <rect x="14" y="5" width="4" height="14" />
         </svg>
       </button>
-    </nav>
-    <select id="selectPlayer">
-      <option value="" selected>-- Загальна статистика --</option>
-    </select>
+    </div>
 
     <div id="matchesStats"></div>
     <table class="statTable" id="playerStatsTable">
