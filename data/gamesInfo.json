@@ -812,5 +812,58 @@
         "streamerId": "107383793"
       }
     ]
+  },
+  "8934315784": {
+    "date": "2026-08-07T22:43:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/tg2EVS4O2iI?t=790",
+        "streamerId": "107383793"
+      }
+    ]
+  },
+  "8934393976": {
+    "date": "2026-08-07T23:40:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/tg2EVS4O2iI?t=4203",
+        "streamerId": "107383793"
+      }
+    ]
+  },
+  "8934476967": {
+    "date": "2026-08-08T00:55:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/tg2EVS4O2iI?t=8693",
+        "streamerId": "107383793"
+      }
+    ]
+  },
+  "8936015205": {
+    "date": "2026-08-08T22:17:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/m0Xkj8zi8xc?t=727",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/l-GcF2wQ3hQ?t=114",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "8936113475": {
+    "date": "2026-08-08T23:25:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/l-GcF2wQ3hQ?t=4207",
+        "streamerId": "173288536"
+      },
+      {
+        "url": "https://youtu.be/m0Xkj8zi8xc?t=4839",
+        "streamerId": "107383793"
+      }
+    ]
   }
 }
