@@ -114,6 +114,7 @@ async function GetMatchInfo(replay) {
 
   const matchData = {
     bans,
+    matchDate,
     duration: `${Math.floor(duration / 60)}:${(duration % 60).toString().padStart(2, "0")}`,
     winner:
       lastBuilding.targetname === "npc_dota_goodguys_fort" ? "Dire" : "Radiant",
