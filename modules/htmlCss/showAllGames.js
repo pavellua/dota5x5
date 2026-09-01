@@ -12,7 +12,6 @@ export default function ShowAllGames(resJson) {
   let filtredMas;
   if (selectPlayerId != "") {
     filtredMas = allMatches.filter((match) => {
-      console.log(match);
       return match.players.find((player) => player.accountid == selectPlayerId);
     });
   }
@@ -20,7 +19,6 @@ export default function ShowAllGames(resJson) {
   allMatches.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   (filtredMas || allMatches).forEach((match) => {
-    console.log(match);
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
 
@@ -55,9 +53,9 @@ export default function ShowAllGames(resJson) {
       "click",
       () => {
         if (match.winner == "Radiant") {
-          winnerContainerEl.innerHTML = `<span class="radiant teamLabel">Sentinel</span>`;
+          winnerContainerEl.innerHTML = `<span class="radiant teamLabel">Sentinel </span> `;
         } else if (match.winner == "Dire") {
-          winnerContainerEl.innerHTML = `<span  class="dire teamLabel">Scourge</span>`;
+          winnerContainerEl.innerHTML = `<span  class="dire teamLabel">Scourge </span> `;
         }
       },
       { once: true },
@@ -70,8 +68,8 @@ export default function ShowAllGames(resJson) {
     matchContainer.append(teamsContainer);
     teamsContainer.append(radiantContainer);
     teamsContainer.append(direContainer);
-    radiantContainer.innerHTML = `<span class="radiant teamLabel">Sentinel</span>`;
-    direContainer.innerHTML = `<span  class="dire teamLabel">Scourge</span>`;
+    radiantContainer.innerHTML = `<span class="radiant teamLabel">Sentinel ${Math.round(match.teamsRating.Radiant / 5)}</span>`;
+    direContainer.innerHTML = `<span  class="dire teamLabel">Scourge ${Math.round(match.teamsRating.Dire / 5)}</span>`;
     matchContainer.classList.add("matchContainer");
     matchContainer.setAttribute("data-match-id", matchId);
     match.players.forEach((player) => {
@@ -83,7 +81,7 @@ export default function ShowAllGames(resJson) {
         streamIcon = getStreamIcon(player, match.streams);
       }
 
-      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${streamIcon}`;
+      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${getRatingChange(player.changeRating)} ${streamIcon}`;
 
       if (player.team == "Radiant") {
         radiantContainer.append(playerContainer);
@@ -117,4 +115,12 @@ function getStreamIcon(player, streams) {
     }
   }
   return "";
+}
+
+function getRatingChange(changeRating) {
+  if (changeRating < 0) {
+    return `<span style="color:red; font-weight:600;">&nbsp;${changeRating}</span>`;
+  } else {
+    return `<span style="color:green; font-weight:600;">&nbsp;+${changeRating} </span>`;
+  }
 }

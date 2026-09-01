@@ -188,7 +188,7 @@ matchesStats.addEventListener("click", (e) => {
   const playerId = e.target.getAttribute("data-player-id");
   if (playerId) {
     hideActiveContainer();
-
+    selectIndividPlayerContainer.value = playerId;
     ShowIndividualStats({ playerStats, playerId });
   }
 });

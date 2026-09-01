@@ -6,15 +6,34 @@ function PlayerStats(resJson) {
   const heroesId = resJson.heroesId;
 
   matches.forEach((game) => {
+    console.log(game);
+    let teamsRating = {
+      Radiant: 0,
+      Dire: 0,
+    };
     game.players.forEach((player) => {
       const id = player.accountid;
       if (!playersStat[id]) {
-        playersStat[id] = { name: player.name, wins: 0, losses: 0, heroes: {} };
+        playersStat[id] = {
+          name: player.name,
+          wins: 0,
+          losses: 0,
+          heroes: {},
+          rating: 1500,
+          matchNumber: 0,
+        };
+      }
+
+      if (player.team === "Radiant") {
+        teamsRating.Radiant += playersStat[id].rating;
+      } else {
+        teamsRating.Dire += playersStat[id].rating;
       }
 
       const won = player.team === game.winner;
       if (won) playersStat[id].wins++;
       else playersStat[id].losses++;
+      playersStat[id].matchNumber++;
 
       const heroId = player.hero;
       if (!playersStat[id].heroes[heroId]) {
@@ -24,6 +43,21 @@ function PlayerStats(resJson) {
       if (won) playersStat[id].heroes[heroId].wins++;
       else playersStat[id].heroes[heroId].losses++;
       teamMates(player, game, playersStat);
+    });
+    game.teamsRating = teamsRating;
+
+    game.players.forEach((player) => {
+      const id = player.accountid;
+      const won = player.team === game.winner;
+      player.changeRating = getCurrentRating(
+        won,
+        playersStat[id].matchNumber,
+        teamsRating,
+        player.team,
+      );
+
+      playersStat[id].rating += player.changeRating;
+      player.rating = playersStat[id].rating;
     });
   });
 
@@ -87,4 +121,26 @@ function teamMates(player, game, playersStat) {
       }
     }
   });
+}
+
+function getCurrentRating(won, matchNumber, teamsRating, playerTeam) {
+  let kFactor;
+
+  let expectedScore;
+  const radiantRating = teamsRating.Radiant / 5;
+  const direRating = teamsRating.Dire / 5;
+
+  if (playerTeam === "Radiant") {
+    expectedScore = 1 / (1 + Math.pow(10, (direRating - radiantRating) / 400));
+  } else {
+    expectedScore = 1 / (1 + Math.pow(10, (radiantRating - direRating) / 400));
+  }
+
+  const actualScore = won ? 1 : 0;
+
+  if (matchNumber < 10) kFactor = 60;
+  else if (matchNumber < 25) kFactor = 50;
+  else kFactor = 45;
+
+  return Math.round(kFactor * (actualScore - expectedScore));
 }

@@ -2,6 +2,7 @@ const playerHeroesContainer = document.getElementById("playerHeroes");
 const playerHeroesTable = playerHeroesContainer.querySelector("table");
 const tableBody = playerHeroesTable.querySelector("tbody");
 export default function ShowIndividuaHeroes(playerStats, playerId, data) {
+  console.log(playerId);
   const playerHeroes = playerStats[playerId].heroes;
   const heroesId = data.heroesId;
   tableBody.innerHTML = "";

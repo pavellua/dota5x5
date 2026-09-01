@@ -17,13 +17,13 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
 
   // Сортування по вінрейту (від більшого до меншого)
   players.sort((a, b) => {
-    if (b.winrate !== a.winrate) return b.winrate - a.winrate;
+    if (b.rating !== a.rating) return b.rating - a.rating;
     return b.wins + b.losses - (a.wins + a.losses);
   });
   players.forEach((player) => {
     if (player.name === "Невідомо") return;
     const tr = document.createElement("tr");
-    console.log(player);
+
     tr.setAttribute("data-player-id", player.id);
     const playerName = player.name;
     const wins = player.wins;
@@ -32,7 +32,10 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
     const winrate = Math.round(player.winrate * 100);
 
     tr.innerHTML = `
-<td data-player-name>${playerName}</td>
+<td data-player-name>
+  <span>${playerName}</span><br>
+  <small class="winrate">${player.rating}</small>
+</td>
 <td class="greenTd">${wins}</td>
 <td class="redTd">${losses}</td>
 <td>${matchNumber}</td>
