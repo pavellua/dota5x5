@@ -72,6 +72,7 @@ export default function ShowAllGames(resJson) {
     direContainer.innerHTML = `<span  class="dire teamLabel">Scourge ${Math.round(match.teamsRating.Dire / 5)}</span>`;
     matchContainer.classList.add("matchContainer");
     matchContainer.setAttribute("data-match-id", matchId);
+
     match.players.forEach((player) => {
       const playerContainer = document.createElement("div");
       playerContainer.classList.add("playerContainer");
@@ -81,7 +82,7 @@ export default function ShowAllGames(resJson) {
         streamIcon = getStreamIcon(player, match.streams);
       }
 
-      playerContainer.innerHTML = `${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${getRatingChange(player.changeRating)} ${streamIcon}`;
+      playerContainer.innerHTML = `<span>&nbsp;${player.role}&nbsp;</span>${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${getRatingChange(player.changeRating)} ${streamIcon}`;
 
       if (player.team == "Radiant") {
         radiantContainer.append(playerContainer);

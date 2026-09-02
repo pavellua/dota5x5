@@ -46,13 +46,13 @@ music.preload = "auto";
 music.load();
 music.volume = 0.08;
 
-document.addEventListener(
-  "click",
-  () => {
-    music.play();
-  },
-  { once: true },
-);
+// document.addEventListener(
+//   "click",
+//   () => {
+//     music.play();
+//   },
+//   { once: true },
+// );
 
 if (!local) {
   const dataRequest = await fetch("/api/matches");

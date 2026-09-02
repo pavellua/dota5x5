@@ -79,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: red; /* іконка стане червоною */
+  color: green; /* іконка стане червоною */
   transition: transform 0.1s ease;
 }
 select {

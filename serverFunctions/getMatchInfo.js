@@ -1,4 +1,6 @@
 const { GetHeroesId } = require("./getHeroesId");
+const { GetPlayerLineLasthit } = require("./getPlayerLineLasthit");
+const { GetPlayerRole } = require("./getPlayerRole");
 
 async function GetMatchInfo(replay) {
   const parserResponse = await fetch("http://localhost:5600", {
@@ -37,6 +39,9 @@ async function GetMatchInfo(replay) {
 
   const heroBySlot = {};
   const stacksBySlot = {};
+  const playersCoordinates = {};
+  const playersAt5Min = {};
+
   const players = [];
   const bans = {
     dire: [],
@@ -48,6 +53,23 @@ async function GetMatchInfo(replay) {
   let teamBanId;
 
   events.forEach((e) => {
+    if (e.type === "interval" && e.slot !== undefined) {
+      // Координати кожні 30 секунд
+      if (e.time >= 30 && e.time <= 300 && e.time % 30 === 0) {
+        playersCoordinates[e.slot] ??= {};
+
+        playersCoordinates[e.slot][e.time] = {
+          x: e.x,
+          y: e.y,
+        };
+      }
+
+      // Дані саме на 5 хвилині
+      if (e.time === 300) {
+        playersAt5Min[e.slot] = e;
+      }
+    }
+
     // Герої
     if (
       e.slot !== undefined &&
@@ -107,6 +129,14 @@ async function GetMatchInfo(replay) {
       lastInterval = e;
     }
   });
+  const playerLines = {};
+
+  Object.entries(playersCoordinates).forEach(([slot, coordinates]) => {
+    playerLines[slot] = GetPlayerLineLasthit(slot, coordinates, playersAt5Min);
+  });
+
+  const rolesPlayers = GetPlayerRole(playerLines);
+  console.log(rolesPlayers);
 
   // Після циклу формуємо результат
   const duration = lastInterval ? lastInterval.time : 0;
@@ -122,6 +152,7 @@ async function GetMatchInfo(replay) {
       slot: p.key,
       team: p.value < 128 ? "Radiant" : "Dire",
       accountid: p.accountid,
+      role: rolesPlayers[p.key],
       name: knownPlayers[String(p.accountid)] || "Невідомо",
       hero: heroBySlot[p.key] || "Невідомо",
       creeps_stacked: stacksBySlot[p.key]?.creeps_stacked || 0,
@@ -130,7 +161,7 @@ async function GetMatchInfo(replay) {
       sen_placed: stacksBySlot[p.key]?.sen_placed || 0,
     })),
   };
-
+  
   return matchData;
 }
 

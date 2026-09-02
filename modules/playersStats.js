@@ -6,7 +6,6 @@ function PlayerStats(resJson) {
   const heroesId = resJson.heroesId;
 
   matches.forEach((game) => {
-    console.log(game);
     let teamsRating = {
       Radiant: 0,
       Dire: 0,
@@ -55,6 +54,7 @@ function PlayerStats(resJson) {
         teamsRating,
         player.team,
       );
+      console.log(game.replay_file);
 
       playersStat[id].rating += player.changeRating;
       player.rating = playersStat[id].rating;

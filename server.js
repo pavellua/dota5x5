@@ -231,3 +231,44 @@ app.get("/api/add-match-data", async (req, res) => {
   }
   console.log(gamesInfo);
 });
+
+app.get("/api/get-players-roles", async (req, res) => {
+  const path = require("path");
+  const fs = require("fs");
+
+  try {
+    const replaysPath = path.join(__dirname, "replays");
+
+    // Отримуємо всі файли з папки
+    const files = fs.readdirSync(replaysPath);
+
+    // Залишаємо тільки .dem
+    const replayFiles = files.filter(
+      (file) => path.extname(file).toLowerCase() === ".dem",
+    );
+
+    let matches = JSON.parse(fs.readFileSync("./matches.json", "utf8"));
+    // Перебираємо всі ріплеї
+    for (const file of replayFiles) {
+      console.log(`Обробка: ${file}`);
+
+      const replayPath = path.join(replaysPath, file);
+      const replay = fs.readFileSync(replayPath);
+
+      const matchData = await GetMatchInfo(replay);
+
+      const matchReplay = matches.find((match) => match.replay_file == file);
+
+      console.log(matchData);
+      break;
+    }
+
+    res.json(matches);
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+});

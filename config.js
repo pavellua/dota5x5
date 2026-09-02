@@ -8,6 +8,7 @@ const addStreamBtn = document.getElementById("addStreamBtn");
 const addMatchInfoBtn = document.getElementById("addMatchInfoBtn");
 const matchDateInput = document.getElementById("matchDateInput");
 const matchTimeInput = document.getElementById("matchTimeInput");
+const playersRoleBtn = document.getElementById("playersRoleBtn");
 
 deleteBtn.addEventListener("click", async () => {
   const deleteReplayId = replayNumberDeleteInput.value;
@@ -51,4 +52,10 @@ addMatchInfoBtn.addEventListener("click", async () => {
     const data = await dataRequest.json();
     console.log(data);
   }
+});
+
+playersRoleBtn.addEventListener("click", async () => {
+  const dataRequest = await fetch(`/api/get-players-roles`);
+  const data = await dataRequest.json();
+  console.log(data);
 });
