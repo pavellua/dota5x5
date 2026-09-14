@@ -34,7 +34,9 @@ body {
   transition: opacity 3s ease;
   z-index: -1;
 }
-
+#individualBtns {
+  margin-top: 10px;
+}
 .nav {
   display: flex;
   gap: 8px;
@@ -63,10 +65,7 @@ body {
 }
 
 .nav-btn.active {
-  background: rgba(139, 92, 246, 0.3);
-  border-color: #8b5cf6;
-  color: #fff;
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  color: #d5fd24;
 }
 #playBtn {
   width: 25px;

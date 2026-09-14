@@ -88,47 +88,66 @@
     </table>
 
     <div id="individualStats">
-      <div id="winrateWithPlayers">
-        <div id="teammateWinrate">
-          <p class="heading">ТІММЕЙТИ</p>
-          <table class="statTable">
-            <thead>
-              <td>Гравець</td>
-              <td>Перемоги</td>
-              <td>Поразки</td>
-              <td>Услього ігр</td>
-              <td>Вінрейт</td>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <div id="opponentWinrate">
-          <p class="heading">ОПОНЕНТИ</p>
-          <table class="statTable">
-            <thead>
-              <td>Гравець</td>
-              <td>Перемоги</td>
-              <td>Поразки</td>
-              <td>Услього ігр</td>
-              <td>Вінрейт</td>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+      <div id="individualBtns">
+        <button class="nav-btn" id="teammatesBtn">Тіммейти</button>
+
+        <button class="nav-btn" id="individualHeroesBtn">Герої</button>
+        <button class="nav-btn" id="rolesPlayerBtn">Ролі</button>
       </div>
-      <div id="playerHeroes">
-        <p class="heading">ГЕРОЇ</p>
-        <table class="statTable">
-          <thead>
-            <td></td>
-            <td>Герой</td>
-            <td>Перемоги</td>
-            <td>Поразки</td>
-            <td>Услього ігр</td>
-            <td>Вінрейт</td>
-          </thead>
-          <tbody></tbody>
-        </table>
+      <div id="individualContainerInfo">
+        <div style="display: none" id="winrateWithPlayers">
+          <div id="teammateWinrate">
+            <p class="heading">ТІММЕЙТИ</p>
+            <table class="statTable">
+              <thead>
+                <td>Гравець</td>
+                <td>Перемоги</td>
+                <td>Поразки</td>
+                <td>Услього ігр</td>
+                <td>Вінрейт</td>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div id="opponentWinrate">
+            <p class="heading">ОПОНЕНТИ</p>
+            <table class="statTable">
+              <thead>
+                <td>Гравець</td>
+                <td>Перемоги</td>
+                <td>Поразки</td>
+                <td>Услього ігр</td>
+                <td>Вінрейт</td>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div style="display: none" id="playerHeroes">
+          <table class="statTable">
+            <thead>
+              <td></td>
+              <td>Герой</td>
+              <td>Перемоги</td>
+              <td>Поразки</td>
+              <td>Услього ігр</td>
+              <td>Вінрейт</td>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div style="display: none" id="playerRolesContainer">
+          <table class="statTable">
+            <thead>
+              <td>Роль</td>
+              <td>Перемоги</td>
+              <td>Поразки</td>
+              <td>Услього ігр</td>
+              <td>Вінрейт</td>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
 

@@ -1,81 +1,63 @@
 import { GetData } from "../dataStore.js";
 import ShowIndividuaHeroes from "./showIndividualHeroes.js";
+import ShowPlayerRoles from "./showPlayerRoles.js";
+import ShowTeammates from "./showTeammates.js";
 
 const individualStatsContainer = document.getElementById("individualStats");
 
-const teammateWinrateContainer = document.getElementById("teammateWinrate");
-const opponentWinrateContainer = document.getElementById("opponentWinrate");
-
-const teammatesTable = teammateWinrateContainer.querySelector("table");
-const teammatesTableBody = teammatesTable.querySelector("tbody");
 const selectIndividPlayerContainer = document.getElementById("selectPlayer");
-const opponentsTable = opponentWinrateContainer.querySelector("table");
-const opponentsTableBody = opponentsTable.querySelector("tbody");
+
+const rolesPlayerBtn = document.getElementById("rolesPlayerBtn");
+const teammatesBtn = document.getElementById("teammatesBtn");
+const individualHeroesBtn = document.getElementById("individualHeroesBtn");
+
+let playerStats, playerId, selectIdPlayer, data;
+let sortParam = "winrate";
+
+teammatesBtn.addEventListener("click", () => {
+  ShowTeammates(playerStats, sortParam);
+});
+
+individualHeroesBtn.addEventListener("click", () => {
+  ShowIndividuaHeroes(playerStats, selectIndividPlayerContainer.value, data);
+});
+rolesPlayerBtn.addEventListener("click", () => {
+  ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
+});
 
 export default async function ShowIndividualStats(params) {
-  let { playerStats, playerId, sortParam = "winrate" } = params;
-  const selectIdPlayer = selectIndividPlayerContainer.value;
+  playerStats = params.playerStats;
+  playerId = params.playerId;
+  sortParam = params.sortParam;
+  selectIdPlayer = selectIndividPlayerContainer.value;
 
-  opponentsTableBody.innerHTML = "";
-  teammatesTableBody.innerHTML = "";
   individualStatsContainer.style.display = "block";
-  console.log(1);
-
+  data = await GetData();
   setTimeout(
     () => individualStatsContainer.classList.add("activeContainer"),
     10,
   );
   if (!playerId && selectIdPlayer) playerId = selectIdPlayer;
   if (playerId) {
-    const data = await GetData();
-    ShowIndividuaHeroes(playerStats, selectIndividPlayerContainer.value, data);
-    selectIndividPlayerContainer.value = playerId;
-    let teamMates = playerStats[playerId].teamMates;
-    console.log(teamMates);
-    teamMates = Object.entries(teamMates)
-      .map(([id, stat]) => ({ id, ...stat }))
-      .sort((a, b) => b[sortParam] - a[sortParam]);
-
-    let opponents = playerStats[playerId].opponents;
-    opponents = Object.entries(opponents)
-      .map(([id, stat]) => ({ id, ...stat }))
-      .sort((a, b) => b[sortParam] - a[sortParam]);
-
-    for (let player of teamMates) {
-      const teammateTr = document.createElement("tr");
-      teammatesTableBody.append(teammateTr);
-      const teammateName = playerStats[player.id].name;
-      const winrate = player.winrate;
-      const wins = player.wins;
-      const lose = player.lose;
-      const matchesNumber = wins + lose;
-
-      teammateTr.innerHTML = `
-<td>${teammateName}</td>
-<td class="greenTd">${wins}</td>
-<td class="redTd">${lose}</td>
-<td>${matchesNumber}</td>
-<td class="winrate">${winrate}%</td>
-
-`;
-    }
-
-    for (let player of opponents) {
-      const opponentTr = document.createElement("tr");
-      opponentsTableBody.append(opponentTr);
-      const teammateName = playerStats[player.id].name;
-      const winrate = player.winrate;
-      const wins = player.wins;
-      const lose = player.lose;
-      const matchesNumber = wins + lose;
-      opponentTr.innerHTML = `
-<td>${teammateName}</td>
-<td class="greenTd">${wins}</td>
-<td class="redTd">${lose}</td>
-<td>${matchesNumber}</td>
-<td class="winrate">${winrate}%</td>
-
-`;
+    const activeIndividContainer = document.querySelector(
+      ".activeIndividContainer",
+    );
+    const activeIndividContainerId = activeIndividContainer.id;
+    console.log(activeIndividContainerId);
+    switch (activeIndividContainerId) {
+      case "playerHeroes":
+        ShowIndividuaHeroes(
+          playerStats,
+          selectIndividPlayerContainer.value,
+          data,
+        );
+        break;
+      case "winrateWithPlayers":
+        ShowTeammates(playerStats, sortParam);
+        break;
+      case "playerRolesContainer":
+        ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
+        break;
     }
   }
 }

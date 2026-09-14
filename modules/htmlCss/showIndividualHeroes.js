@@ -1,7 +1,22 @@
 const playerHeroesContainer = document.getElementById("playerHeroes");
 const playerHeroesTable = playerHeroesContainer.querySelector("table");
 const tableBody = playerHeroesTable.querySelector("tbody");
+const individualContainerInfo = document.getElementById(
+  "individualContainerInfo",
+);
 export default function ShowIndividuaHeroes(playerStats, playerId, data) {
+  const activeIndividContainer = document.querySelector(
+    ".activeIndividContainer",
+  );
+  activeIndividContainer
+    ? activeIndividContainer.classList.remove("activeIndividContainer")
+    : null;
+  playerHeroesContainer.classList.add("activeIndividContainer");
+  console.log([...individualContainerInfo.children]);
+  [...individualContainerInfo.children].forEach(
+    (element) => (element.style.display = "none"),
+  );
+  playerHeroesContainer.style.display = "block";
   console.log(playerId);
   const playerHeroes = playerStats[playerId].heroes;
   const heroesId = data.heroesId;
@@ -21,7 +36,6 @@ export default function ShowIndividuaHeroes(playerStats, playerId, data) {
     .sort((a, b) => b.picks - a.picks);
 
   for (let heroStat of playerHeroesMas) {
-    console.log(heroStat);
     const heroId = heroStat.hero_id;
     const heroName = heroStat.hero_name.name;
     const picksNumber = heroStat.picks;
@@ -45,6 +59,5 @@ export default function ShowIndividuaHeroes(playerStats, playerId, data) {
        <td class="winrate">${winrate}%</td>
      
 `;
-    console.log(heroStat);
   }
 }

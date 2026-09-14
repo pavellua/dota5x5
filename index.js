@@ -69,12 +69,20 @@ console.log(playerStats);
 AddIndividPlayerInSelect(playerStats);
 
 allMatchesBtn.addEventListener("click", () => {
+  const activeBtn = document.querySelector(".nav").querySelector(".active");
+
+  activeBtn ? activeBtn.classList.remove("active") : null;
+  allMatchesBtn.classList.add("active");
   hideActiveContainer();
 
   ShowAllGames(data);
 });
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
+  const activeBtn = document.querySelector(".nav").querySelector(".active");
+
+  activeBtn ? activeBtn.classList.remove("active") : null;
+  pickedBanedHeroesBtn.classList.add("active");
   hideActiveContainer();
   ShowPicksStatsTable(pickedHeroes, data);
 });
@@ -110,10 +118,18 @@ headPicksTable.addEventListener("click", (e) => {
   ShowPicksStatsTable(pickedHeroes, data);
 });
 playersBtn.addEventListener("click", () => {
+  const activeBtn = document.querySelector(".nav").querySelector(".active");
+
+  activeBtn ? activeBtn.classList.remove("active") : null;
+  playersBtn.classList.add("active");
   hideActiveContainer();
   ShowPlayerStatsTable(playerStats, data);
 });
 individBtn.addEventListener("click", async () => {
+  const activeBtn = document.querySelector(".nav").querySelector(".active");
+
+  activeBtn ? activeBtn.classList.remove("active") : null;
+  individBtn.classList.add("active");
   hideActiveContainer();
   ShowIndividualStats({ playerStats });
 });

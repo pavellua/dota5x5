@@ -42,6 +42,7 @@ function PlayerStats(resJson) {
       if (won) playersStat[id].heroes[heroId].wins++;
       else playersStat[id].heroes[heroId].losses++;
       teamMates(player, game, playersStat);
+      roles(player, game, playersStat);
     });
     game.teamsRating = teamsRating;
 
@@ -143,4 +144,20 @@ function getCurrentRating(won, matchNumber, teamsRating, playerTeam) {
   else kFactor = 45;
 
   return Math.round(kFactor * (actualScore - expectedScore));
+}
+
+function roles(player, game, playersStat) {
+  const id = player.accountid;
+  const won = player.team === game.winner;
+
+  if (!playersStat[id].roles) {
+    playersStat[id].roles = {};
+  }
+  if (!playersStat[id].roles[player.role]) {
+    playersStat[id].roles[player.role] = { wins: 0, lose: 0 };
+  }
+
+  won
+    ? playersStat[id].roles[player.role].wins++
+    : playersStat[id].roles[player.role].lose++;
 }
