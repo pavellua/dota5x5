@@ -177,7 +177,7 @@ headPicksTable.addEventListener("click", (e) => {
 });
 playersBtn.addEventListener("click", () => {
   const activeBtn = document.querySelector(".nav").querySelector(".active");
-
+  selectIndividPlayerContainer.style.display = "none";
   activeBtn ? activeBtn.classList.remove("active") : null;
   playersBtn.classList.add("active");
   hideActiveContainer();
