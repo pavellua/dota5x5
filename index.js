@@ -2,6 +2,7 @@ import { GetData } from "./modules/dataStore.js";
 
 import AddIndividPlayerInSelect from "./modules/htmlCss/addIndividPlayerInSelect.js";
 import ShowAllGames from "./modules/htmlCss/showAllGames.js";
+import ShowGiveawayInfo from "./modules/htmlCss/showGiveawayInfo.js";
 import ShowIndividuaHeroes from "./modules/htmlCss/showIndividualHeroes.js";
 import ShowIndividualStats from "./modules/htmlCss/showIndiwidualStats.js";
 import ShowPicksStatsTable from "./modules/htmlCss/showPicksStatsTable.js";
@@ -17,6 +18,7 @@ const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 const playersBtn = document.getElementById("playersBtn");
 const matchesStats = document.getElementById("matchesStats");
 const playBtn = document.getElementById("playBtn");
+const giveawayBtn = document.getElementById("giveawayBtn");
 
 const playIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>`;
 const pauseIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
@@ -61,6 +63,81 @@ if (!local) {
   data = await GetData();
 }
 
+////////////////////////////////////////
+// Отримування даних ТГ
+
+let tg = null;
+
+if (window.Telegram?.WebApp) {
+  tg = window.Telegram.WebApp;
+
+  tg.ready();
+
+  console.log("Запущено через Telegram");
+} else {
+  console.log("Запущено локально");
+}
+
+async function notifyAppOpened() {
+  if (!tg) {
+    console.log("Telegram недоступний — локальний запуск");
+    return;
+  }
+
+  const user = tg.initDataUnsafe?.user;
+
+  console.log("Telegram user:", user);
+
+  try {
+    const response = await fetch(
+      "https://unconsecrated-chronographically-mauricio.ngrok-free.dev/api/app-opened",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          action: "app_opened",
+          user: user,
+          time: new Date().toISOString(),
+        }),
+      },
+    );
+
+    const result = await response.json();
+
+    console.log("Сервер отримав запит:", result);
+  } catch (error) {
+    console.error("Помилка відправки запиту:", error);
+  }
+}
+
+try {
+  const response = await fetch(
+    "https://unconsecrated-chronographically-mauricio.ngrok-free.dev/api/app-opened",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        action: "app_opened",
+        user: 1,
+        time: new Date().toISOString(),
+      }),
+    },
+  );
+
+  const result = await response.json();
+
+  console.log("Сервер отримав запит:", result);
+} catch (error) {
+  console.error("Помилка відправки запиту:", error);
+}
+notifyAppOpened();
+
+////////////////////////////////////////
+
 let playerStats = PlayerStats(data);
 
 let pickedHeroes = TopPickedHeroes(data);
@@ -69,6 +146,7 @@ console.log(playerStats);
 AddIndividPlayerInSelect(playerStats);
 
 allMatchesBtn.addEventListener("click", () => {
+  selectIndividPlayerContainer.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -79,6 +157,7 @@ allMatchesBtn.addEventListener("click", () => {
 });
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
+  selectIndividPlayerContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -88,7 +167,6 @@ pickedBanedHeroesBtn.addEventListener("click", () => {
 });
 
 headPicksTable.addEventListener("click", (e) => {
-  console.log(pickedHeroes);
   switch (e.target.dataset.sort) {
     case "bans":
       pickedHeroes = pickedHeroes.sort((a, b) => b.bans - a.bans);
@@ -126,6 +204,7 @@ playersBtn.addEventListener("click", () => {
   ShowPlayerStatsTable(playerStats, data);
 });
 individBtn.addEventListener("click", async () => {
+  selectIndividPlayerContainer.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -219,4 +298,13 @@ playBtn.addEventListener("click", () => {
     playBtn.innerHTML = playIcon;
     playBtn.style.color = "green";
   }
+});
+
+giveawayBtn.addEventListener("click", async () => {
+  const activeBtn = document.querySelector(".nav").querySelector(".active");
+  selectIndividPlayerContainer.style.display = "none";
+  activeBtn ? activeBtn.classList.remove("active") : null;
+  giveawayBtn.classList.add("active");
+  hideActiveContainer();
+  await ShowGiveawayInfo(data);
 });

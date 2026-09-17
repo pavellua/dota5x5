@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/allGames.css" />
     <link rel="stylesheet" href="styles/playerStatTable.css" />
     <link rel="stylesheet" href="styles/individualStats.css" />
+    <link rel="stylesheet" href="styles/giveaway.css" />
 
     <link
       rel="stylesheet"
@@ -21,6 +22,9 @@
       <button class="nav-btn" id="pickedBanedHeroesBtn">Піки</button>
       <button class="nav-btn" id="playersBtn">Гравці</button>
       <button class="nav-btn" id="individBtn">Індивідуальна</button>
+      <button style="display: none" class="nav-btn" id="giveawayBtn">
+        Розіграш
+      </button>
     </nav>
     <div style="display: flex; align-items: center">
       <select id="selectPlayer">
@@ -149,6 +153,49 @@
           </table>
         </div>
       </div>
+    </div>
+
+    <div id="giveawayContainer">
+      <p id="giveawayDateText"></p>
+      <p id="giveawayTimer"></p>
+      <div id="conditions">
+        <h3>Умови розіграшу</h3>
+        <p>
+          1) Повинно відбутися мінімум
+          <span id="minimuMatchesForAllPlayesr"></span> матчів за останні 3
+          тижні
+        </p>
+
+        <p>
+          2) Гравець повинен зіграти мінімум
+          <span id="minimumMatchesPlayerAlltime"></span> матчів за весь час
+        </p>
+        <p>
+          3) Гравець повинен зіграти мінімум
+          <span id="minimumMatchesPlayer3weeks"></span> матчі за останні 3 тижні
+        </p>
+        <p>
+          4) Чим більше матчів зіграв гравець за останні 3 тижні - тим більше
+          шанс на перемогу
+        </p>
+      </div>
+
+      <div class="matches-progress-block">
+        <div class="progress-container">
+          <div class="progress-bar" id="matchesProgress"></div>
+        </div>
+        <div id="matchPlayed"></div>
+      </div>
+      <table class="statTable" id="giveawayInfoTable">
+        <thead>
+          <td>Гравець</td>
+
+          <td>3 тижні</td>
+          <td>Услього ігр</td>
+          <td>Шанс на перемогу</td>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
 
     <script type="module" src="index.js" defer></script>

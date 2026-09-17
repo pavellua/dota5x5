@@ -1,11 +1,26 @@
 import SortTeammates from "./helpingModules/sortTeammates.js";
-
+let matchCounter;
 function PlayerStats(resJson) {
   let playersStat = {};
   const matches = resJson.matches;
   const heroesId = resJson.heroesId;
-
+  let latestGiveawayObject = addNextGiveaway(resJson);
+  const nextGiveawayDate = latestGiveawayObject.giveawayDate;
+  const startCalculatingDate = new Date(nextGiveawayDate);
+  startCalculatingDate.setDate(startCalculatingDate.getDate() - 21);
+  matchCounter = 0;
+  console.log(resJson);
   matches.forEach((game) => {
+    let matchDate = game.date;
+    matchDate = new Date(matchDate);
+    matchDate.setHours(matchDate.getHours() - 3);
+    calculateMatchesForGiveaway(
+      latestGiveawayObject,
+      matchDate,
+      startCalculatingDate,
+      nextGiveawayDate,
+    );
+
     let teamsRating = {
       Radiant: 0,
       Dire: 0,
@@ -47,6 +62,13 @@ function PlayerStats(resJson) {
     game.teamsRating = teamsRating;
 
     game.players.forEach((player) => {
+      calculateMatchPlayerForGiveaway(
+        latestGiveawayObject,
+        player,
+        startCalculatingDate,
+        nextGiveawayDate,
+        matchDate,
+      );
       const id = player.accountid;
       const won = player.team === game.winner;
       player.changeRating = getCurrentRating(
@@ -55,7 +77,6 @@ function PlayerStats(resJson) {
         teamsRating,
         player.team,
       );
-      console.log(game.replay_file);
 
       playersStat[id].rating += player.changeRating;
       player.rating = playersStat[id].rating;
@@ -77,7 +98,7 @@ function PlayerStats(resJson) {
         stats.count > 0 ? Math.round((stats.wins / stats.count) * 100) : 0;
     }
   });
-
+  resJson.playersStat = playersStat;
   return playersStat;
 }
 
@@ -160,4 +181,73 @@ function roles(player, game, playersStat) {
   won
     ? playersStat[id].roles[player.role].wins++
     : playersStat[id].roles[player.role].lose++;
+}
+
+function calculateMatchesForGiveaway(
+  latestGiveawayObject,
+  matchDate,
+  startCalculatingDate,
+  nextGiveawayDate,
+) {
+  if (
+    matchDate > startCalculatingDate &&
+    matchDate < new Date(nextGiveawayDate)
+  ) {
+    matchCounter++;
+  }
+
+  latestGiveawayObject.matchesPlayed = matchCounter;
+}
+
+function addNextGiveaway(data) {
+  const giveawayInfo = data.giveawayInfo;
+  console.log(giveawayInfo);
+  let latestGiveawayObject = giveawayInfo.reduce((max, item) => {
+    return new Date(item.giveawayDate) > new Date(max.giveawayDate)
+      ? item
+      : max;
+  });
+  let lastGiveawayDate = latestGiveawayObject.giveawayDate;
+  console.log(lastGiveawayDate);
+  const currentDate = new Date();
+
+  const nextGiveawayDate = new Date(lastGiveawayDate);
+
+  while (nextGiveawayDate < currentDate) {
+    nextGiveawayDate.setDate(nextGiveawayDate.getDate() + 21);
+
+    if (nextGiveawayDate >= currentDate) {
+      latestGiveawayObject = {
+        giveawayDate: nextGiveawayDate.toISOString(),
+      };
+      giveawayInfo.push(latestGiveawayObject);
+    }
+  }
+
+  return latestGiveawayObject;
+}
+
+function calculateMatchPlayerForGiveaway(
+  latestGiveawayObject,
+  player,
+  startCalculatingDate,
+  nextGiveawayDate,
+  matchDate,
+) {
+  if (
+    matchDate > startCalculatingDate &&
+    matchDate < new Date(nextGiveawayDate)
+  ) {
+    if (!latestGiveawayObject.players) {
+      latestGiveawayObject.players = {};
+    }
+    if (!latestGiveawayObject.players[player.accountid]) {
+      latestGiveawayObject.players[player.accountid] = {
+        playerName: player.name,
+        matchNumber: 0,
+      };
+    }
+
+    latestGiveawayObject.players[player.accountid].matchNumber++;
+  }
 }

@@ -15,23 +15,29 @@ let playerStats, playerId, selectIdPlayer, data;
 let sortParam = "winrate";
 
 teammatesBtn.addEventListener("click", () => {
-  ShowTeammates(playerStats, sortParam);
+  if (selectIndividPlayerContainer.value != "") {
+    ShowTeammates(playerStats, sortParam);
+  }
 });
 
 individualHeroesBtn.addEventListener("click", () => {
-  ShowIndividuaHeroes(playerStats, selectIndividPlayerContainer.value, data);
+  if (selectIndividPlayerContainer.value != "") {
+    ShowIndividuaHeroes(playerStats, selectIndividPlayerContainer.value, data);
+  }
 });
 rolesPlayerBtn.addEventListener("click", () => {
-  ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
+  if (selectIndividPlayerContainer.value != "") {
+    ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
+  }
 });
 
 export default async function ShowIndividualStats(params) {
+  console.log(2);
   playerStats = params.playerStats;
   playerId = params.playerId;
   sortParam = params.sortParam;
   selectIdPlayer = selectIndividPlayerContainer.value;
 
-  individualStatsContainer.style.display = "block";
   data = await GetData();
   setTimeout(
     () => individualStatsContainer.classList.add("activeContainer"),
@@ -39,9 +45,17 @@ export default async function ShowIndividualStats(params) {
   );
   if (!playerId && selectIdPlayer) playerId = selectIdPlayer;
   if (playerId) {
-    const activeIndividContainer = document.querySelector(
+    individualStatsContainer.style.display = "block";
+    let activeIndividContainer = document.querySelector(
       ".activeIndividContainer",
     );
+    if (!activeIndividContainer) {
+      const winrateWithPlayersContainer =
+        document.getElementById("winrateWithPlayers");
+      winrateWithPlayersContainer.classList.add("activeIndividContainer");
+      activeIndividContainer = winrateWithPlayersContainer;
+    }
+
     const activeIndividContainerId = activeIndividContainer.id;
     console.log(activeIndividContainerId);
     switch (activeIndividContainerId) {
@@ -53,6 +67,7 @@ export default async function ShowIndividualStats(params) {
         );
         break;
       case "winrateWithPlayers":
+        console.log(1);
         ShowTeammates(playerStats, sortParam);
         break;
       case "playerRolesContainer":

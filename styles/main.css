@@ -34,14 +34,17 @@ body {
   transition: opacity 3s ease;
   z-index: -1;
 }
+
 #individualBtns {
   margin-top: 10px;
 }
 .nav {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   margin-bottom: 10px;
   align-items: center;
+
+  flex-wrap: wrap;
 }
 
 .nav-btn {
@@ -115,3 +118,4 @@ select option {
   background-color: #190d2e;
   color: #c4b5fd;
 }
+

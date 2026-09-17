@@ -9,9 +9,8 @@ export default function AddIndividPlayerInSelect(playerStats) {
     }))
     .filter((player) => player.playerName != "Невідомо")
     .sort((a, b) => a.playerName.localeCompare(b.playerName));
-  console.log(playersMas);
+
   for (let player of playersMas) {
-    console.log(player);
     const option = document.createElement("option");
     option.value = player.playerId;
     option.innerText = player.playerName;

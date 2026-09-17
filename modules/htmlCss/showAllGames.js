@@ -25,7 +25,9 @@ export default function ShowAllGames(resJson) {
     matchesStats.append(matchContainer);
     const matchDateIdContainer = document.createElement("div");
     matchContainer.append(matchDateIdContainer);
-    const date = new Date(match.date.replace("Z", ""));
+    const date = new Date(match.date);
+
+    date.setHours(date.getHours() - 3);
 
     const matchDateString = date.toLocaleString("uk-UA", {
       year: "numeric",
