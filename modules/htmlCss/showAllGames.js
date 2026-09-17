@@ -122,8 +122,8 @@ function getStreamIcon(player, streams) {
 
 function getRatingChange(changeRating) {
   if (changeRating < 0) {
-    return `<span style="color:red; font-weight:600;">&nbsp;${changeRating}</span>`;
+    return `<span style="color:red; font-weight:400;">&nbsp;${changeRating}</span>`;
   } else {
-    return `<span style="color:green; font-weight:600;">&nbsp;+${changeRating} </span>`;
+    return `<span style="color:green; font-weight:400;">&nbsp;+${changeRating} </span>`;
   }
 }

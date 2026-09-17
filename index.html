@@ -22,9 +22,7 @@
       <button class="nav-btn" id="pickedBanedHeroesBtn">Піки</button>
       <button class="nav-btn" id="playersBtn">Гравці</button>
       <button class="nav-btn" id="individBtn">Індивідуальна</button>
-      <button style="display: none" class="nav-btn" id="giveawayBtn">
-        Розіграш
-      </button>
+      <button class="nav-btn" id="giveawayBtn">Розіграш</button>
     </nav>
     <div style="display: flex; align-items: center">
       <select id="selectPlayer">
@@ -156,6 +154,9 @@
     </div>
 
     <div id="giveawayContainer">
+      <p id="prizeText">
+        Розігруються предмети для гри DOTA 2 на суму 150 грн на вибір переможця
+      </p>
       <p id="giveawayDateText"></p>
       <p id="giveawayTimer"></p>
       <div id="conditions">
@@ -196,6 +197,10 @@
         </thead>
         <tbody></tbody>
       </table>
+      <div id="chooseWinnerContainer">
+        <span>?</span>
+        <button id="chooseWinnerBtn">Переможець</button>
+      </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script type="module" src="index.js" defer></script>

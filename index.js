@@ -1,4 +1,5 @@
 import { GetData } from "./modules/dataStore.js";
+import ChooseWinner from "./modules/helpingModules/chooseWinner.js";
 
 import AddIndividPlayerInSelect from "./modules/htmlCss/addIndividPlayerInSelect.js";
 import ShowAllGames from "./modules/htmlCss/showAllGames.js";
@@ -19,6 +20,8 @@ const playersBtn = document.getElementById("playersBtn");
 const matchesStats = document.getElementById("matchesStats");
 const playBtn = document.getElementById("playBtn");
 const giveawayBtn = document.getElementById("giveawayBtn");
+const chooseWinnerBtn = document.getElementById("chooseWinnerBtn");
+const chooseWinnerContainer = document.getElementById("chooseWinnerContainer");
 
 const playIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,4 20,12 6,20"/></svg>`;
 const pauseIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
@@ -74,8 +77,9 @@ if (window.Telegram?.WebApp) {
   tg.ready();
   message = "Запущено через Telegram";
   console.log("Запущено через Telegram");
+  notifyAppOpened();
 } else {
-  message = "ЗЗапущено локально";
+  message = "Запущено локально";
   console.log("Запущено локально");
 }
 
@@ -83,38 +87,36 @@ async function notifyAppOpened() {
   if (!tg) {
     console.log("Telegram недоступний — локальний запуск");
     return;
-  }
+  } else {
+    const user = tg.initDataUnsafe?.user;
 
-  const user = tg.initDataUnsafe?.user;
+    console.log("Telegram user:", user);
 
-  console.log("Telegram user:", user);
-
-  try {
-    const response = await fetch(
-      "https://unconsecrated-chronographically-mauricio.ngrok-free.dev/api/app-opened",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    try {
+      const response = await fetch(
+        "https://unconsecrated-chronographically-mauricio.ngrok-free.dev/api/app-opened",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            action: "app_opened",
+            user: tg.initDataUnsafe?.user,
+            initData: tg.initData,
+            time: new Date().toISOString(),
+          }),
         },
-        body: JSON.stringify({
-          action: "app_opened",
-          user: tg.initDataUnsafe?.user,
-          initData: tg.initData,
-          time: new Date().toISOString(),
-        }),
-      },
-    );
+      );
 
-    const result = await response.json();
+      const result = await response.json();
 
-    console.log("Сервер отримав запит:", result);
-  } catch (error) {
-    console.error("Помилка відправки запиту:", error);
+      console.log("Сервер отримав запит:", result);
+    } catch (error) {
+      console.error("Помилка відправки запиту:", error);
+    }
   }
 }
-
-notifyAppOpened();
 
 ////////////////////////////////////////
 
@@ -287,4 +289,11 @@ giveawayBtn.addEventListener("click", async () => {
   giveawayBtn.classList.add("active");
   hideActiveContainer();
   await ShowGiveawayInfo(data);
+});
+
+chooseWinnerBtn.addEventListener("click", () => {
+  const winner = ChooseWinner(data);
+  console.log(winner);
+
+  chooseWinnerContainer.querySelector("span").innerHTML = winner.playerName;
 });
