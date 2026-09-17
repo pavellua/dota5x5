@@ -114,28 +114,6 @@ async function notifyAppOpened() {
   }
 }
 
-try {
-  const response = await fetch(
-    "https://unconsecrated-chronographically-mauricio.ngrok-free.dev/api/app-opened",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        action: "app_opened",
-        user: message,
-        time: tg,
-      }),
-    },
-  );
-
-  const result = await response.json();
-
-  console.log("Сервер отримав запит:", result);
-} catch (error) {
-  console.error("Помилка відправки запиту:", error);
-}
 notifyAppOpened();
 
 ////////////////////////////////////////
