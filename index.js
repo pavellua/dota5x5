@@ -67,14 +67,15 @@ if (!local) {
 // Отримування даних ТГ
 
 let tg = null;
-
+let message = "";
 if (window.Telegram?.WebApp) {
   tg = window.Telegram.WebApp;
 
   tg.ready();
-
+  message = "Запущено через Telegram";
   console.log("Запущено через Telegram");
 } else {
+  message = "ЗЗапущено локально";
   console.log("Запущено локально");
 }
 
@@ -98,7 +99,8 @@ async function notifyAppOpened() {
         },
         body: JSON.stringify({
           action: "app_opened",
-          user: user,
+          user: tg.initDataUnsafe?.user,
+          initData: tg.initData,
           time: new Date().toISOString(),
         }),
       },
@@ -122,8 +124,8 @@ try {
       },
       body: JSON.stringify({
         action: "app_opened",
-        user: 1,
-        time: new Date().toISOString(),
+        user: message,
+        time: tg,
       }),
     },
   );
