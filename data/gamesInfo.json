@@ -1015,5 +1015,44 @@
         "streamerId": "107383793"
       }
     ]
+  },
+  "9005242352": {
+    "date": "2026-09-18T22:11:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/n5qv7LCnlBk?t=132",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/xKfpsjod2ko?t=190",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "9005376452": {
+    "date": "2026-09-18T23:41:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/xKfpsjod2ko?t=5601",
+        "streamerId": "173288536"
+      },
+      {
+        "url": "https://youtu.be/n5qv7LCnlBk?t=5541",
+        "streamerId": "107383793"
+      }
+    ]
+  },
+  "9005457444": {
+    "date": "2026-09-19T00:50:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/n5qv7LCnlBk?t=9716",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/xKfpsjod2ko?t=9766",
+        "streamerId": "173288536"
+      }
+    ]
   }
 }
