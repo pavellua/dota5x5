@@ -19,7 +19,7 @@ let giveawayTimerInterval;
 let data;
 const giveawayConditions = {
   minimumMatchesPlayerAlltime: 10,
-  minimumMatchesPlayer3weeks: 3,
+  minimumMatchesPlayer3weeks: 4,
   minimuMatchesForAllPlayesr: 7,
 };
 

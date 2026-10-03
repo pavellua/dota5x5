@@ -286,24 +286,8 @@
       }
     ],
     "bans": {
-      "dire": [
-        121,
-        111,
-        34,
-        86,
-        60,
-        59,
-        47
-      ],
-      "radiant": [
-        76,
-        99,
-        75,
-        98,
-        25,
-        7,
-        2
-      ]
+      "dire": [121, 111, 34, 86, 60, 59, 47],
+      "radiant": [76, 99, 75, 98, 25, 7, 2]
     }
   },
   "8850900224": {
@@ -323,24 +307,8 @@
       }
     ],
     "bans": {
-      "dire": [
-        111,
-        121,
-        76,
-        99,
-        98,
-        27,
-        50
-      ],
-      "radiant": [
-        87,
-        34,
-        79,
-        71,
-        12,
-        135,
-        42
-      ]
+      "dire": [111, 121, 76, 99, 98, 27, 50],
+      "radiant": [87, 34, 79, 71, 12, 135, 42]
     }
   },
   "8858391884": {
@@ -1078,6 +1046,45 @@
     "streams": [
       {
         "url": "https://youtu.be/M2dwBoDTsRQ?t=7467",
+        "streamerId": "107383793"
+      }
+    ]
+  },
+  "9026432699": {
+    "date": "2026-10-02T22:20:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/utIH_T6sfxs?t=504",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/1v4poNsBNys?t=170",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "9026513654": {
+    "date": "2026-10-02T23:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/utIH_T6sfxs?t=4005",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/1v4poNsBNys?t=3673",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "9026582869": {
+    "date": "2026-10-03T00:17:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/1v4poNsBNys?t=7145",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/utIH_T6sfxs?t=7477",
         "streamerId": "107383793"
       }
     ]
