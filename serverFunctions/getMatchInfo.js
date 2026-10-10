@@ -161,7 +161,7 @@ async function GetMatchInfo(replay) {
       sen_placed: stacksBySlot[p.key]?.sen_placed || 0,
     })),
   };
-  
+
   return matchData;
 }
 

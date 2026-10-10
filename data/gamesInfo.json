@@ -286,24 +286,8 @@
       }
     ],
     "bans": {
-      "dire": [
-        121,
-        111,
-        34,
-        86,
-        60,
-        59,
-        47
-      ],
-      "radiant": [
-        76,
-        99,
-        75,
-        98,
-        25,
-        7,
-        2
-      ]
+      "dire": [121, 111, 34, 86, 60, 59, 47],
+      "radiant": [76, 99, 75, 98, 25, 7, 2]
     }
   },
   "8850900224": {
@@ -323,24 +307,8 @@
       }
     ],
     "bans": {
-      "dire": [
-        111,
-        121,
-        76,
-        99,
-        98,
-        27,
-        50
-      ],
-      "radiant": [
-        87,
-        34,
-        79,
-        71,
-        12,
-        135,
-        42
-      ]
+      "dire": [111, 121, 76, 99, 98, 27, 50],
+      "radiant": [87, 34, 79, 71, 12, 135, 42]
     }
   },
   "8858391884": {
@@ -1157,6 +1125,58 @@
       {
         "url": "https://youtu.be/gbQO3pgQDt0?t=7691",
         "streamerId": "1092509200"
+      }
+    ]
+  },
+  "9037043125": {
+    "date": "2026-10-09T22:19:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/73lQV46dQkw?t=914",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/-d0oPwI1ZVs?t=463",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/dk1GM8JoV6k?t=229",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "9037127398": {
+    "date": "2026-10-09T23:15:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/73lQV46dQkw?t=4273",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/-d0oPwI1ZVs?t=3819",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/dk1GM8JoV6k?t=3587",
+        "streamerId": "173288536"
+      }
+    ]
+  },
+  "9037195952": {
+    "date": "2026-10-010T00:07:00Z",
+    "streams": [
+      {
+        "url": "https://youtu.be/73lQV46dQkw?t=7430",
+        "streamerId": "173288536"
+      },
+      {
+        "url": "https://youtu.be/-d0oPwI1ZVs?t=6968",
+        "streamerId": "1092509200"
+      },
+
+      {
+        "url": "https://youtu.be/dk1GM8JoV6k?t=6733",
+        "streamerId": "173288536"
       }
     ]
   }
