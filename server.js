@@ -146,6 +146,7 @@ app.get("/api/add-replays", async (req, res) => {
       const matchData = await GetMatchInfo(replay);
       matchData.date = matchDate;
       matchData.streams = streamsMas;
+      console.log(matchDateInfo);
       matchDateInfo.bans ? (matchData.bans = matchDateInfo.bans) : null;
       // Можеш додати ім'я файлу
       matchData.replay_file = file;
