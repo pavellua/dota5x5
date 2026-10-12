@@ -2,17 +2,14 @@ const playerStatsTable = document.getElementById("playerStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
 
 let heroesId = null;
-let maxHeroPoolSize = 0;
+let totalPossibleHeroes = 0;
 export default function ShowPlayerStatsTable(playerStats, resJson) {
   bodyTable.innerHTML = "";
 
   playerStatsTable.style.display = "table";
   setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   heroesId = resJson.heroesId;
-  maxHeroPoolSize = Math.max(
-    1,
-    ...Object.values(playerStats).map((player) => Object.keys(player.heroes).length),
-  );
+  totalPossibleHeroes = Math.max(1, Object.keys(heroesId).length);
 
   const players = Object.entries(playerStats).map(([id, player]) => ({
     id,
@@ -95,6 +92,6 @@ function playersHeroesDiv(player, matches) {
     .join("");
 
   const poolSize = Object.keys(player.heroes).length;
-  const poolPercent = Math.round((poolSize / maxHeroPoolSize) * 100);
+  const poolPercent = Math.round((poolSize / totalPossibleHeroes) * 100);
   return `<div class="recent-heroes">${icons}</div><div class="hero-pool-meter" role="img" aria-label="${poolSize} unique heroes in pool" title="${poolSize} heroes in pool"><span style="width: ${poolPercent}%"></span><b>${poolSize}</b></div>`;
 }
