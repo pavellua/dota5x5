@@ -26,6 +26,208 @@
   transition: opacity 0.7s ease;
 }
 
+#playerWinrateChart {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  background: rgba(5, 0, 27, 0.5);
+  color: #e0e0e0;
+}
+
+.playerWinrateHeading {
+  color: #c4b5fd;
+  font-size: 15px;
+}
+
+.playerWinrateSummary {
+  margin: 6px 0 8px;
+  color: #e7ff5c;
+  font-size: 12px;
+}
+
+.winLossChartScroller {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid rgba(196, 181, 253, 0.15);
+  border-radius: 8px;
+  background: rgba(15, 10, 30, 0.5);
+  scrollbar-width: thin;
+  scrollbar-color: #6d5a9e transparent;
+}
+
+.playerWinrateSvg {
+  display: block;
+  width: max-content;
+  max-width: none;
+  height: 270px;
+}
+
+.playerRatingSection {
+  margin-top: 16px;
+}
+
+.playerRatingHeading {
+  margin: 0 0 6px;
+  color: #c4b5fd;
+  font-size: 14px;
+}
+
+.playerRatingSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.playerRatingSvg .winrateAxisLabel {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.playerRatingScroller {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(196, 181, 253, 0.15);
+  border-radius: 8px;
+  background: rgba(15, 10, 30, 0.5);
+}
+
+.playerRatingCurve {
+  fill: none;
+  stroke: #a78bfa;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.winLossZeroLine {
+  stroke: rgba(243, 232, 255, 0.8);
+  stroke-width: 1.5;
+}
+
+.winLossGridLine {
+  stroke: rgba(196, 181, 253, 0.2);
+  stroke-width: 1;
+}
+
+.winLossDayTick {
+  stroke: rgba(196, 181, 253, 0.16);
+  stroke-width: 1;
+}
+
+.winrateAxisLabel {
+  fill: #e5ddff;
+
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: #190d2e;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.winLossBar {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.winLossBar.win {
+  fill: #4ade80;
+}
+
+.winLossBar.loss {
+  fill: #f87171;
+}
+
+.winLossSegmentDivider {
+  stroke: #190d2e;
+  stroke-width: 1;
+  pointer-events: none;
+}
+
+.winLossBar:hover,
+.winLossBar:focus {
+  opacity: 0.7;
+  outline: none;
+}
+
+.winLossChartLegend {
+  display: flex;
+  gap: 14px;
+  margin: 8px 0;
+  color: #c4b5fd;
+  font-size: 11px;
+}
+
+.winLossChartLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.winLossChartLegend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.winLossChartLegend .winLegend {
+  background: #4ade80;
+}
+
+.winLossChartLegend .lossLegend {
+  background: #f87171;
+}
+
+.winLossMatchDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.winLossMatchDetail span {
+  color: #aaa5b8;
+}
+
+@media (max-width: 600px) {
+  #individualStats.activeContainer {
+    display: block;
+  }
+
+  #individualContainerInfo {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #individualStats .statTable,
+  #heroPickDetails .statTable {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  #playerStatsTable.activeContainer,
+  #picksStatsTable.activeContainer {
+    display: block;
+  }
+
+  #individualStats .statTable thead td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  #individualStats .statTable tbody td {
+    padding: 9px 6px;
+  }
+}
+
 #teammateWinrate .heading {
   margin: 15px 0 8px 0;
   font-weight: 700;

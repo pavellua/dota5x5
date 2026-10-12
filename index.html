@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/allGames.css" />
@@ -24,7 +24,7 @@
       <button class="nav-btn" id="individBtn">Індивідуальна</button>
       <button class="nav-btn" id="giveawayBtn">Розіграш</button>
     </nav>
-    <div style="display: flex; align-items: center">
+    <div id="playerFilterControls" style="display: flex; align-items: center">
       <select id="selectPlayer">
         <option value="" selected>-- Загальна статистика --</option>
       </select>
@@ -35,7 +35,13 @@
       </button>
     </div>
 
+    <div id="heroFilterContainer">
+      <label for="heroFilter">Фільтр за героєм</label>
+      <input id="heroFilter" type="search" list="heroOptions" placeholder="Почніть вводити ім’я героя" autocomplete="off" />
+      <datalist id="heroOptions"></datalist>
+    </div>
     <div id="matchesStats"></div>
+    <section id="matchDetails" aria-live="polite"></section>
     <table class="statTable" id="playerStatsTable">
       <thead>
         <td>Гравець</td>
@@ -50,44 +56,35 @@
     <table class="statTable" id="picksStatsTable">
       <thead>
         <td></td>
-        <td></td>
-        <td>
-          <span>Бани</span>
-
-          <button class="sort-btn" data-sort="bans">
-            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
-          </button>
-        </td>
-        <td>
-          <span
-            >Перемоги
-            <button class="sort-btn" data-sort="wins">
-              <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
-            </button></span
-          >
-        </td>
-        <td>
-          <span>Поразки</span>
-          <button class="sort-btn" data-sort="lose">
-            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
-          </button>
-        </td>
-        <td>
-          <span>Піки</span>
-          <button class="sort-btn" data-sort="picks">
-            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
-          </button>
-        </td>
-
-        <td>
-          <span>Вінрейт</span
-          ><button class="sort-btn" data-sort="winrate">
-            <span class="arrow-asc">▲</span><span class="arrow-desc">▼</span>
-          </button>
-        </td>
+        <td>Герой</td>
+        <td>Бани</td>
+        <td>Перемоги</td>
+        <td>Поразки</td>
+        <td>Піки</td>
+        <td>Вінрейт</td>
       </thead>
       <tbody></tbody>
     </table>
+    <section id="heroPickDetails">
+      <button type="button" class="heroPickDetailsBack" data-action="back-to-picks">← До списку героїв</button>
+      <div class="heroPickDetailsHeading">
+        <img id="heroPickDetailsIcon" alt="" />
+        <div>
+          <h2 id="heroPickDetailsName"></h2>
+          <p id="heroPickDetailsSummary"></p>
+        </div>
+      </div>
+      <table class="statTable" id="heroPlayerStatsTable">
+        <thead>
+          <td>Гравець</td>
+          <td>Матчів</td>
+          <td>Перемоги</td>
+          <td>Поразки</td>
+          <td>Вінрейт</td>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
 
     <div id="individualStats">
       <div id="individualBtns">
@@ -95,6 +92,7 @@
 
         <button class="nav-btn" id="individualHeroesBtn">Герої</button>
         <button class="nav-btn" id="rolesPlayerBtn">Ролі</button>
+        <button class="nav-btn" id="playerWinrateBtn">Вінрейт</button>
       </div>
       <div id="individualContainerInfo">
         <div style="display: none" id="winrateWithPlayers">
@@ -150,6 +148,7 @@
             <tbody></tbody>
           </table>
         </div>
+        <div style="display: none" id="playerWinrateChart"></div>
       </div>
     </div>
 

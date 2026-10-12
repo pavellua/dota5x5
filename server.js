@@ -9,9 +9,22 @@ const app = express();
 const REPLAYS_DIR = path.join(__dirname, "replays");
 
 app.use(express.static("."));
+app.use(express.json());
 
 // Кеш щоб не парсити одне й те саме двічі
 const cache = {};
+
+function applyReplayDate(matchData, fallbackDate = "") {
+  const replayDate = matchData.matchStartTime;
+  if (replayDate) {
+    const dateWithDisplayOffset = new Date(replayDate);
+    dateWithDisplayOffset.setUTCHours(dateWithDisplayOffset.getUTCHours() + 3);
+    matchData.date = dateWithDisplayOffset.toISOString().replace(".000Z", "Z");
+    matchData.date_from_replay = true;
+  } else {
+    matchData.date = fallbackDate || "";
+  }
+}
 
 app.get("/api/matches", async (req, res) => {
   const heroesId = await GetHeroesId();
@@ -56,7 +69,7 @@ app.get("/api/matches", async (req, res) => {
         continue;
       }
       const matchData = await GetMatchInfo(replay);
-      matchData.date = matchDateInfo.date || "";
+      applyReplayDate(matchData, matchDateInfo?.date);
       matchData.streams = matchDateInfo.streams || [];
       // Можеш додати ім'я файлу
       matchData.replay_file = file;
@@ -144,7 +157,7 @@ app.get("/api/add-replays", async (req, res) => {
         continue;
       }
       const matchData = await GetMatchInfo(replay);
-      matchData.date = matchDate;
+      applyReplayDate(matchData, matchDate);
       matchData.streams = streamsMas;
       console.log(matchDateInfo);
       matchDateInfo.bans ? (matchData.bans = matchDateInfo.bans) : null;
@@ -207,6 +220,32 @@ app.get("/api/add-stream", async (req, res) => {
 app.get("/api/get-matches", async (req, res) => {
   const matches = JSON.parse(fs.readFileSync("./matches.json", "utf-8"));
   res.json(matches);
+});
+
+app.post("/api/parse-replay-preview", async (req, res) => {
+  const requestedName = String(req.body?.fileName || "").trim();
+  const fileName = requestedName.toLowerCase().endsWith(".dem")
+    ? requestedName
+    : `${requestedName}.dem`;
+
+  if (!requestedName || path.basename(fileName) !== fileName || /[\\/]/.test(fileName)) {
+    return res.status(400).json({ error: "Вкажи назву .dem файлу без шляху." });
+  }
+
+  const replayPath = path.resolve(REPLAYS_DIR, fileName);
+  if (!replayPath.startsWith(path.resolve(REPLAYS_DIR) + path.sep) || !fs.existsSync(replayPath)) {
+    return res.status(404).json({ error: `Реплей ${fileName} не знайдено в папці replays.` });
+  }
+
+  try {
+    const replay = fs.readFileSync(replayPath);
+    const matchData = await GetMatchInfo(replay, { includeParserEventSummary: true });
+    matchData.replay_file = fileName;
+    res.json(matchData);
+  } catch (error) {
+    console.error(`Помилка тестового парсингу ${fileName}:`, error);
+    res.status(500).json({ error: error.message || "Не вдалося розпарсити реплей." });
+  }
 });
 
 app.get("/api/add-match-data", async (req, res) => {

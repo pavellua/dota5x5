@@ -3,7 +3,9 @@ import ChooseWinner from "./modules/helpingModules/chooseWinner.js";
 
 import AddIndividPlayerInSelect from "./modules/htmlCss/addIndividPlayerInSelect.js";
 import ShowAllGames from "./modules/htmlCss/showAllGames.js";
+import ShowMatchDetails from "./modules/htmlCss/showMatchDetails.js";
 import ShowGiveawayInfo from "./modules/htmlCss/showGiveawayInfo.js";
+import ShowHeroPickDetails from "./modules/htmlCss/showHeroPickDetails.js";
 import ShowIndividuaHeroes from "./modules/htmlCss/showIndividualHeroes.js";
 import ShowIndividualStats from "./modules/htmlCss/showIndiwidualStats.js";
 import ShowPicksStatsTable from "./modules/htmlCss/showPicksStatsTable.js";
@@ -11,13 +13,18 @@ import ShowPlayerStatsTable from "./modules/htmlCss/showPlayerStatsTable.js";
 import PlayerStats from "./modules/playersStats.js";
 
 import TopPickedHeroes from "./modules/topPickedHeroes.js";
+import EnableTableSorting from "./modules/helpingModules/enableTableSorting.js";
 
 const picksStatsTable = document.getElementById("picksStatsTable");
-const headPicksTable = picksStatsTable.querySelector("thead");
+const heroPickDetails = document.getElementById("heroPickDetails");
 const allMatchesBtn = document.getElementById("allMatchesBtn");
 const pickedBanedHeroesBtn = document.getElementById("pickedBanedHeroesBtn");
 const playersBtn = document.getElementById("playersBtn");
 const matchesStats = document.getElementById("matchesStats");
+const matchDetails = document.getElementById("matchDetails");
+const heroFilterContainer = document.getElementById("heroFilterContainer");
+const heroFilter = document.getElementById("heroFilter");
+const heroOptions = document.getElementById("heroOptions");
 const playBtn = document.getElementById("playBtn");
 const giveawayBtn = document.getElementById("giveawayBtn");
 const chooseWinnerBtn = document.getElementById("chooseWinnerBtn");
@@ -123,11 +130,22 @@ async function notifyAppOpened() {
 let playerStats = PlayerStats(data);
 
 let pickedHeroes = TopPickedHeroes(data);
+EnableTableSorting();
+
+Object.values(data.heroesId)
+  .map((hero) => hero.name)
+  .sort((a, b) => a.localeCompare(b))
+  .forEach((name) => {
+    const option = document.createElement("option");
+    option.value = name;
+    heroOptions.append(option);
+  });
 
 console.log(playerStats);
 AddIndividPlayerInSelect(playerStats);
 
 allMatchesBtn.addEventListener("click", () => {
+  heroFilterContainer.style.display = "block";
   selectIndividPlayerContainer.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
@@ -139,6 +157,7 @@ allMatchesBtn.addEventListener("click", () => {
 });
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
+  heroFilterContainer.style.display = "block";
   selectIndividPlayerContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
@@ -148,36 +167,25 @@ pickedBanedHeroesBtn.addEventListener("click", () => {
   ShowPicksStatsTable(pickedHeroes, data);
 });
 
-headPicksTable.addEventListener("click", (e) => {
-  switch (e.target.dataset.sort) {
-    case "bans":
-      pickedHeroes = pickedHeroes.sort((a, b) => b.bans - a.bans);
+picksStatsTable.addEventListener("click", (event) => {
+  const heroRow = event.target.closest("tr[data-hero-id]");
+  if (!heroRow) return;
 
-      break;
-    case "picks":
-      pickedHeroes = pickedHeroes.sort((a, b) => b.picks - a.picks);
+  hideActiveContainer();
+  heroFilterContainer.style.display = "none";
+  ShowHeroPickDetails(heroRow.dataset.heroId, data);
+});
 
-      break;
-    case "wins":
-      pickedHeroes = pickedHeroes.sort((a, b) => b.wins - a.wins);
+heroPickDetails.addEventListener("click", (event) => {
+  if (!event.target.closest('[data-action="back-to-picks"]')) return;
 
-      break;
-    case "lose":
-      pickedHeroes = pickedHeroes.sort((a, b) => b.lose - a.lose);
-
-      break;
-    case "winrate":
-      pickedHeroes.sort((a, b) => {
-        if (isNaN(a.winrate)) return 1;
-        if (isNaN(b.winrate)) return -1;
-        return b.winrate - a.winrate || b.picks - a.picks;
-      });
-
-      break;
-  }
+  hideActiveContainer();
+  heroFilterContainer.style.display = "block";
   ShowPicksStatsTable(pickedHeroes, data);
 });
+
 playersBtn.addEventListener("click", () => {
+  heroFilterContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
   selectIndividPlayerContainer.style.display = "none";
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -186,6 +194,7 @@ playersBtn.addEventListener("click", () => {
   ShowPlayerStatsTable(playerStats, data);
 });
 individBtn.addEventListener("click", async () => {
+  heroFilterContainer.style.display = "none";
   selectIndividPlayerContainer.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
@@ -193,6 +202,14 @@ individBtn.addEventListener("click", async () => {
   individBtn.classList.add("active");
   hideActiveContainer();
   ShowIndividualStats({ playerStats });
+});
+
+heroFilter.addEventListener("input", () => {
+  if (matchesStats.classList.contains("activeContainer")) {
+    ShowAllGames(data);
+  } else if (picksStatsTable.classList.contains("activeContainer")) {
+    ShowPicksStatsTable(pickedHeroes, data);
+  }
 });
 
 function hideActiveContainer() {
@@ -255,19 +272,50 @@ selectIndividPlayerContainer.addEventListener("change", function () {
 });
 
 playerStatsTable.addEventListener("click", (e) => {
-  if (e.target.hasAttribute("data-player-name")) {
-    hideActiveContainer();
-    const playerId = e.target.closest("tr").getAttribute("data-player-id");
-    ShowIndividualStats({ playerStats, playerId });
-  }
+  const playerName = e.target.closest("[data-player-name]");
+  if (!playerName) return;
+
+  const playerId = playerName.closest("tr")?.dataset.playerId;
+  if (!playerId) return;
+
+  selectIndividPlayerContainer.value = playerId;
+  selectIndividPlayerContainer.style.display = "block";
+  document.querySelector(".nav .active")?.classList.remove("active");
+  individBtn.classList.add("active");
+  hideActiveContainer();
+  ShowIndividualStats({ playerStats, playerId });
 });
 matchesStats.addEventListener("click", (e) => {
-  const playerId = e.target.getAttribute("data-player-id");
+  if (e.target.closest(".winnerContainer, .streamUrl")) return;
+
+  const playerName = e.target.closest(".playerName");
+  const playerId = playerName?.dataset.playerId;
   if (playerId) {
     hideActiveContainer();
     selectIndividPlayerContainer.value = playerId;
     ShowIndividualStats({ playerStats, playerId });
+    return;
   }
+
+  const matchContainer = e.target.closest(".matchContainer");
+  if (!matchContainer) return;
+  const match = data.matches.find(
+    (item) => item.replay_file.replace(/\.dem$/i, "") === matchContainer.dataset.matchId,
+  );
+  if (!match) return;
+
+  hideActiveContainer();
+  heroFilterContainer.style.display = "none";
+  selectIndividPlayerContainer.style.display = "none";
+  ShowMatchDetails(match, data.heroesId);
+});
+
+matchDetails.addEventListener("click", (e) => {
+  if (!e.target.closest('[data-action="back-to-matches"]')) return;
+  hideActiveContainer();
+  heroFilterContainer.style.display = "block";
+  selectIndividPlayerContainer.style.display = "block";
+  ShowAllGames(data);
 });
 
 playBtn.addEventListener("click", () => {
@@ -283,6 +331,7 @@ playBtn.addEventListener("click", () => {
 });
 
 giveawayBtn.addEventListener("click", async () => {
+  heroFilterContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
   selectIndividPlayerContainer.style.display = "none";
   activeBtn ? activeBtn.classList.remove("active") : null;

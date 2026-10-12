@@ -1,5 +1,6 @@
 const playerStatsTable = document.getElementById("picksStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
+const heroFilter = document.getElementById("heroFilter");
 
 export default function ShowPicksStatsTable(pickedHeroes, resJson) {
   bodyTable.innerHTML = "";
@@ -8,9 +9,15 @@ export default function ShowPicksStatsTable(pickedHeroes, resJson) {
   setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   const heroesId = resJson.heroesId;
 
-  pickedHeroes.forEach((hero) => {
+  const heroQuery = heroFilter.value.trim().toLocaleLowerCase();
+  pickedHeroes
+    .filter((hero) =>
+      hero.hero_name.name.toLocaleLowerCase().includes(heroQuery),
+    )
+    .forEach((hero) => {
     const tr = document.createElement("tr");
     const heroId = hero.hero_id;
+    tr.dataset.heroId = heroId;
     const heroName = hero.hero_name.name;
     const pickNumber = hero.picks;
     const wins = hero.wins;

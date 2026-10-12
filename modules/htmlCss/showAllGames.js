@@ -1,5 +1,6 @@
 const matchesStats = document.getElementById("matchesStats");
 const selectPlayer = document.getElementById("selectPlayer");
+const heroFilter = document.getElementById("heroFilter");
 
 export default function ShowAllGames(resJson) {
   matchesStats.innerHTML = "";
@@ -9,16 +10,36 @@ export default function ShowAllGames(resJson) {
   const allMatches = resJson.matches;
   const heroesId = resJson.heroesId;
   const selectPlayerId = selectPlayer.value;
-  let filtredMas;
+  let filtredMas = allMatches;
   if (selectPlayerId != "") {
-    filtredMas = allMatches.filter((match) => {
+    filtredMas = filtredMas.filter((match) => {
       return match.players.find((player) => player.accountid == selectPlayerId);
     });
   }
 
+  const heroQuery = heroFilter.value.trim().toLocaleLowerCase();
+  if (heroQuery) {
+    const selectedHero = Object.entries(heroesId).find(([, hero]) =>
+      hero.name.toLocaleLowerCase() === heroQuery,
+    );
+    filtredMas = filtredMas.filter((match) =>
+      match.players.some((player) => {
+        const heroName = heroesId[player.hero]?.name?.toLocaleLowerCase() || "";
+        return selectedHero
+          ? String(player.hero) === selectedHero[0]
+          : heroName.includes(heroQuery);
+      }),
+    );
+  }
+
   allMatches.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  (filtredMas || allMatches).forEach((match) => {
+  const matchCount = document.createElement("p");
+  matchCount.className = "matchCount";
+  matchCount.textContent = `${filtredMas.length} з ${allMatches.length} матчів`;
+  matchesStats.append(matchCount);
+
+  filtredMas.forEach((match) => {
     const matchContainer = document.createElement("div");
     const matchId = match.replay_file.replace(".dem", "");
 
@@ -26,7 +47,6 @@ export default function ShowAllGames(resJson) {
     const matchDateIdContainer = document.createElement("div");
     matchContainer.append(matchDateIdContainer);
     const date = new Date(match.date);
-
     date.setHours(date.getHours() - 3);
 
     const matchDateString = date.toLocaleString("uk-UA", {
@@ -91,6 +111,34 @@ export default function ShowAllGames(resJson) {
       } else if (player.team == "Dire") {
         direContainer.append(playerContainer);
       }
+    });
+
+    [
+      { container: radiantContainer, bans: match.bans?.radiant || [] },
+      { container: direContainer, bans: match.bans?.dire || [] },
+    ].forEach(({ container, bans }) => {
+      if (!bans.length) return;
+
+      const bansRow = document.createElement("div");
+      bansRow.className = "matchBansRow";
+      const bansLabel = document.createElement("span");
+      bansLabel.className = "matchBansLabel";
+      bansLabel.textContent = "Бани";
+      bansRow.append(bansLabel);
+
+      const bansIcons = document.createElement("div");
+      bansIcons.className = "matchBansIcons";
+      bans.forEach((heroId) => {
+        const hero = heroesId[heroId];
+        if (!hero) return;
+        const icon = document.createElement("img");
+        icon.src = `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/icons/${hero.npcName.replace("npc_dota_hero_", "")}.png`;
+        icon.alt = hero.name;
+        icon.title = hero.name;
+        bansIcons.append(icon);
+      });
+      bansRow.append(bansIcons);
+      container.append(bansRow);
     });
   });
 }

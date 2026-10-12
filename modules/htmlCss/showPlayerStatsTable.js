@@ -2,12 +2,17 @@ const playerStatsTable = document.getElementById("playerStatsTable");
 const bodyTable = playerStatsTable.querySelector("tbody");
 
 let heroesId = null;
+let maxHeroPoolSize = 0;
 export default function ShowPlayerStatsTable(playerStats, resJson) {
   bodyTable.innerHTML = "";
 
   playerStatsTable.style.display = "table";
   setTimeout(() => playerStatsTable.classList.add("activeContainer"), 10);
   heroesId = resJson.heroesId;
+  maxHeroPoolSize = Math.max(
+    1,
+    ...Object.values(playerStats).map((player) => Object.keys(player.heroes).length),
+  );
 
   const players = Object.entries(playerStats).map(([id, player]) => ({
     id,
@@ -40,7 +45,7 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
 <td class="redTd">${losses}</td>
 <td>${matchNumber}</td>
 <td class="winrate">${winrate}%</td>
-<td class="heroesStats">${playersHeroesDiv(player)}</td>
+<td class="heroesStats">${playersHeroesDiv(player, resJson.matches)}</td>
 
 
 
@@ -50,16 +55,37 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
   });
 }
 
-function playersHeroesDiv(player) {
-  return Object.entries(player.heroes)
+function playersHeroesDiv(player, matches) {
+  const seenHeroes = new Set();
+  const recentHeroes = [];
+  const playerMatches = [...matches].sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+
+  for (const match of playerMatches) {
+    const matchPlayer = match.players.find(
+      (candidate) => String(candidate.accountid) === String(player.id),
+    );
+    if (!matchPlayer) continue;
+
+    const heroId = String(matchPlayer.hero);
+    if (seenHeroes.has(heroId)) continue;
+    seenHeroes.add(heroId);
+    recentHeroes.push([heroId, player.heroes[heroId]]);
+    if (recentHeroes.length === 10) break;
+  }
+
+  const icons = recentHeroes
     .map(([heroId, stats]) => {
-      const imgName = heroesId[heroId].npcName.replace("npc_dota_hero_", "");
+      const hero = heroesId[heroId];
+      if (!hero || !stats) return "";
+      const imgName = hero.npcName.replace("npc_dota_hero_", "");
 
       return `
         <div class="hero-item">
           <img 
             src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/icons/${imgName}.png"
-            alt="${heroId}"
+            alt="${hero.name}"
             title="${heroId} — ${stats.picks} ігор (${stats.wins}W/${stats.losses}L)"
           />
           <span>${stats.picks}</span>
@@ -67,4 +93,8 @@ function playersHeroesDiv(player) {
       `;
     })
     .join("");
+
+  const poolSize = Object.keys(player.heroes).length;
+  const poolPercent = Math.round((poolSize / maxHeroPoolSize) * 100);
+  return `<div class="recent-heroes">${icons}</div><div class="hero-pool-meter" role="img" aria-label="${poolSize} unique heroes in pool" title="${poolSize} heroes in pool"><span style="width: ${poolPercent}%"></span><b>${poolSize}</b></div>`;
 }

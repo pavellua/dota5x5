@@ -2,6 +2,7 @@ import { GetData } from "../dataStore.js";
 import ShowIndividuaHeroes from "./showIndividualHeroes.js";
 import ShowPlayerRoles from "./showPlayerRoles.js";
 import ShowTeammates from "./showTeammates.js";
+import ShowPlayerWinrateChart from "./showPlayerWinrateChart.js";
 
 const individualStatsContainer = document.getElementById("individualStats");
 
@@ -10,6 +11,7 @@ const selectIndividPlayerContainer = document.getElementById("selectPlayer");
 const rolesPlayerBtn = document.getElementById("rolesPlayerBtn");
 const teammatesBtn = document.getElementById("teammatesBtn");
 const individualHeroesBtn = document.getElementById("individualHeroesBtn");
+const playerWinrateBtn = document.getElementById("playerWinrateBtn");
 
 let playerStats, playerId, selectIdPlayer, data;
 let sortParam = "winrate";
@@ -30,12 +32,18 @@ rolesPlayerBtn.addEventListener("click", () => {
     ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
   }
 });
+playerWinrateBtn.addEventListener("click", () => {
+  const selectedPlayerId = playerId || selectIndividPlayerContainer.value;
+  if (selectedPlayerId) {
+    ShowPlayerWinrateChart(playerStats, selectedPlayerId, data);
+  }
+});
 
 export default async function ShowIndividualStats(params) {
   console.log(2);
   playerStats = params.playerStats;
   playerId = params.playerId;
-  sortParam = params.sortParam;
+  sortParam = params.sortParam || "count";
   selectIdPlayer = selectIndividPlayerContainer.value;
 
   data = await GetData();
@@ -72,6 +80,9 @@ export default async function ShowIndividualStats(params) {
         break;
       case "playerRolesContainer":
         ShowPlayerRoles(playerStats, selectIndividPlayerContainer.value, data);
+        break;
+      case "playerWinrateChart":
+        ShowPlayerWinrateChart(playerStats, playerId, data);
         break;
     }
   }

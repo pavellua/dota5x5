@@ -11,6 +11,7 @@ const individualContainerInfo = document.getElementById(
 );
 
 export default function ShowTeammates(playerStats, sortParam) {
+  sortParam ||= "count";
   const activeIndividContainer = document.querySelector(
     ".activeIndividContainer",
   );
@@ -24,6 +25,8 @@ export default function ShowTeammates(playerStats, sortParam) {
   winrateWithPlayers.style.display = "block";
   opponentsTableBody.innerHTML = "";
   teammatesTableBody.innerHTML = "";
+  teammatesTable.querySelectorAll("thead td")[3].dataset.sortDirection = "desc";
+  opponentsTable.querySelectorAll("thead td")[3].dataset.sortDirection = "desc";
   const playerId = selectIndividPlayerContainer.value;
 
   let teamMates = playerStats[playerId].teamMates;
