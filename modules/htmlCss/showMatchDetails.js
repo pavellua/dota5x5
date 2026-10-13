@@ -1,3 +1,5 @@
+import { roleName } from "./showPlayerRoles.js";
+
 const detailsContainer = document.getElementById("matchDetails");
 
 export default function ShowMatchDetails(match, heroesId) {
@@ -55,7 +57,10 @@ export default function ShowMatchDetails(match, heroesId) {
       const playerName = document.createElement("strong");
       playerName.textContent = player.name || "Невідомий гравець";
       const role = document.createElement("span");
-      role.textContent = (hero?.name || "Невідомий герой") + " · позиція " + (player.role || "—");
+      role.textContent =
+        (hero?.name || "\u041d\u0435\u0432\u0456\u0434\u043e\u043c\u0438\u0439 \u0433\u0435\u0440\u043e\u0439") +
+        " \u00b7 " +
+        (roleName(player.role) || "\u2014");
       identity.append(playerName, role);
       row.append(identity);
 

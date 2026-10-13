@@ -18,7 +18,7 @@ const matchPlayed = document.getElementById("matchPlayed");
 let giveawayTimerInterval;
 let data;
 const giveawayConditions = {
-  minimumMatchesPlayerAlltime: 10,
+  minimumMatchesPlayerAlltime: 11,
   minimumMatchesPlayer3weeks: 4,
   minimuMatchesForAllPlayesr: 7,
 };
@@ -143,7 +143,7 @@ function winChancePlayer() {
 
     if (
       playerMatchNumber >= giveawayConditions.minimumMatchesPlayer3weeks &&
-      playerAllTimeMatchNumber > giveawayConditions.minimumMatchesPlayerAlltime
+      playerAllTimeMatchNumber >= giveawayConditions.minimumMatchesPlayerAlltime
     ) {
       giveawayPlayers[playerId].tickets = Math.pow(
         giveawayPlayers[playerId].matchNumber,

@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/allGames.css" />
@@ -25,7 +28,9 @@
       <button class="nav-btn" id="giveawayBtn">Розіграш</button>
     </nav>
     <div id="playerFilterControls" style="display: flex; align-items: center">
-      <select id="selectPlayer">
+      <input id="playerSearch" type="search" list="playerOptions" placeholder="&#1042;&#1074;&#1077;&#1076;&#1110;&#1090;&#1100; &#1110;&#1084;&#39;&#1103; &#1075;&#1088;&#1072;&#1074;&#1094;&#1103;" autocomplete="off" />
+      <datalist id="playerOptions"></datalist>
+      <select id="selectPlayer" hidden>
         <option value="" selected>-- Загальна статистика --</option>
       </select>
       <button id="playBtn" aria-label="Play">
@@ -37,14 +42,21 @@
 
     <div id="heroFilterContainer">
       <label for="heroFilter">Фільтр за героєм</label>
-      <input id="heroFilter" type="search" list="heroOptions" placeholder="Почніть вводити ім’я героя" autocomplete="off" />
+      <input
+        id="heroFilter"
+        type="search"
+        list="heroOptions"
+        placeholder="Почніть вводити ім’я героя"
+        autocomplete="off"
+      />
       <datalist id="heroOptions"></datalist>
     </div>
     <div id="matchesStats"></div>
     <section id="matchDetails" aria-live="polite"></section>
     <table class="statTable" id="playerStatsTable">
       <thead>
-        <td>Гравець</td>
+        <td>#</td>
+        <td data-sort-column="1">Гравець</td>
         <td>Перемоги</td>
         <td>Поразки</td>
         <td>Услього ігр</td>
@@ -66,7 +78,13 @@
       <tbody></tbody>
     </table>
     <section id="heroPickDetails">
-      <button type="button" class="heroPickDetailsBack" data-action="back-to-picks">← До списку героїв</button>
+      <button
+        type="button"
+        class="heroPickDetailsBack"
+        data-action="back-to-picks"
+      >
+        ← До списку героїв
+      </button>
       <div class="heroPickDetailsHeading">
         <img id="heroPickDetailsIcon" alt="" />
         <div>

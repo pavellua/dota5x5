@@ -2,17 +2,26 @@ export default function EnableTableSorting() {
   document.querySelectorAll(".statTable").forEach((table) => {
     const headers = table.querySelectorAll("thead td, thead th");
     headers.forEach((header, columnIndex) => {
+      const sortByPlayerRating =
+        table.id === "playerStatsTable" && columnIndex === 1;
       const label = header.textContent.trim();
       if (!label) return;
 
       header.classList.add("sortableHeader");
       header.tabIndex = 0;
       header.setAttribute("role", "button");
+      if (sortByPlayerRating) header.dataset.sortDirection = "desc";
       header.setAttribute("aria-label", `Сортувати за: ${label}`);
 
       const sortByHeader = () => {
         const currentDirection = header.dataset.sortDirection;
-        const direction = currentDirection === "asc" ? "desc" : "asc";
+        const direction = currentDirection
+          ? currentDirection === "asc"
+            ? "desc"
+            : "asc"
+          : sortByPlayerRating
+            ? "desc"
+            : "asc";
         headers.forEach((otherHeader) => delete otherHeader.dataset.sortDirection);
         header.dataset.sortDirection = direction;
 
@@ -22,7 +31,9 @@ export default function EnableTableSorting() {
         const rows = [...tbody.rows].map((row, index) => ({
           row,
           index,
-          value: row.cells[columnIndex]?.textContent.trim() || "",
+          value: sortByPlayerRating
+            ? row.dataset.playerRating || ""
+            : row.cells[columnIndex]?.textContent.trim() || "",
         }));
 
         rows.sort((a, b) => {

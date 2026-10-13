@@ -1,5 +1,6 @@
 export default function AddIndividPlayerInSelect(playerStats) {
   const selectIndividPlayerContainer = document.getElementById("selectPlayer");
+  const playerOptions = document.getElementById("playerOptions");
   console.log(playerStats);
 
   const playersMas = Object.entries(playerStats)
@@ -15,6 +16,11 @@ export default function AddIndividPlayerInSelect(playerStats) {
     option.value = player.playerId;
     option.innerText = player.playerName;
     selectIndividPlayerContainer.append(option);
+
+    const searchOption = document.createElement("option");
+    searchOption.value = player.playerName;
+    searchOption.dataset.playerId = player.playerId;
+    playerOptions.append(searchOption);
   }
   selectIndividPlayerContainer.value = "";
   console.log(selectIndividPlayerContainer.options[0]);

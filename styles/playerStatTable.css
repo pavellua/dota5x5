@@ -146,6 +146,14 @@
   letter-spacing: 0.08em;
 }
 
+.playerStatsSummary {
+  padding: 0 4px 8px;
+  color: #c4b5fd;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .statTable thead td {
   /* padding: 14px 18px; */
   font-weight: 600;
@@ -188,7 +196,15 @@
 
 .statTable thead .sortableHeader[data-sort-direction="asc"]::after {
   background: #d5fd24;
-  clip-path: polygon(50% 0, 100% 45%, 65% 45%, 65% 100%, 35% 100%, 35% 45%, 0 45%);
+  clip-path: polygon(
+    50% 0,
+    100% 45%,
+    65% 45%,
+    65% 100%,
+    35% 100%,
+    35% 45%,
+    0 45%
+  );
 }
 
 .statTable thead .sortableHeader[data-sort-direction="desc"]::after {
@@ -219,6 +235,12 @@
   color: #c4b5fd;
 }
 
+.playerRatingRank {
+  width: 32px;
+  color: #aaa5b8 !important;
+  font-size: 12px;
+}
+
 .greenTd {
   color: #4ade80;
 }
@@ -245,6 +267,16 @@
   height: 24 px;
   border-radius: 4px;
   border: 1px solid #2a2a4a;
+}
+
+.hero-item img.win {
+  border: 1px solid rgba(0, 255, 76, 0.2);
+  background-color: rgba(0, 255, 76, 0.2);
+}
+
+.hero-item img.loss {
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .hero-item span {

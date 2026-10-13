@@ -50,9 +50,9 @@ export default function ShowPlayerRoles(playerStats, playerId, data) {
   }
 }
 
-function roleName(roleNumber) {
+export function roleName(roleNumber) {
   let roleName;
-  switch (roleNumber) {
+  switch (String(roleNumber)) {
     case "1":
       roleName = "Carry";
       break;

@@ -86,6 +86,24 @@ body {
   color: green; /* іконка стане червоною */
   transition: transform 0.1s ease;
 }
+
+#playerSearch {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid rgba(139, 92, 246, 0.6);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: rgba(15, 10, 30, 0.9);
+  color: #f3e8ff;
+  font: inherit;
+}
+
+#playerSearch:focus {
+  outline: none;
+  border-color: #c4b5fd;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.35);
+}
 select {
   appearance: none;
   -webkit-appearance: none;
@@ -158,7 +176,7 @@ select option {
     margin: 4px 0 10px;
   }
 
-  #selectPlayer {
+  #playerSearch {
     flex: 1;
     min-width: 0;
     width: auto;

@@ -39,6 +39,8 @@ const pauseIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
 const winrateWithPlayersContainer =
   document.getElementById("winrateWithPlayers");
 const selectIndividPlayerContainer = document.getElementById("selectPlayer");
+const playerSearchInput = document.getElementById("playerSearch");
+const playerOptions = document.getElementById("playerOptions");
 const playerStatsTable = document.getElementById("playerStatsTable");
 const individBtn = document.getElementById("individBtn");
 
@@ -56,15 +58,17 @@ img.onload = () => {
 const music = new Audio("./sounds/mainTheme.mp3");
 music.preload = "auto";
 music.load();
-music.volume = 0.08;
+music.volume = 0.02;
 
-// document.addEventListener(
-//   "click",
-//   () => {
-//     music.play();
-//   },
-//   { once: true },
-// );
+document.addEventListener(
+  "click",
+  () => {
+    playBtn.innerHTML = pauseIcon;
+    playBtn.style.color = "red";
+    music.play();
+  },
+  { once: true },
+);
 
 if (!local) {
   const dataRequest = await fetch("/api/matches");
@@ -146,7 +150,7 @@ AddIndividPlayerInSelect(playerStats);
 
 allMatchesBtn.addEventListener("click", () => {
   heroFilterContainer.style.display = "block";
-  selectIndividPlayerContainer.style.display = "block";
+  playerSearchInput.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -158,7 +162,7 @@ allMatchesBtn.addEventListener("click", () => {
 
 pickedBanedHeroesBtn.addEventListener("click", () => {
   heroFilterContainer.style.display = "block";
-  selectIndividPlayerContainer.style.display = "none";
+  playerSearchInput.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -187,7 +191,7 @@ heroPickDetails.addEventListener("click", (event) => {
 playersBtn.addEventListener("click", () => {
   heroFilterContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
-  selectIndividPlayerContainer.style.display = "none";
+  playerSearchInput.style.display = "none";
   activeBtn ? activeBtn.classList.remove("active") : null;
   playersBtn.classList.add("active");
   hideActiveContainer();
@@ -195,7 +199,7 @@ playersBtn.addEventListener("click", () => {
 });
 individBtn.addEventListener("click", async () => {
   heroFilterContainer.style.display = "none";
-  selectIndividPlayerContainer.style.display = "block";
+  playerSearchInput.style.display = "block";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
 
   activeBtn ? activeBtn.classList.remove("active") : null;
@@ -251,6 +255,28 @@ winrateWithPlayersContainer.addEventListener("click", (e) => {
   if (e.target.dataset.sort) ShowPicksStatsTable(pickedHeroes, data);
 });
 
+function setPlayerSelection(playerId) {
+  const option = [...selectIndividPlayerContainer.options].find(
+    (candidate) => candidate.value === playerId,
+  );
+  selectIndividPlayerContainer.value = playerId || "";
+  playerSearchInput.value = playerId ? option?.textContent || "" : "";
+}
+
+playerSearchInput.addEventListener("input", () => {
+  const searchValue = playerSearchInput.value.trim().toLocaleLowerCase();
+  const option = [...playerOptions.options].find(
+    (candidate) => candidate.value.trim().toLocaleLowerCase() === searchValue,
+  );
+  const playerId = option?.dataset.playerId || "";
+  if (selectIndividPlayerContainer.value === playerId) return;
+
+  selectIndividPlayerContainer.value = playerId;
+  selectIndividPlayerContainer.dispatchEvent(
+    new Event("change", { bubbles: true }),
+  );
+});
+
 selectIndividPlayerContainer.addEventListener("change", function () {
   const activeContainer = document.querySelector(".activeContainer");
   if (activeContainer) {
@@ -278,8 +304,8 @@ playerStatsTable.addEventListener("click", (e) => {
   const playerId = playerName.closest("tr")?.dataset.playerId;
   if (!playerId) return;
 
-  selectIndividPlayerContainer.value = playerId;
-  selectIndividPlayerContainer.style.display = "block";
+  setPlayerSelection(playerId);
+  playerSearchInput.style.display = "block";
   document.querySelector(".nav .active")?.classList.remove("active");
   individBtn.classList.add("active");
   hideActiveContainer();
@@ -292,7 +318,7 @@ matchesStats.addEventListener("click", (e) => {
   const playerId = playerName?.dataset.playerId;
   if (playerId) {
     hideActiveContainer();
-    selectIndividPlayerContainer.value = playerId;
+    setPlayerSelection(playerId);
     ShowIndividualStats({ playerStats, playerId });
     return;
   }
@@ -300,13 +326,15 @@ matchesStats.addEventListener("click", (e) => {
   const matchContainer = e.target.closest(".matchContainer");
   if (!matchContainer) return;
   const match = data.matches.find(
-    (item) => item.replay_file.replace(/\.dem$/i, "") === matchContainer.dataset.matchId,
+    (item) =>
+      item.replay_file.replace(/\.dem$/i, "") ===
+      matchContainer.dataset.matchId,
   );
   if (!match) return;
 
   hideActiveContainer();
   heroFilterContainer.style.display = "none";
-  selectIndividPlayerContainer.style.display = "none";
+  playerSearchInput.style.display = "none";
   ShowMatchDetails(match, data.heroesId);
 });
 
@@ -314,7 +342,7 @@ matchDetails.addEventListener("click", (e) => {
   if (!e.target.closest('[data-action="back-to-matches"]')) return;
   hideActiveContainer();
   heroFilterContainer.style.display = "block";
-  selectIndividPlayerContainer.style.display = "block";
+  playerSearchInput.style.display = "block";
   ShowAllGames(data);
 });
 
@@ -333,7 +361,7 @@ playBtn.addEventListener("click", () => {
 giveawayBtn.addEventListener("click", async () => {
   heroFilterContainer.style.display = "none";
   const activeBtn = document.querySelector(".nav").querySelector(".active");
-  selectIndividPlayerContainer.style.display = "none";
+  playerSearchInput.style.display = "none";
   activeBtn ? activeBtn.classList.remove("active") : null;
   giveawayBtn.classList.add("active");
   hideActiveContainer();
