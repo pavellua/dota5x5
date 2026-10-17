@@ -36,25 +36,31 @@ parseReplayPreviewBtn.addEventListener("click", async () => {
       data = JSON.parse(responseText);
     } catch {
       if (responseText.includes("Cannot POST /api/parse-replay-preview")) {
-        throw new Error("Новий маршрут ще не завантажений. Зупини та знову запусти Node-сервер, потім онови цю сторінку.");
+        throw new Error(
+          "Новий маршрут ще не завантажений. Зупини та знову запусти Node-сервер, потім онови цю сторінку.",
+        );
       }
-      throw new Error(`Сервер повернув не JSON (HTTP ${response.status}). Перевір, що запущений Node-сервер цього проєкту.`);
+      throw new Error(
+        `Сервер повернув не JSON (HTTP ${response.status}). Перевір, що запущений Node-сервер цього проєкту.`,
+      );
     }
-    if (!response.ok) throw new Error(data.error || "Не вдалося розпарсити реплей.");
+    if (!response.ok)
+      throw new Error(data.error || "Не вдалося розпарсити реплей.");
 
     replayPreviewStatus.textContent = "Готово: " + data.replay_file;
     const matchDate = document.createElement("p");
-    const formatMatchDate = (value) => value
-      ? new Intl.DateTimeFormat("uk-UA", {
-          timeZone: "Europe/Kyiv",
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          hourCycle: "h23",
-        }).format(new Date(value))
-      : "час відсутній у метаданих реплею";
+    const formatMatchDate = (value) =>
+      value
+        ? new Intl.DateTimeFormat("uk-UA", {
+            timeZone: "Europe/Kyiv",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            hourCycle: "h23",
+          }).format(new Date(value))
+        : "час відсутній у метаданих реплею";
     const formattedDraftDuration = Number.isFinite(data.draftDuration)
       ? `${Math.floor(data.draftDuration / 60)}:${String(data.draftDuration % 60).padStart(2, "0")}`
       : "невідомо";
@@ -72,7 +78,24 @@ parseReplayPreviewBtn.addEventListener("click", async () => {
     const table = document.createElement("table");
     const head = document.createElement("thead");
     const headerRow = document.createElement("tr");
-    ["Гравець", "Команда", "Герой (ID)", "K", "D", "A", "Роль", "Стаки кріпів/таборів", "Поставлено obs/sentry", "Смоки", "True Sight для obs", "Золото за obs", "Ластхіти", "Денаї", "Нетворс", "Шкода ворожим героям"].forEach((label) => {
+    [
+      "Гравець",
+      "Команда",
+      "Герой (ID)",
+      "K",
+      "D",
+      "A",
+      "Роль",
+      "Стаки кріпів/таборів",
+      "Поставлено obs/sentry",
+      "Смоки",
+      "True Sight для obs",
+      "Золото за obs",
+      "Ластхіти",
+      "Денаї",
+      "Нетворс",
+      "Шкода ворожим героям",
+    ].forEach((label) => {
       const cell = document.createElement("th");
       cell.textContent = label;
       headerRow.append(cell);
@@ -117,7 +140,8 @@ parseReplayPreviewBtn.addEventListener("click", async () => {
     details.append(detailsSummary, rawData);
     replayPreviewResults.append(details);
   } catch (error) {
-    replayPreviewStatus.textContent = error.message || "Помилка під час парсингу.";
+    replayPreviewStatus.textContent =
+      error.message || "Помилка під час парсингу.";
   } finally {
     parseReplayPreviewBtn.disabled = false;
   }
@@ -142,9 +166,18 @@ addReplaysBtn.addEventListener("click", async () => {
 saveStreamsBtn.addEventListener("click", async () => {
   const replayId = replayNumberDeleteInput.value.trim();
   const streams = [
-    { streamerId: "107383793", input: document.getElementById("streamUrlPavlo") },
-    { streamerId: "1092509200", input: document.getElementById("streamUrlVladik") },
-    { streamerId: "173288536", input: document.getElementById("streamUrlKatia") },
+    {
+      streamerId: "107383793",
+      input: document.getElementById("streamUrlPavlo"),
+    },
+    {
+      streamerId: "1092509200",
+      input: document.getElementById("streamUrlVladik"),
+    },
+    {
+      streamerId: "173288536",
+      input: document.getElementById("streamUrlKatia"),
+    },
   ].filter(({ input }) => input.value.trim());
 
   streamsStatus.textContent = "";
@@ -161,10 +194,14 @@ saveStreamsBtn.addEventListener("click", async () => {
   saveStreamsBtn.disabled = true;
   try {
     for (const { streamerId, input } of streams) {
-      const params = new URLSearchParams({ idReplay: replayId, streamerId, streamUrl: input.value.trim() });
-      const response = await fetch(`/api/add-stream?${params}`);
+      const response = await fetch("/api/add-stream", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idReplay: replayId, streamerId, streamUrl: input.value.trim() }),
+      });
       const result = await response.json();
-      if (!response.ok || !result.success) throw new Error("Не вдалося зберегти посилання.");
+      if (!response.ok || !result.success)
+        throw new Error("Не вдалося зберегти посилання.");
     }
     streamsStatus.textContent = `Збережено посилань: ${streams.length}.`;
   } catch (error) {

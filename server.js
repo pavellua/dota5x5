@@ -182,39 +182,39 @@ app.get("/api/add-replays", async (req, res) => {
   console.log(`Збережено ${matches.length} матчів`);
 });
 
-app.get("/api/add-stream", async (req, res) => {
-  const replayId = req.query.idReplay;
-  const streamerId = req.query.streamerId;
-  const streamUrl = req.query.streamUrl;
-
-  const gamesInfo = JSON.parse(
-    fs.readFileSync("./data/gamesInfo.json", "utf-8"),
-  );
-  const currentGame = gamesInfo[replayId];
-
-  if (currentGame) {
-    if (!currentGame.streams) {
-      currentGame.streams = [];
-    }
-    currentGame.streams.push({
-      url: streamUrl,
-      streamerId: streamerId,
-    });
-
-    fs.writeFileSync(
-      "./data/gamesInfo.json",
-      JSON.stringify(gamesInfo, null, 2),
-      "utf-8",
-    );
-    res.json({ success: true });
-  } else {
-    res.json({ success: false });
+app.post("/api/add-stream", async (req, res) => {
+  const replayId = String(req.body?.idReplay || "").trim();
+  const streamerId = String(req.body?.streamerId || "").trim();
+  const streamUrl = String(req.body?.streamUrl || "").trim();
+  if (!/^\d+$/.test(replayId) || !streamerId || !streamUrl) {
+    return res.status(400).json({ success: false, error: "Invalid replay ID or stream link." });
   }
 
-  // res.json({
-  //   matches: matches,
-  //   heroesId,
-  // });
+  try {
+    const gamesInfoPath = path.join(__dirname, "data", "gamesInfo.json");
+    const gamesInfo = JSON.parse(fs.readFileSync(gamesInfoPath, "utf-8"));
+    const currentGame = gamesInfo[replayId] || (gamesInfo[replayId] = {});
+    if (!Array.isArray(currentGame.streams)) currentGame.streams = [];
+
+    const existingStream = currentGame.streams.find((stream) => stream.streamerId === streamerId);
+    if (existingStream) existingStream.url = streamUrl;
+    else currentGame.streams.push({ url: streamUrl, streamerId });
+    fs.writeFileSync(gamesInfoPath, JSON.stringify(gamesInfo, null, 2), "utf-8");
+
+    const matchesPath = path.join(__dirname, "matches.json");
+    if (fs.existsSync(matchesPath)) {
+      const matches = JSON.parse(fs.readFileSync(matchesPath, "utf-8"));
+      const match = matches.find((item) => item.replay_file === `${replayId}.dem`);
+      if (match) {
+        match.streams = currentGame.streams;
+        fs.writeFileSync(matchesPath, JSON.stringify(matches, null, 2), "utf-8");
+      }
+    }
+    return res.json({ success: true });
+  } catch (error) {
+    console.error("Failed to save stream link:", error);
+    return res.status(500).json({ success: false, error: "Could not write stream link files." });
+  }
 });
 
 app.get("/api/get-matches", async (req, res) => {
