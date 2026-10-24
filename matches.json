@@ -16836,5 +16836,403 @@
       }
     ],
     "replay_file": "9050004567.dem"
+  },
+  {
+    "matchStartTime": "2026-10-23T20:35:58Z",
+    "bans": {
+      "dire": [
+        34,
+        21,
+        105,
+        36,
+        49,
+        74,
+        101
+      ],
+      "radiant": [
+        111,
+        2,
+        121,
+        54,
+        8,
+        25,
+        23
+      ]
+    },
+    "matchDate": 873,
+    "duration": "40:35",
+    "winner": "Radiant",
+    "roshansKilled": {
+      "radiant": 1,
+      "dire": 0
+    },
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 107383793,
+        "role": 5,
+        "name": "Павло",
+        "hero": 87,
+        "creeps_stacked": 9,
+        "camps_stacked": 3,
+        "obs_placed": 12,
+        "sen_placed": 19,
+        "kills": 5,
+        "deaths": 8,
+        "assists": 32
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1039325711,
+        "role": 2,
+        "name": "Тьома",
+        "hero": 7,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 1,
+        "sen_placed": 1,
+        "kills": 10,
+        "deaths": 5,
+        "assists": 25
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 1267571416,
+        "role": 3,
+        "name": "Дрюс",
+        "hero": 84,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 10,
+        "deaths": 7,
+        "assists": 28
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 1692235787,
+        "role": 1,
+        "name": "Жека Пєтька",
+        "hero": 41,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 16,
+        "deaths": 5,
+        "assists": 12
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 143352670,
+        "role": 4,
+        "name": "Невідомо",
+        "hero": 128,
+        "creeps_stacked": 7,
+        "camps_stacked": 2,
+        "obs_placed": 6,
+        "sen_placed": 13,
+        "kills": 11,
+        "deaths": 5,
+        "assists": 26
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 1199610740,
+        "role": 1,
+        "name": "Нікіта",
+        "hero": 48,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 3,
+        "deaths": 8,
+        "assists": 10
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 143651735,
+        "role": 5,
+        "name": "Агата",
+        "hero": 85,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 6,
+        "sen_placed": 12,
+        "kills": 6,
+        "deaths": 13,
+        "assists": 11
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 173288536,
+        "role": 4,
+        "name": "Катя",
+        "hero": 30,
+        "creeps_stacked": 4,
+        "camps_stacked": 2,
+        "obs_placed": 10,
+        "sen_placed": 19,
+        "kills": 3,
+        "deaths": 16,
+        "assists": 12
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 118600431,
+        "role": 3,
+        "name": "Дєдор",
+        "hero": 135,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 11,
+        "deaths": 10,
+        "assists": 11
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1092509200,
+        "role": 2,
+        "name": "Владік Паща",
+        "hero": 17,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 2,
+        "sen_placed": 2,
+        "kills": 6,
+        "deaths": 6,
+        "assists": 7
+      }
+    ],
+    "date": "2026-10-23T23:35:58Z",
+    "date_from_replay": true,
+    "streams": [
+      {
+        "url": "https://youtu.be/wqxS3VFOi8c?t=215",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/KW5RjGWDYq8?t=316",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/dGbRY_tpa50",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "9058654202.dem"
+  },
+  {
+    "matchStartTime": "2026-10-23T21:38:38Z",
+    "bans": {
+      "dire": [
+        50,
+        119,
+        60,
+        47,
+        70,
+        6,
+        18
+      ],
+      "radiant": [
+        137,
+        75,
+        63,
+        59,
+        102,
+        12,
+        109
+      ]
+    },
+    "matchDate": 910,
+    "duration": "44:10",
+    "winner": "Dire",
+    "roshansKilled": {
+      "radiant": 0,
+      "dire": 1
+    },
+    "players": [
+      {
+        "slot": "0",
+        "team": "Radiant",
+        "accountid": 1092509200,
+        "role": 3,
+        "name": "Владік Паща",
+        "hero": 14,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 3,
+        "deaths": 9,
+        "assists": 13
+      },
+      {
+        "slot": "1",
+        "team": "Radiant",
+        "accountid": 1199610740,
+        "role": 1,
+        "name": "Нікіта",
+        "hero": 1,
+        "creeps_stacked": 6,
+        "camps_stacked": 2,
+        "obs_placed": 0,
+        "sen_placed": 1,
+        "kills": 2,
+        "deaths": 6,
+        "assists": 5
+      },
+      {
+        "slot": "2",
+        "team": "Radiant",
+        "accountid": 173288536,
+        "role": 4,
+        "name": "Катя",
+        "hero": 68,
+        "creeps_stacked": 2,
+        "camps_stacked": 1,
+        "obs_placed": 9,
+        "sen_placed": 21,
+        "kills": 8,
+        "deaths": 13,
+        "assists": 10
+      },
+      {
+        "slot": "3",
+        "team": "Radiant",
+        "accountid": 143651735,
+        "role": 5,
+        "name": "Агата",
+        "hero": 5,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 5,
+        "sen_placed": 12,
+        "kills": 4,
+        "deaths": 13,
+        "assists": 9
+      },
+      {
+        "slot": "4",
+        "team": "Radiant",
+        "accountid": 118600431,
+        "role": 2,
+        "name": "Дєдор",
+        "hero": 136,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 3,
+        "sen_placed": 1,
+        "kills": 6,
+        "deaths": 10,
+        "assists": 6
+      },
+      {
+        "slot": "5",
+        "team": "Dire",
+        "accountid": 107383793,
+        "role": 5,
+        "name": "Павло",
+        "hero": 110,
+        "creeps_stacked": 0,
+        "camps_stacked": 0,
+        "obs_placed": 14,
+        "sen_placed": 18,
+        "kills": 9,
+        "deaths": 4,
+        "assists": 24
+      },
+      {
+        "slot": "6",
+        "team": "Dire",
+        "accountid": 1692235787,
+        "role": 1,
+        "name": "Жека Пєтька",
+        "hero": 10,
+        "creeps_stacked": 6,
+        "camps_stacked": 2,
+        "obs_placed": 0,
+        "sen_placed": 1,
+        "kills": 11,
+        "deaths": 6,
+        "assists": 11
+      },
+      {
+        "slot": "7",
+        "team": "Dire",
+        "accountid": 1267571416,
+        "role": 3,
+        "name": "Дрюс",
+        "hero": 28,
+        "creeps_stacked": 3,
+        "camps_stacked": 1,
+        "obs_placed": 0,
+        "sen_placed": 0,
+        "kills": 19,
+        "deaths": 4,
+        "assists": 16
+      },
+      {
+        "slot": "8",
+        "team": "Dire",
+        "accountid": 143352670,
+        "role": 4,
+        "name": "Невідомо",
+        "hero": 112,
+        "creeps_stacked": 18,
+        "camps_stacked": 4,
+        "obs_placed": 4,
+        "sen_placed": 15,
+        "kills": 8,
+        "deaths": 6,
+        "assists": 27
+      },
+      {
+        "slot": "9",
+        "team": "Dire",
+        "accountid": 1039325711,
+        "role": 2,
+        "name": "Тьома",
+        "hero": 91,
+        "creeps_stacked": 2,
+        "camps_stacked": 1,
+        "obs_placed": 1,
+        "sen_placed": 1,
+        "kills": 4,
+        "deaths": 5,
+        "assists": 31
+      }
+    ],
+    "date": "2026-10-24T00:38:38Z",
+    "date_from_replay": true,
+    "streams": [
+      {
+        "url": "https://youtu.be/wqxS3VFOi8c?t=3969",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/KW5RjGWDYq8?t=4066",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/dGbRY_tpa50?t=3761",
+        "streamerId": "173288536"
+      }
+    ],
+    "replay_file": "9058727830.dem"
   }
 ]
