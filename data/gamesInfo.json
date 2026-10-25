@@ -1365,5 +1365,21 @@
         "streamerId": "173288536"
       }
     ]
+  },
+  "9060343668": {
+    "streams": [
+      {
+        "url": "https://youtu.be/d9KLvJiwjBk",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/amWDZa3g_sI",
+        "streamerId": "1092509200"
+      },
+      {
+        "url": "https://youtu.be/h8tiXVKLrHQ?t=2020",
+        "streamerId": "173288536"
+      }
+    ]
   }
 }
