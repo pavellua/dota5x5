@@ -1417,5 +1417,41 @@
         "streamerId": "1092509200"
       }
     ]
+  },
+  "9080690294": {
+    "streams": [
+      {
+        "url": "https://youtu.be/G1v2Xc1IGDI?t=105",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/_dzB51noX6s?t=265",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "9080796499": {
+    "streams": [
+      {
+        "url": "https://youtu.be/G1v2Xc1IGDI?t=5260",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/_dzB51noX6s?t=5419",
+        "streamerId": "1092509200"
+      }
+    ]
+  },
+  "9080843578": {
+    "streams": [
+      {
+        "url": "https://youtu.be/G1v2Xc1IGDI?t=8544",
+        "streamerId": "107383793"
+      },
+      {
+        "url": "https://youtu.be/_dzB51noX6s?t=8717",
+        "streamerId": "1092509200"
+      }
+    ]
   }
 }
