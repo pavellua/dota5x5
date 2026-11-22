@@ -44,6 +44,59 @@ const playerOptions = document.getElementById("playerOptions");
 const playerStatsTable = document.getElementById("playerStatsTable");
 const individBtn = document.getElementById("individBtn");
 
+enableMouseDragScroll(document.querySelector(".nav"));
+
+function enableMouseDragScroll(element) {
+  if (!element) return;
+
+  let startX = 0;
+  let startScrollLeft = 0;
+  let dragged = false;
+
+  element.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "mouse" || event.button !== 0) return;
+    startX = event.clientX;
+    startScrollLeft = element.scrollLeft;
+    dragged = false;
+    element.dataset.dragStartX = String(startX);
+    element.dataset.dragStartScroll = String(startScrollLeft);
+  });
+
+  element.addEventListener("pointermove", (event) => {
+    if (!(event.buttons & 1) || event.pointerType !== "mouse") return;
+    const originX = Number(element.dataset.dragStartX);
+    if (!Number.isFinite(originX)) return;
+    const distance = event.clientX - originX;
+    if (Math.abs(distance) > 4) {
+      dragged = true;
+      element.classList.add("is-dragging");
+    }
+    if (dragged) {
+      element.scrollLeft = Number(element.dataset.dragStartScroll) - distance;
+      event.preventDefault();
+    }
+  });
+
+  const stopDragging = () => {
+    element.classList.remove("is-dragging");
+    delete element.dataset.dragStartX;
+    delete element.dataset.dragStartScroll;
+  };
+  element.addEventListener("pointerup", stopDragging);
+  element.addEventListener("pointercancel", stopDragging);
+  element.addEventListener("pointerleave", stopDragging);
+  element.addEventListener(
+    "click",
+    (event) => {
+      if (!dragged) return;
+      event.preventDefault();
+      event.stopPropagation();
+      dragged = false;
+    },
+    true,
+  );
+}
+
 const local = true;
 let data;
 

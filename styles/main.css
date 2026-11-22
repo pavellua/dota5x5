@@ -240,6 +240,34 @@ select option {
   }
 }
 
+@media (max-width: 600px) and (hover: hover) and (pointer: fine) {
+  .nav {
+    cursor: grab;
+    touch-action: pan-x;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(196, 181, 253, 0.55) transparent;
+  }
+
+  .nav.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .nav.is-dragging .nav-btn {
+    pointer-events: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+
+  .nav::-webkit-scrollbar-thumb {
+    background: rgba(196, 181, 253, 0.55);
+    border-radius: 4px;
+  }
+}
+
 @media (max-width: 360px) {
   body {
     padding-right: 8px;
