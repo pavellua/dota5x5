@@ -13,7 +13,7 @@ export default function ShowAllGames(resJson) {
   let filtredMas = allMatches;
   if (selectPlayerId != "") {
     filtredMas = filtredMas.filter((match) => {
-      return match.players.find((player) => player.accountid == selectPlayerId);
+      return match.players.find((player) => String(player.statsId || player.accountid) === String(selectPlayerId));
     });
   }
 
@@ -104,7 +104,7 @@ export default function ShowAllGames(resJson) {
         streamIcon = getStreamIcon(player, match.streams);
       }
 
-      playerContainer.innerHTML = `<span>&nbsp;${player.role}&nbsp;</span>${heroIconContainerString}<span class="playerName" data-player-id = ${player.accountid}>${player.name} </span> ${getRatingChange(player.changeRating)} ${streamIcon}`;
+      playerContainer.innerHTML = `<span>&nbsp;${player.role}&nbsp;</span>${heroIconContainerString}<span class="playerName" data-player-id = ${player.statsId || player.accountid}>${player.name} </span> ${getRatingChange(player.changeRating)} ${streamIcon}`;
 
       if (player.team == "Radiant") {
         radiantContainer.append(playerContainer);

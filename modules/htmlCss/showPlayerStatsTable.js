@@ -19,7 +19,7 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
     if (!Number.isFinite(matchTime)) return;
 
     match.players.forEach((matchPlayer) => {
-      const playerId = String(matchPlayer.accountid);
+      const playerId = String(matchPlayer.statsId || matchPlayer.accountid);
       const lastPlayed = lastPlayedByPlayer.get(playerId) || 0;
       if (matchTime > lastPlayed) lastPlayedByPlayer.set(playerId, matchTime);
     });
@@ -86,7 +86,7 @@ function playersHeroesDiv(player, matches) {
 
   for (const match of playerMatches) {
     const matchPlayer = match.players.find(
-      (candidate) => String(candidate.accountid) === String(player.id),
+      (candidate) => String(candidate.statsId || candidate.accountid) === String(player.id),
     );
     if (!matchPlayer) continue;
 

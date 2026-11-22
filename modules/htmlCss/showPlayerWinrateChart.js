@@ -17,7 +17,7 @@ export default function ShowPlayerWinrateChart(playerStats, playerId, data) {
     .map((match) => ({
       match,
       player: match.players.find(
-        (entry) => String(entry.accountid) === String(playerId),
+        (entry) => String(entry.statsId || entry.accountid) === String(playerId),
       ),
       date: match.date ? new Date(match.date) : null,
     }))

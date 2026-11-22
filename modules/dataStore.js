@@ -9,6 +9,8 @@ export async function GetData() {
     const heroes = await heroesResp.json();
     const giveawayInfoResp = await fetch("./data/giveawayInfo.json");
     const giveawayInfo = await giveawayInfoResp.json();
+    const playersResp = await fetch("./players.json");
+    const players = await playersResp.json();
     const heroesId = Object.fromEntries(
       heroes.map((h) => [h.id, { name: h.localized_name, npcName: h.name }]),
     );
@@ -16,6 +18,7 @@ export async function GetData() {
       matches,
       heroesId,
       giveawayInfo,
+      players,
     };
   }
 

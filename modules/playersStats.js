@@ -4,6 +4,17 @@ function PlayerStats(resJson) {
   let playersStat = {};
   const matches = resJson.matches;
   const heroesId = resJson.heroesId;
+  const playerIdByAccountId = new Map();
+  const playerNamesById = new Map();
+  (resJson.players || []).forEach((player) => {
+    const ids = (Array.isArray(player.ids) ? player.ids : [player.id])
+      .filter((id) => id !== undefined && id !== null)
+      .map(String);
+    const playerId = ids[0];
+    if (!playerId) return;
+    playerNamesById.set(playerId, player.name);
+    ids.forEach((id) => playerIdByAccountId.set(id, playerId));
+  });
   let latestGiveawayObject = addNextGiveaway(resJson);
   const nextGiveawayDate = latestGiveawayObject.giveawayDate;
   const startCalculatingDate = new Date(nextGiveawayDate);
@@ -21,15 +32,21 @@ function PlayerStats(resJson) {
       nextGiveawayDate,
     );
 
+    game.players.forEach((player) => {
+      player.statsId = playerIdByAccountId.get(String(player.accountid)) || String(player.accountid);
+    });
+
     let teamsRating = {
       Radiant: 0,
       Dire: 0,
     };
     game.players.forEach((player) => {
-      const id = player.accountid;
+      const id = playerIdByAccountId.get(String(player.accountid)) || String(player.accountid);
+      player.statsId = id;
       if (!playersStat[id]) {
         playersStat[id] = {
-          name: player.name,
+          name: playerNamesById.get(id) || player.name,
+          ids: [...((resJson.players || []).find((entry) => String((entry.ids || [entry.id])[0]) === id)?.ids || [id])],
           wins: 0,
           losses: 0,
           heroes: {},
@@ -69,7 +86,7 @@ function PlayerStats(resJson) {
         nextGiveawayDate,
         matchDate,
       );
-      const id = player.accountid;
+      const id = player.statsId;
       const won = player.team === game.winner;
       player.changeRating = getCurrentRating(
         won,
@@ -105,7 +122,7 @@ function PlayerStats(resJson) {
 export default PlayerStats;
 
 function teamMates(player, game, playersStat) {
-  const id = player.accountid;
+  const id = player.statsId;
   const won = player.team === game.winner;
 
   const playerSide = player.team;
@@ -117,7 +134,7 @@ function teamMates(player, game, playersStat) {
   }
 
   game.players.forEach((player) => {
-    const teamMateId = player.accountid;
+    const teamMateId = player.statsId;
 
     if (playerSide == player.team) {
       if (!playersStat[id].teamMates[teamMateId] && teamMateId != id) {
@@ -168,7 +185,7 @@ function getCurrentRating(won, matchNumber, teamsRating, playerTeam) {
 }
 
 function roles(player, game, playersStat) {
-  const id = player.accountid;
+  const id = player.statsId;
   const won = player.team === game.winner;
 
   if (!playersStat[id].roles) {
@@ -241,13 +258,14 @@ function calculateMatchPlayerForGiveaway(
     if (!latestGiveawayObject.players) {
       latestGiveawayObject.players = {};
     }
-    if (!latestGiveawayObject.players[player.accountid]) {
-      latestGiveawayObject.players[player.accountid] = {
+    const playerId = player.statsId || String(player.accountid);
+    if (!latestGiveawayObject.players[playerId]) {
+      latestGiveawayObject.players[playerId] = {
         playerName: player.name,
         matchNumber: 0,
       };
     }
 
-    latestGiveawayObject.players[player.accountid].matchNumber++;
+    latestGiveawayObject.players[playerId].matchNumber++;
   }
 }
