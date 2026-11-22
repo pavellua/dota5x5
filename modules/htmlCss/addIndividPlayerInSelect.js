@@ -5,13 +5,17 @@ export default function AddIndividPlayerInSelect(playerStats) {
 
   const playersMas = Object.entries(playerStats)
     .map(([playerId, data]) => ({
-      playerId: playerId,
+      playerId,
       playerName: data.name,
     }))
-    .filter((player) => player.playerName != "Невідомо")
+    .filter(
+      (player) =>
+        String(player.playerName || "").trim().toLocaleLowerCase() !==
+        "невідомо",
+    )
     .sort((a, b) => a.playerName.localeCompare(b.playerName));
 
-  for (let player of playersMas) {
+  for (const player of playersMas) {
     const option = document.createElement("option");
     option.value = player.playerId;
     option.innerText = player.playerName;

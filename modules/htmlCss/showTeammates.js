@@ -33,11 +33,13 @@ export default function ShowTeammates(playerStats, sortParam) {
   console.log(teamMates);
   teamMates = Object.entries(teamMates)
     .map(([id, stat]) => ({ id, ...stat }))
+    .filter((player) => isKnownPlayer(playerStats[player.id]?.name))
     .sort((a, b) => b[sortParam] - a[sortParam]);
 
   let opponents = playerStats[playerId].opponents;
   opponents = Object.entries(opponents)
     .map(([id, stat]) => ({ id, ...stat }))
+    .filter((player) => isKnownPlayer(playerStats[player.id]?.name))
     .sort((a, b) => b[sortParam] - a[sortParam]);
 
   for (let player of teamMates) {
@@ -76,4 +78,9 @@ export default function ShowTeammates(playerStats, sortParam) {
 
 `;
   }
+}
+
+function isKnownPlayer(name) {
+  const normalizedName = String(name || "").trim().toLocaleLowerCase();
+  return normalizedName !== "" && !/невідом|unknown/.test(normalizedName);
 }

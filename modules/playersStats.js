@@ -8,8 +8,10 @@ function PlayerStats(resJson) {
   const playerNamesById = new Map();
   (resJson.players || []).forEach((player) => {
     const ids = (Array.isArray(player.ids) ? player.ids : [player.id])
+      .flatMap((id) => String(id ?? "").split(/[，,]/))
       .filter((id) => id !== undefined && id !== null)
-      .map(String);
+      .map((id) => id.trim())
+      .filter(Boolean);
     const playerId = ids[0];
     if (!playerId) return;
     playerNamesById.set(playerId, player.name);

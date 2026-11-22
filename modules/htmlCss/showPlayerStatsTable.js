@@ -26,16 +26,15 @@ export default function ShowPlayerStatsTable(playerStats, resJson) {
   });
   const activeSince = Date.now() - 40 * 24 * 60 * 60 * 1000;
 
-  const allPlayers = Object.entries(playerStats)
-    .map(([id, player]) => ({
-      id,
-      ...player,
-      winrate: player.wins / (player.wins + player.losses) || 0,
-    }));
+  const allPlayers = Object.entries(playerStats).map(([id, player]) => ({
+    id,
+    ...player,
+    winrate: player.wins / (player.wins + player.losses) || 0,
+  }));
 
   const players = allPlayers.filter((player) => {
     const lastPlayed = lastPlayedByPlayer.get(String(player.id));
-    return player.wins + player.losses >= 8 && lastPlayed >= activeSince;
+    return player.wins + player.losses >= 6 && lastPlayed >= activeSince;
   });
   players.sort((a, b) => {
     if (b.rating !== a.rating) return b.rating - a.rating;
@@ -86,7 +85,8 @@ function playersHeroesDiv(player, matches) {
 
   for (const match of playerMatches) {
     const matchPlayer = match.players.find(
-      (candidate) => String(candidate.statsId || candidate.accountid) === String(player.id),
+      (candidate) =>
+        String(candidate.statsId || candidate.accountid) === String(player.id),
     );
     if (!matchPlayer) continue;
 
