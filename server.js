@@ -14,6 +14,33 @@ app.use(express.json());
 // Кеш щоб не парсити одне й те саме двічі
 const cache = {};
 
+function getKnownPlayerNames() {
+  const configuredPlayers = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "players.json"), "utf8"),
+  );
+
+  if (!Array.isArray(configuredPlayers)) return configuredPlayers;
+
+  return Object.fromEntries(
+    configuredPlayers.flatMap((player) =>
+      (Array.isArray(player.ids) ? player.ids : [player.id])
+        .filter((id) => id !== undefined && id !== null && String(id).trim() !== "")
+        .map((id) => [String(id), player.name]),
+    ),
+  );
+}
+
+function updateKnownPlayerNames(matches) {
+  const namesById = getKnownPlayerNames();
+  for (const match of matches) {
+    for (const player of match.players || []) {
+      const knownName = namesById[String(player.accountid)];
+      if (knownName) player.name = knownName;
+    }
+  }
+  return matches;
+}
+
 function applyReplayDate(matchData, fallbackDate = "") {
   const replayDate = matchData.matchStartTime;
   if (replayDate) {
@@ -82,6 +109,7 @@ app.get("/api/matches", async (req, res) => {
       console.error(`Помилка в ${file}:`, err);
     }
   }
+  updateKnownPlayerNames(matches);
   res.json({
     matches: matches,
     heroesId,
@@ -218,7 +246,9 @@ app.post("/api/add-stream", async (req, res) => {
 });
 
 app.get("/api/get-matches", async (req, res) => {
-  const matches = JSON.parse(fs.readFileSync("./matches.json", "utf-8"));
+  const matches = updateKnownPlayerNames(
+    JSON.parse(fs.readFileSync("./matches.json", "utf-8")),
+  );
   res.json(matches);
 });
 

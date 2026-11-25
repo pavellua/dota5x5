@@ -35,7 +35,19 @@ async function GetMatchInfo(replay, options = {}) {
   );
   console.log(JSON.stringify(wardEvents, null, 2));
 
-  const knownPlayers = require("../players.json");
+  const playersConfig = require("../players.json");
+  // players.json stores each player once, with one or more account IDs.
+  // Build a lookup for every ID so replay account IDs still resolve to the
+  // configured player name when they use an alternate account.
+  const knownPlayers = Array.isArray(playersConfig)
+    ? Object.fromEntries(
+        playersConfig.flatMap((player) =>
+          (Array.isArray(player.ids) ? player.ids : [player.id])
+            .filter((id) => id !== undefined && id !== null && String(id).trim() !== "")
+            .map((id) => [String(id), player.name]),
+        ),
+      )
+    : playersConfig;
   const heroes = require("../data/heroes.json");
   const heroesById = Object.fromEntries(heroes.map((hero) => [hero.id, hero]));
 
